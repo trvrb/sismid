@@ -1,5 +1,7 @@
 # Wright-Fisher population dynamics
 
+![](figures/wright-fisher.png)
+
 ### Wright-Fisher model with mutation and genetic drift
 
  * [iPython notebook](mutation-genetic-drift.ipynb)
