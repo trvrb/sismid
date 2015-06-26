@@ -12,3 +12,7 @@ We will detail bioinformatic methods to build phylogenies, quantify selective pr
 Methods to measure pathogen phenotypic similarity and antigenic evolution, such as antigenic cartography, will be introduced.
 Assumes material from Module 2 (Mathematical Models of Infectious Diseases).
 Material from Module 14 (Evolutionary Dynamics and Molecular Epidemiology of Viruses) would be helpful, but not required.
+
+## Evolution and selection
+
+### [Wright Fisher Dynamics](wright-fisher)
