@@ -2,6 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
+import argparse
 
 # global variables
 pop_size = 100
@@ -95,19 +96,31 @@ def get_all_haplotypes():
             haplotypes.add(haplotype)
     return haplotypes
 
-colors = ["#781C86", "#571EA2", "#462EB9", "#3F47C9", "#3F63CF", "#447CCD", "#4C90C0", "#56A0AE", "#63AC9A", "#72B485", "#83BA70", "#96BD60", "#AABD52", "#BDBB48", "#CEB541", "#DCAB3C", "#E49938", "#E68133", "#E4632E", "#DF4327", "#DB2122"]
-
 def stacked_trajectory_plot():
-    mpl.rcParams['font.size']=18
-    plt.figure(num=None, figsize=(14, 6), dpi=80, facecolor='w', edgecolor='k')
-    haplotypes = get_all_haplotypes()
-    trajectories = [get_trajectory(haplotype) for haplotype in haplotypes]
-    plt.stackplot(range(generations), trajectories, colors=colors)
-    plt.ylim(0, 1)
-    plt.ylabel("frequency")
-    plt.xlabel("generation")
-    plt.show()
+	colors = ["#781C86", "#571EA2", "#462EB9", "#3F47C9", "#3F63CF", "#447CCD", "#4C90C0", "#56A0AE", "#63AC9A", "#72B485", "#83BA70", "#96BD60", "#AABD52", "#BDBB48", "#CEB541", "#DCAB3C", "#E49938", "#E68133", "#E4632E", "#DF4327", "#DB2122"]
+	mpl.rcParams['font.size']=18
+	plt.figure(num=None, figsize=(14, 6), dpi=80, facecolor='w', edgecolor='k')
+	haplotypes = get_all_haplotypes()
+	trajectories = [get_trajectory(haplotype) for haplotype in haplotypes]
+	plt.stackplot(range(generations), trajectories, colors=colors)
+	plt.ylim(0, 1)
+	plt.ylabel("frequency")
+	plt.xlabel("generation")
+	plt.show()
 
-# output
-simulate()
-stacked_trajectory_plot()
+if __name__=="__main__":
+	parser = argparse.ArgumentParser(description = "run wright-fisher simulation with mutation and genetic drift")
+	parser.add_argument('--pop_size', type = int, default = 100.0, help = "population size")
+	parser.add_argument('--mutation_rate', type = float, default = 0.002, help = "mutation rate")
+	parser.add_argument('--seq_length', type = int, default = 10, help = "sequence length")
+	parser.add_argument('--generations', type = int, default = 200, help = "generations")	
+	
+	params = parser.parse_args()	
+	pop_size = params.pop_size
+	mutation_rate = params.mutation_rate
+	seq_length = params.seq_length
+	generations = params.generations		
+	
+	simulate()
+	stacked_trajectory_plot()
+	
