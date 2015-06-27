@@ -80,3 +80,12 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Analysis of influenza sequence data
 
 ## Day 3: Immunity
+
+### Serology (Trevor)
+
+* Cartography
+* Original antigenic sin
+
+### B cells (Sarah)
+
+ * ???
