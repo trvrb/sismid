@@ -17,10 +17,10 @@ Run script with:
 
 	python mutation-genetic-drift.py --pop_size 100 --mutation_rate 0.002 --generations 200
 
-### 2. [Visualization of Wright-Fisher haplotype dynamics](http://bedford.io/projects/haplotypes/)
+ * [Visualization of Wright-Fisher haplotype dynamics](http://bedford.io/projects/haplotypes/)
 
-### 3. Neutral expectations for population summary statistics
+### 2. Neutral expectations for population summary statistics
 
-### 4. Wright-Fisher model with mutation, genetic drift and selection
+### 3. Wright-Fisher model with mutation, genetic drift and selection
 
  * [iPython notebook](mutation-genetic-drift-selection.ipynb)
