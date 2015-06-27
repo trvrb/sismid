@@ -1,6 +1,10 @@
 # Wright-Fisher population dynamics
 
+### Wright-Fisher model
+
 ![](figures/wright-fisher.png)
+
+ * [Visualization of Wright-Fisher ancestry](http://bedford.io/projects/ancestry/)
 
 ### 1. Wright-Fisher model with mutation and genetic drift
 
@@ -11,6 +15,10 @@ Run script with:
 
 	python mutation-genetic-drift.py --pop_size 100 --mutation_rate 0.002 --generations 200
 
-### 2. Wright-Fisher model with mutation, genetic drift and selection
+### 2. [Visualization of Wright-Fisher haplotype dynamics](http://bedford.io/projects/haplotypes/)
+
+### 3. Neutral expectations for population summary statistics
+
+### 4. Wright-Fisher model with mutation, genetic drift and selection
 
  * [iPython notebook](mutation-genetic-drift-selection.ipynb)
