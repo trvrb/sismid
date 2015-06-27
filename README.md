@@ -77,4 +77,4 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * *Exercise 2: Effects of positive and negative selection on population dynamics*
 * Analysis of influenza sequence data
 
-## Day 3: Modeling immunity
+## Day 3: Immunity
