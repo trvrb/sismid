@@ -67,7 +67,9 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 
 ## Day 2: Evolution and selection
 
-### [Wright-Fisher Dynamics](wright-fisher)
+### [Flu and its evolution](flu/)
+
+### [Wright-Fisher Dynamics](wright-fisher/)
 
 * Introduction to Wright-Fisher model
 * Wright-Fisher with mutation and genetic drift

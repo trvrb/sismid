@@ -10,8 +10,8 @@ There are *N* individuals in the population. Every generation, each individual h
 
 ### 1. Wright-Fisher model with mutation and genetic drift
 
- * [iPython notebook](mutation-genetic-drift.ipynb)
- * [Python script](mutation-genetic-drift.py)
+ * [iPython notebook](https://github.com/trvrb/sismid/blob/master/wright-fisher/mutation-genetic-drift.ipynb)
+ * [Python script](https://github.com/trvrb/sismid/blob/master/wright-fisher/mutation-genetic-drift.py)
 
 Run script with:
 
@@ -23,4 +23,4 @@ Run script with:
 
 ### 3. Wright-Fisher model with mutation, genetic drift and selection
 
- * [iPython notebook](mutation-genetic-drift-selection.ipynb)
+ * [iPython notebook](https://github.com/trvrb/sismid/blob/master/wright-fisher/mutation-genetic-drift-selection.ipynb)
