@@ -48,7 +48,21 @@ body {
   
 .reveal h6 {
 	font-size: 0.5em;
-} 
+}
+
+.title {
+	position: absolute;
+	top:0px;
+	left:0px;
+	z-index:100;
+}
+
+.citation {
+	position: absolute;
+	bottom:0px;
+	left:0px;
+	z-index:100;
+}
 
 /*********************************************
  * LINKS
