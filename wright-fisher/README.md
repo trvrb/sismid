@@ -8,7 +8,7 @@ There are *N* individuals in the population. Every generation, each individual h
 
  * [Visualization of Wright-Fisher ancestry](http://bedford.io/projects/ancestry/)
 
-### 1. Wright-Fisher model with mutation and genetic drift
+### Wright-Fisher model with mutation and genetic drift
 
  * [iPython notebook](https://github.com/trvrb/sismid/blob/master/wright-fisher/mutation-genetic-drift.ipynb)
  * [Python script](https://github.com/trvrb/sismid/blob/master/wright-fisher/mutation-genetic-drift.py)
@@ -19,8 +19,8 @@ Run script with:
 
  * [Visualization of Wright-Fisher haplotype dynamics](http://bedford.io/projects/haplotypes/)
 
-### 2. Neutral expectations for population summary statistics
+### [Neutral expectations for population summary statistics](summary-statistics.md)
 
-### 3. Wright-Fisher model with mutation, genetic drift and selection
+### Wright-Fisher model with mutation, genetic drift and selection
 
  * [iPython notebook](https://github.com/trvrb/sismid/blob/master/wright-fisher/mutation-genetic-drift-selection.ipynb)
