@@ -8,62 +8,35 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 
 ## Day 1: Competitive dynamics
 
-### Strain dynamics are evolutionary dynamics
+### [Introduction to immune-mediated competition](competition/) 
 
-### The dangers of intuition
-* Problem: intrinsic nonlinearities, unknown model structure
-* Misuse of correlations (especially when analyzing snapshots)
-* Misuse of confounders (e.g., shared risks for two strains)
+* The dangers of intuition
+* The biological basis of antigenic diversity: innate, cellular, and humoral responses
+* Antigenically variable pathogens
 
-### The biological basis of antigenic diversity
-* Innate response
-* Cellular response
-* Humoral response
+### [Mechanistic multistrain models](models/)
+* Statistical, compartmental, and agent-based models
+* The many forms of competition
+* Analytic solutions
+* Numerical integration
+* *Exercise 1: Simulate from a mechanistic model with independent and competing strains. Create a bifurcation diagram, varying the strength of competition.*
 
-### Antigenically varying pathogens
-* Neutral antigenic variation
-* Static types: Pneumococcus, pertussis, choleras, RSV?
-* Evolving types: Influenza, HIV, malaria, enteroviruses
-* Competition between different "species"
-* Challenge: Heterogeneity in host response
-
-### Mechanistic models
-* Compartment models (v. statistical or agent-based)
-* History v. status-based approaches
-* Coinfection, superinfection, “neutral null models”
-* Strength, time scale, breadth
-* Antigenic drift as loss of immunity
-* Solving for equilibrium states
-* When we need numerical integration
-* *Lab 1: Simulate from a mechanistic model with independent and competing strains. Create a bifurcation diagram, varying the strength of competition.*
-
-### Fitting mechanistic models
-* Fit to deterministic skeletons
-* Likelihood with case (population) data
-* *Lab 2: Inference of SIR model and/or longitudinal model with Stan*
-* Likelihood with longitudinal models
-* Epidemiological approach: GLMs
-* Stan: HPV
+### [Fitting mechanistic models](fitting/)
+* Deterministic skeletons
+* Nonlinear least squared and maximum likelihood with population data
+* *Exercise 2: Inference of a SIR model*
+* GLMs with longitudinal data
+* MCMC with Stan: HPV as a case study
 * Probes and arbitrary metrics
-* Pneumo as case example
-* Insufficient approaches: wavelet analysis...
-  
-### When do we trust a model? Issues fitting.
-* Non-identifiability
-* Problems with model structure and bias (He et al. 2011)
-* Work from simulated data?
-* *Lab 3: When to trust a model. Do we require prediction?*
+* *Exercise 3: When to trust a model.*
+* Tips & tricks: insights from natural experiments
 
-### Other tips & tricks: Insights from natural experiments
-* Vaccination can reveal competition: pneumo, human papillomavirus Evolution/Immigration: Similar shifts in competition
-* Influenza subtypes (and A v. B)
-* Seasonal influenza (H3N2, H1N1, B)
-
-### Attractor reconstruction & "empirical dynamical modeling"
-* State-space reconstruction, attractors, Takens theorem
+### [State-space reconstruction](ssr/)
+* State space and attractors
+* Prediction
+* Takens theorem
 * Convergent cross-mapping for causal inference
-* Limitations: nonstationarity, correlated noise
-* *Lab 4: Attractor reconstruction and convergent cross-mapping. Generate time series (from Lab 1 code), look at impact on convergent cross-mapping.*
+* *Exercise 4: Attractor reconstruction and convergent cross-mapping.*
 
 ## Day 2: Evolution and selection
 
