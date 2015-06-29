@@ -18,6 +18,12 @@ Genetic diversity is most commonly summarized with the statistic *&pi;*, which i
 
 *&pi;* for *Drosophila* and *&pi;* for flu is approximately 0.01, while *&pi;* for humans is approximately 0.001. This means that for an average length gene of 1000 basepairs, two random fruit flies or two random flues will probably differ at ~10 sites, while two random humans will differ at ~1 site.
 
+## Unique variants
+
+The number of unique haplotypes in a sample of *n* sequences can be estimated from [Ewen's sampling formula](https://en.wikipedia.org/wiki/Ewens's_sampling_formula). Ewen's sampling formula gives the probability of observing `$a_1$` copies of haplotype 1, `$a_2$` copies of haplotype 2, etc... in a sample of *n* sequences. The sole parameter of the sampling formula is *&theta;*. Thus *&theta;* is sufficient to predict the entire distribution of haplotype frequencies. The expectation of *k* unique haplotypes follows:
+
+`$$ E[k] = \sum^{n}_{i=1} \frac{\theta}{\theta + i - 1} $$`.
+
 With *&theta;* = 0.2, there is usually only a single dominant haplotype in the population.
 
 ![](figures/trajectories_theta0.2_n100.png)
@@ -32,6 +38,32 @@ With *&theta;* = 5.0, there are many segregating haplotypes.
 
 ## Chance of fixation
 
-A new mutant appears in the population at an initial frequency *p* of `$1/N$`. It has a 
+A new mutant appears in the population at an initial frequency *p* of `$1/N$`. It has a `$1/N$` of eventually fixing in the population and a `$(N-1)/N$` chance of being lost from the population.
 
-If a mutant is at population frequency *p*, then it has a *p* chance of fixing.
+Similarly, if a mutant is at population frequency *p*, then it has a *p* chance of fixing. At any point in time, looking forwards, the chance of fixation of a neutral mutation is just its frequency.
+
+## Time to fixation
+
+Conditioned on a neutral mutant fixing, the expected time to fixation is 2*N* generations. Thus, the rate of population turnover scales inversely with population size. This time to fixation is also a measure of the strength of random genetic drift.
+
+With *&theta;* = 1 and *N* = 20, haplotypes emerge and disappear rapidly.
+
+![](figures/trajectories_theta1_n20.png)
+
+With *&theta;* = 1 and *N* = 100, population turnover takes approximately 200 generations.
+
+![](figures/trajectories_theta1_n100.png)
+
+With *&theta;* = 1 and *N* = 500, population turnover occurs slowly.
+
+![](figures/trajectories_theta1_n500.png)
+
+## Divergence
+
+Each generation we expect *N&mu;* mutations across the entire population. Each mutation has a `$1/N$` chance of fixing. Thus the rate of fixed mutations is `$ N \mu \times 1/N = \mu$`.
+
+This result, that the rate of neutral divergence across a species is equal to the rate of mutation in a single individual, is a classic finding from [Kimura](http://www.blackwellpublishing.com/ridley/classictexts/kimura.pdf).
+
+# Overview
+
+Mutation rate *&mu;* determines the rate of interspecies divergence, population size *N* determines the rate of population turnover and their product *N&mu;* determines the level of standing genetic variation.
