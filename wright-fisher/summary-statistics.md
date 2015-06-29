@@ -22,13 +22,13 @@ With *&theta;* = 0.2, there is usually only a single dominant haplotype in the p
 
 ![](figures/trajectories_theta0.2_n100.png)
 
-With *&theta;* = 1.0, there are general a small handful of haplotypes.
+With *&theta;* = 1.0, there are generally a small handful of haplotypes.
 
-![](figures/trajectories_theta1.0_n100.png)
+![](figures/trajectories_theta1_n100.png)
 
 With *&theta;* = 5.0, there are many segregating haplotypes.
 
-![](figures/trajectories_theta5.0_n100.png)
+![](figures/trajectories_theta5_n100.png)
 
 ## Chance of fixation
 
