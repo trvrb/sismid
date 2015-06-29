@@ -8,23 +8,23 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 
 ## Day 1: Competitive dynamics
 
-### [Introduction to immune-mediated competition](competition/) 
+### [Immune-mediated competition](competition/) 
 
 * The dangers of intuition
 * The biological basis of antigenic diversity: innate, cellular, and humoral responses
 * Antigenically variable pathogens
 
-### [Mechanistic multistrain models](models/)
+### [Multistrain models](models/)
 * Statistical, compartmental, and agent-based models
 * The many forms of competition
 * Analytic solutions
 * Numerical integration
-* *Exercise 1: Simulate from a mechanistic model with independent and competing strains. Create a bifurcation diagram, varying the strength of competition.*
+* *Exercise 1: Analyzing the dynamics of a multistrain SIR system.*
 
 ### [Fitting mechanistic models](fitting/)
 * Deterministic skeletons
 * Nonlinear least squared and maximum likelihood with population data
-* *Exercise 2: Inference of a SIR model*
+* *Exercise 2: Inference for a multistrain SIR model*
 * GLMs with longitudinal data
 * MCMC with Stan: HPV as a case study
 * Probes and arbitrary metrics
