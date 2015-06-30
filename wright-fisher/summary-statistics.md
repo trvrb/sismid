@@ -26,15 +26,15 @@ The number of unique haplotypes in a sample of *n* sequences can be estimated fr
 
 With *&theta;* = 0.2, there is usually only a single dominant haplotype in the population.
 
-![](figures/trajectories_theta0.2_n100.png)
+![](images/trajectories_theta0.2_n100.png)
 
 With *&theta;* = 1.0, there are generally a small handful of haplotypes.
 
-![](figures/trajectories_theta1_n100.png)
+![](images/trajectories_theta1_n100.png)
 
 With *&theta;* = 5.0, there are many segregating haplotypes.
 
-![](figures/trajectories_theta5_n100.png)
+![](images/trajectories_theta5_n100.png)
 
 ## Chance of fixation
 
@@ -48,15 +48,15 @@ Conditioned on a neutral mutant fixing, the expected time to fixation is 2*N* ge
 
 With *&theta;* = 1 and *N* = 20, haplotypes emerge and disappear rapidly.
 
-![](figures/trajectories_theta1_n20.png)
+![](images/trajectories_theta1_n20.png)
 
 With *&theta;* = 1 and *N* = 100, population turnover takes approximately 200 generations.
 
-![](figures/trajectories_theta1_n100.png)
+![](images/trajectories_theta1_n100.png)
 
 With *&theta;* = 1 and *N* = 500, population turnover occurs slowly.
 
-![](figures/trajectories_theta1_n500.png)
+![](images/trajectories_theta1_n500.png)
 
 ## Divergence
 

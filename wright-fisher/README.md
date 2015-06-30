@@ -2,9 +2,9 @@
 
 ### Wright-Fisher model
 
-There are *N* individuals in the population. Every generation, each individual has a Poisson number of offspring (looking forwards in time), or picks one random parent individual (looking backwards time). Generations are discrete and non-overlapping.
+![](images/wright_fisher.png)
 
-![](figures/wright-fisher.png)
+There are *N* individuals in the population. Every generation, each individual has a Poisson number of offspring (looking forwards in time), or picks one random parent individual (looking backwards time). Generations are discrete and non-overlapping.
 
  * [Visualization of Wright-Fisher ancestry](http://bedford.io/projects/ancestry/)
 
