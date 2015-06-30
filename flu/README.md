@@ -1,3 +1,5 @@
-# Introduction to influenza and its evolution
+# Influenza
 
-### [Slides are here](http://bedford.io/projects/sismid/flu/slides.html)
+### Introduction to flu and its evolution
+
+* [Slides](http://bedford.io/projects/sismid/flu/slides.html)
