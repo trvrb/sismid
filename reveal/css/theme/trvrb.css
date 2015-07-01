@@ -55,8 +55,9 @@ body {
 .citation {
 	position: absolute;
 	bottom:0px;
-	left:0px;
+	right:0px;
 	z-index:100;
+	font-size: 0.45em !important;
 }
 
 .title {
@@ -77,12 +78,11 @@ body {
   transition: color .15s ease; }
 
 .reveal a:not(.image):hover {
-  color: #74a7cb;
-  text-shadow: none;
+  color: #aaa;
   border: none; }
 
 .reveal .roll span:after {
-  color: #fff;
+  color: #aaa;
   background: #264c66; }
 
 /*********************************************
