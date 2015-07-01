@@ -6,7 +6,7 @@
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
 .reveal a:not(.image) {
-  line-height: 1.5em; }
+  line-height: 1.6em; }
 
 /*********************************************
  * GLOBAL STYLES
@@ -17,8 +17,7 @@ body {
 .reveal {
   font-family: "Lato", sans-serif;
   font-size: 34px;
-  font-weight: 300;
-  letter-spacing: -0.02em;  
+  font-weight: 300;  
   color: #333333; }
 
 ::selection {
@@ -38,16 +37,19 @@ body {
   margin: 0 0 20px 0;
   color: #333333;
   font-family: "Lato", sans-serif;
-  font-weight: 300;  
-  letter-spacing: -0.02em;
- 
-  text-shadow: none; }
+  font-weight: 300;
+  text-shadow: none;
+  }
 
 .reveal h1 {
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
   
 .reveal h6 {
 	font-size: 0.5em;
+}
+
+.reveal p {
+  line-height: 1.6em;
 }
 
 .citation {
