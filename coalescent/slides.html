@@ -100,7 +100,49 @@
 				<section data-transition="none">
 					<h3>Each generation coalescence may occur</h3>
 					<img class="stretch" src="images/wright_fisher_6.png">
-				</section>												
+				</section>
+				
+				<section>
+					<h3>Per-generation probability of coalescence</h3>
+					<br>
+					<p>$$\mathrm{Pr}(\mathrm{coal} \, | \, i=2) = \frac{1}{N}$$</p>
+					<br>
+					<p>Probability of first lineage picking an arbitrary parent is 1, while the
+					probability of the 2nd lineage picking the same parent is $\frac{1}{N}$.</p>
+					<p>Probability of coalescence scales inversely with population size.</p>
+				</section>
+				
+				<section>
+					<h3>Per-generation probability of coalescence</h3>
+					<br>
+					<p>$$\mathrm{Pr}(\mathrm{coal}) = \binom{i}{2} \frac{1}{N} = \frac{i(i-1)}{2N}$$</p>
+					<br>
+					<p>There are $\binom{i}{2}$ ways pairs of lineages can pick the same parent.</p>
+					<p>Probability of coalescence scales quadratically with lineage count.</p>
+				</section>
+				
+				<section>
+					<h3>Expected waiting time to coalescence</h3>
+					<br>
+					<p>$$\mathrm{E}[T_i] = \frac{2N}{i(i-1)}$$</p>
+					<br>
+					<p>
+						This is a <a href="https://en.wikipedia.org/wiki/Geometric_distribution">geometric distribution</a>.
+						If each generation there is a $\frac{1}{x}$ probability of an event occurring, we expect to
+						wait $x$ generations for the event to occur.
+					</p>
+				</section>
+				
+				<section>
+					<h3>Continuous time limit</h3>
+					<br>
+					<p>With per-generation probability of an event $\frac{1}{x}$ small, but many generations, then the 
+					discrete time geometric distribution approximates to a continuous time 
+					<a href="https://en.wikipedia.org/wiki/Exponential_distribution">exponential distribution</a>.
+					Thus, we assume $T_i$ to be exponentially distributed with mean
+					<br>
+					<p>$$\mathrm{E}[T_i] = \frac{2N}{i(i-1)}.$$</p>
+				</section>				
 
 				<section>
 					<h2><a href="http://bedford.io/projects/coaltrace/">
