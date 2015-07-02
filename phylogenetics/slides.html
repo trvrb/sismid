@@ -148,18 +148,19 @@
 					For example, if we have data $D$ from a 
 					<a href="https://en.wikipedia.org/wiki/Bernoulli_distribution">Bernoulli</a> observation model 
 					representing $k$ successes in $n$ trials, then
-					the probability of observing $D$ given coin flip probability parameter $p$ is simply
-					$$\mathrm{Pr}(D \, | \, \theta) = p^k \, (1-p)^{n-k}.$$
+					the probability of observing $k$ and $n$ given coin flip probability parameter $p$ is simply
+					$$\mathrm{Pr}(k,n \, | \, p) = p^k \, (1-p)^{n-k}.$$
 				</section>
 				
 				<section>
 					<h3>Maximum likelihood (ML) inference</h3>
 					<br>
 					<p>
-					For the Bernoulli model $\mathrm{Pr}(D \, | \, \theta) = p^k \, (1-p)^{n-k}$,
-					we have $\hat{p} = \cfrac{k}{n}$. For example, with $k=10$ and $n=20$, $\hat{p}=0.5$ 
+					For the Bernoulli model $\mathrm{Pr}(k,n \, | \, p) = p^k \, (1-p)^{n-k}$,
+					we have $\hat{p} = \cfrac{k}{n}$. For example, with $k=8$ and $n=10$, $\hat{p}=0.8$
+					and the likelihood curve follows
 					</p>
-					<img class="stretch" src="images/bernoulli.png">
+					<img class="stretch" src="images/bernoulli_ml.png">
 				</section>				
 
 				<section>
@@ -260,7 +261,42 @@
 					<br>
 					In this case, what is $\mathrm{Pr}(\mathrm{E} \, | \, \mathrm{P})$?
 					</p>
-				</section>								
+				</section>						
+
+				<section>
+					<h3>Bayesian inference</h3>
+					<br>
+					<p>
+					Bayesian inference applies Bayes' rule in a likelihood context, so that
+					$$ \mathrm{Pr}(\theta \, | \, D) = \cfrac{ \mathrm{Pr}(D \, | \, \theta) \, \mathrm{Pr}(\theta) }{ \mathrm{Pr}(D) }, $$
+					where $D$ is data and $\theta$ are parameters. $\mathrm{Pr}(D)$ is constant with respect to $\theta$,
+					so that $ \mathrm{Pr}(\theta \, | \, D) \propto \mathrm{Pr}(D \, | \, \theta) \, \mathrm{Pr}(\theta)$.
+					This relationship is often referred to as
+					$ \mathrm{posterior} \propto \mathrm{likelihood} \times \mathrm{prior}$.
+					</p>
+				</section>
+				
+				<section>
+					<h3>Bayesian inference for Bernoulli model</h3>
+					<br>
+					<p>
+					Following our previous Bernoulli example, we've observed $k$ successes in $n$ trials, and so the 
+					likelihood $\mathrm{Pr}(k,n \, | \, p) = p^k \, (1-p)^{n-k}$. We'll assume a flat prior
+					$\mathrm{Pr}(p) = 1$. In this case, the marginal likelihood follows
+					$$\mathrm{Pr}(k,n) = \int_0^1 \mathrm{Pr}(k,n \, | \, p) \, \mathrm{Pr}(p) \, dp = \cfrac{k! \, (n-k)!}{(n+1)!}.$$
+					And thus, the full posterior follows
+					$$\mathrm{Pr}(p \, | \, k,n) = \cfrac{(n+1)! \, p^k \, (1-p)^{n-k}}{k! \, (n-k)!}.$$
+				</section>
+				
+				<section>
+					<h3>Probability statements</h3>
+					<br>
+					<p>
+					If $k=8$ and $n=10$, the mean posterior $\mathrm{E}[p] = 0.75$, while the 95% credible interval
+					extends from $0.482$ to $0.896$, and the posterior distribution follows 
+					</p>
+					<img class="stretch" src="images/bernoulli_bayesian.png">
+				</section>
 
 			</div>
 
