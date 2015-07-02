@@ -70,7 +70,7 @@
 				<section>
 					<h3>
 					<a href="https://en.wikipedia.org/wiki/Maximum_parsimony_(phylogenetics)">Parsimony</a> is 
-					based on <a href="https://en.wikipedia.org/wiki/Occam's_razor">Occam's razor</a>.</h3>
+					based on <a href="https://en.wikipedia.org/wiki/Occam's_razor">Occam's razor</a></h3>
 					<p>
 					Among competing 
 					hypotheses that predict equally well, the one with the fewest assumptions should be selected.</p>
@@ -124,8 +124,143 @@
 				<section data-transition="none">
 					<h3><i>Exercise: which topology is more likely under parsimony?</i></h3>
 					<img class="stretch" src="images/parsimony_exercise_8.png">
-				</section>																							
+				</section>
 				
+				<section>
+					<h2>Inferring phylogenies with likelihood</h2>
+				</section>
+
+				<section>
+					<h3>Maximum likelihood (ML) inference</h3>
+					<br>
+					<p>
+					In ML, you have some set of data $D$ and a model for generating this data. This model has parameters
+					$\theta$. The probability of observing data is $\mathrm{Pr}(D \, | \, \theta)$. The best parameter 
+					point estimate $\hat{\theta}$ is simply the value that maximizes $\mathrm{Pr}(D \, | \, \theta)$.
+					</p>
+				</section>
+
+
+				<section>
+					<h3>Maximum likelihood (ML) inference</h3>
+					<br>
+					<p>
+					For example, if we have data $D$ from a 
+					<a href="https://en.wikipedia.org/wiki/Bernoulli_distribution">Bernoulli</a> observation model 
+					representing $k$ successes in $n$ trials, then
+					the probability of observing $D$ given coin flip probability parameter $p$ is simply
+					$$\mathrm{Pr}(D \, | \, \theta) = p^k \, (1-p)^{n-k}.$$
+				</section>
+				
+				<section>
+					<h3>Maximum likelihood (ML) inference</h3>
+					<br>
+					<p>
+					For the Bernoulli model $\mathrm{Pr}(D \, | \, \theta) = p^k \, (1-p)^{n-k}$,
+					we have $\hat{p} = \cfrac{k}{n}$. For example, with $k=10$ and $n=20$, $\hat{p}=0.5$ 
+					</p>
+					<img class="stretch" src="images/bernoulli.png">
+				</section>				
+
+				<section>
+					<h3>Data likelihood</h3>
+					<br>
+					<p>
+					In phylogenetics, $D$ are the observed tip sequences and $\theta$ is the phylogenetic tree 
+					including topology and branch lengths.
+					</p>
+				</section>
+
+				<section>
+					<h3>Calculating the likelihood of a single topology</h3>
+					<img class="stretch" src="images/likelihood_tree_1.png">
+				</section>
+				
+				<section>
+					<h3>Transition probability for each branch</h3>
+					<img class="stretch" src="images/likelihood_tree_2.png">
+				</section>
+				
+				<section>
+					<h3>Rather than enumerating all possible internal states</h3>
+					<img class="stretch" src="images/likelihood_tree_3.png">
+				</section>
+				
+				<section>
+					<h3>Can use Felstenstein's pruning algorithm to speed up calculation</h3>
+					<img class="stretch" src="images/likelihood_tree_4.png">
+					<div class="citation">
+						<a href="http://link.springer.com/article/10.1007/BF01734359">
+							Felsenstein 1981
+						</a>
+					</div>
+				</section>
+				
+				<section>
+					<h3>ML inference</h3>
+					<br>
+					<p>
+					Inference becomes a search for the tree that maximizes the likelihood of observing tip sequences. 
+					Lots of computation goes into this.
+					</p>
+				</section>														
+
+				<section>
+					<h2>Bayesian phylogenetic inference</h2>
+				</section>
+
+				<section>
+					<h3>Bayesian inference</h3>
+					<br>
+					<p>
+					Generally, it's difficult to make probability statements using frequentist statistics. You cannot 
+					directly say that model 1 is twice as likely as model 2. 
+					<a href="http://bactra.org/weblog/1111.html">People misuse <i>p</i> values in this sort fashion all 
+					the time.</a>
+					</p>
+				</section>
+
+				<section>
+					<h3>Bayes' rule</h3>
+					<br>
+					<p>
+					Bayes' rule forms the basis of Bayesian inference, it states:
+					$$ \mathrm{Pr}(A \, | \, B) = \cfrac{ \mathrm{Pr}(B \, | \, A) \, \mathrm{Pr}(A) }{ \mathrm{Pr}(B) } $$
+					</p>
+				</section>
+				
+				<section>
+					<h3><i>Bayes' rule exercise</i></h3>
+					<br>
+					<p>
+					For example, let's say we have an Ebola test that is 99% 
+					<a href="https://en.wikipedia.org/wiki/Sensitivity_and_specificity">sensitive</a> and 99% 
+					<a href="https://en.wikipedia.org/wiki/Sensitivity_and_specificity">specific</a> (meaning if 
+					someone has Ebola it 
+					will report true 99% of the time and if someone doesn't have Ebola it will report false 99% of the time).
+					Let's further say that 0.1% of the population has Ebola.
+					If we select a random individual and observe a positive test result, what is the probability that they
+					actually have Ebola?
+					</p>
+				</section>	
+				
+				<section>
+					<h3><i>Bayes' rule exercise</i></h3>
+					<br>
+					<p>
+					If we select a random individual and observe a positive test result, what is the probability that they
+					actually have Ebola? I.e. 
+					$\mathrm{Pr}(\mathrm{P} \, | \, \mathrm{E}) = 0.99$, 
+					$\mathrm{Pr}(\mathrm{N} \, | \, \mathrm{E}) = 0.01$, 
+					<br>
+					$\mathrm{Pr}(\mathrm{P} \, | \, \mathrm{NE}) = 0.01$, 
+					$\mathrm{Pr}(\mathrm{N} \, | \, \mathrm{NE}) = 0.99$
+					<br>
+					and $\mathrm{Pr}(\mathrm{E}) = 0.001$.
+					<br>
+					In this case, what is $\mathrm{Pr}(\mathrm{E} \, | \, \mathrm{P})$?
+					</p>
+				</section>								
 
 			</div>
 
