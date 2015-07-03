@@ -284,7 +284,7 @@
 					likelihood $\mathrm{Pr}(k,n \, | \, p) = p^k \, (1-p)^{n-k}$. We'll assume a flat prior
 					$\mathrm{Pr}(p) = 1$. In this case, the marginal likelihood follows
 					$$\mathrm{Pr}(k,n) = \int_0^1 \mathrm{Pr}(k,n \, | \, p) \, \mathrm{Pr}(p) \, dp = \cfrac{k! \, (n-k)!}{(n+1)!}.$$
-					And thus, the full posterior follows
+					And the full posterior follows
 					$$\mathrm{Pr}(p \, | \, k,n) = \cfrac{(n+1)! \, p^k \, (1-p)^{n-k}}{k! \, (n-k)!}.$$
 				</section>
 				
@@ -297,6 +297,52 @@
 					</p>
 					<img class="stretch" src="images/bernoulli_bayesian.png">
 				</section>
+
+				<section>
+					<h3>Bayesian phylogenetic inference</h3>
+					<br>
+					<p>
+					Here, we are interested in the posterior distribution $\mathrm{Pr}(\tau, \mu \, | \, D)$, where $D$ 
+					represents sequence data, $\tau$ represents the tree topology and $\mu$ represents mutational parameters
+					(like transition vs tranversion rate). In this case,
+					$$ \mathrm{Pr}(\tau, \mu \, | \, D) \propto \mathrm{Pr}(D \, | \, \tau, \mu) \, \mathrm{Pr}(\tau) \, \mathrm{Pr}(\mu). $$
+					</p>
+				</section>
+				
+				<section>
+					<h3>Bayesian coalescent inference</h3>
+					<br>
+					<p>
+					In the case of the coalescent model, we are interested in coalescent rate parameter like $\lambda$. Here,
+					we use $\lambda$ to give the likelihood of observing a particular tree topology $\mathrm{Pr}(\tau \, | \, \lambda)$.
+					This probability is the likelihood of observing the coalescent intervals seen in the tree.
+					</p>
+				</section>				
+
+				<section>
+					<h3>Bayesian coalescent inference</h3>
+					<br>
+					<p>
+					Thus, the full model becomes
+					$$ \mathrm{Pr}(\tau, \mu, \lambda \, | \, D) \propto 
+						\mathrm{Pr}(D \, | \, \tau, \mu) \, \mathrm{Pr}(\tau \, | \, \lambda) \, \mathrm{Pr}(\lambda) \, \mathrm{Pr}(\mu). $$
+					Bayesian approaches work well to build these sorts of nested models.
+					</p>
+				</section>	
+				
+				<section>
+					<h2>BEAST: Bayesian Evolutionary Analysis by Sampling Trees</h2>
+				</section>
+
+				<section data-transition="none">
+					<h3>Markov chain Monte Carlo (MCMC)</h3>
+					<img class="stretch" src="images/mcmc_1.png">
+				</section>
+				
+				<section data-transition="none">
+					<h3>Markov chain Monte Carlo (MCMC)</h3>
+					<img class="stretch" src="images/mcmc_2.png">
+				</section>				
 
 			</div>
 
