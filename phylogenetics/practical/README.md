@@ -18,6 +18,7 @@ This tutorial walks through how to use [BEAST](http://beast.bio.ed.ac.uk/) and a
 3. [Run BEAST analysis](run-beast-analysis.md)
 4. [Examine MCMC output](examine-mcmc-output.md)
 5. [Examine tree output](examine-tree-output.md)
+6. [Analyze vaccine strain choice](analyze-vaccine-strain-choice.md)
 
 ### Next section
 
