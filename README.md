@@ -78,7 +78,7 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * *Exercise: Antigenic map*
 * Original antigenic sin
 
-### B cells (Sarah)
+### [B cell selection and evolution](bcells/)
 
 * VDJ recombination and somatic hypermutation
 * Clonal dynamics and repertoire diversity
