@@ -4,7 +4,7 @@ I started by downloading sequences of the HA segment of H3N2 influenza from the 
 I cleaned up these sequences to keep only strains with at least 900 bases and to keep strains with more antigenic data.
 These strains are the same as was used in the [Integrating influenza antigenic dynamics with molecular evolution](http://bedford.io/papers/bedford-flux/) paper, except restricted to 1994 to 2011.
 This left 244 sequences.
-These sequences were tagged with inferred H3N2 antigenic cluster by [Charles Cheung](http://bedford.io/team/charles-cheung/).
+These sequences were tagged with inferred H3N2 antigenic cluster by [Charles Cheung](http://bedford.io/team/charles-cheung/) (more on antigenic inference and cartography tomorrow).
 There were 8 total antigenic phenotypes in the dataset. 
 
 BEAST accepts either [NEXUS](http://en.wikipedia.org/wiki/Nexus_file) or [FASTA](http://en.wikipedia.org/wiki/FASTA_format) format for sequence data.

@@ -14,16 +14,10 @@ This tutorial walks through how to use [BEAST](http://beast.bio.ed.ac.uk/) and a
 ## Contents
 
 1. [Compile sequence data](compile-sequence-data.md)
-2. [Prepare a skyline analysis](prepare-a-skyline-analysis.md)
-3. [Run the skyline analysis](run-the-skyline-analysis.md)
-4. [Examine the skyline output](examine-the-skyline-output.md)
-5. [Examine the skyline tree](examine-the-skyline-tree.md)
-6. [Prepare a logistic growth analysis](prepare-a-logistic-growth-analysis.md)
-7. [Run the logistic growth analysis](run-the-logistic-growth-analysis.md)
-8. [Examine the logistic growth output](examine-the-logistic-growth-output.md)
-9. [Prepare a phylogeographic analysis](prepare-a-phylogeographic-analysis.md)
-10. [Run the phylogeographic analysis](run-the-phylogeographic-analysis.md)
-11. [Examine the phylogeographic output](examine-the-phylogeographic-output.md)
+2. [Prepare BEAST analysis](prepare-beast-analysis.md)
+3. [Run BEAST analysis](run-beast-analysis.md)
+4. [Examine MCMC output](examine-mcmc-output.md)
+5. [Examine tree output](examine-tree-output.md)
 
 ### Next section
 
