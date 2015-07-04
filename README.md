@@ -19,16 +19,16 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * The many forms of competition
 * Analytic solutions
 * Numerical integration
-* *Exercise 1: Analyzing the dynamics of a multistrain SIR system.*
+* *Exercise: Dynamics of a multistrain SIR system*
 
 ### [Fitting mechanistic models](fitting/)
 * Deterministic skeletons
-* Nonlinear least squared and maximum likelihood with population data
-* *Exercise 2: Inference for a multistrain SIR model*
+* Nonlinear least squares and maximum likelihood with population data
+* *Exercise: Inference for a multistrain SIR model*
 * GLMs with longitudinal data
-* MCMC with Stan: HPV as a case study
+* Hybrid Monte Carlo with Stan: HPV as a case study
 * Probes and arbitrary metrics
-* *Exercise 3: When to trust a model.*
+* When to trust a model
 * Tips & tricks: insights from natural experiments
 
 ### [State-space reconstruction](ssr/)
@@ -36,7 +36,7 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Prediction
 * Takens theorem
 * Convergent cross-mapping for causal inference
-* *Exercise 4: Attractor reconstruction and convergent cross-mapping.*
+* *Exercise: Attractor reconstruction and convergent cross-mapping*
 
 ## Day 2: Evolution and selection
 
@@ -80,4 +80,6 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 
 ### B cells (Sarah)
 
- * ???
+* VDJ recombination and somatic hypermutation
+* Clonal dynamics and repertoire diversity
+* Unsolved problems and vaccine design
