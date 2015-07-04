@@ -60,4 +60,4 @@ This is expected waiting time for two random lineages in the population to coale
 
 ### Next section
 
-* [Examine tree output](examine-tree-output.md)
+* [Examine tree output](figtree.md)

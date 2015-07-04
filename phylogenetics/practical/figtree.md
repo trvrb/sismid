@@ -47,4 +47,4 @@ It's clear that new antigenic clusters emerge and take over the population. Next
 
 ### Next section
 
-* [Analyze vaccine strain choice](analyze-vaccine-strain-choice.md)
+* [Analyze vaccine strain choice](vaccine.md)

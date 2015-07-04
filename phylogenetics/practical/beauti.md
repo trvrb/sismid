@@ -195,4 +195,4 @@ I've included this XML with the practical as `xml/H3N2.xml`.
 
 ### Next section
 
-* [Run BEAST analysis](run-beast-analysis.md)
+* [Run BEAST analysis](beast.md)

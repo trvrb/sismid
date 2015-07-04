@@ -36,4 +36,4 @@ I've included the resulting log file and trees file in the practical as `output/
 
 ### Next section
 
-* [Examine MCMC output](examine-mcmc-output.md)
+* [Examine MCMC output](tracer.md)

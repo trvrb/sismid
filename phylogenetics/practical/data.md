@@ -15,4 +15,4 @@ I've included the final aligned dataset as `data/H3N2.fasta`.
 
 ### Next section
 
-* [Prepare BEAST analysis](prepare-beast-analysis.md)
+* [Prepare BEAST analysis](beauti.md)

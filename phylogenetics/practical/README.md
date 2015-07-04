@@ -13,13 +13,13 @@ This tutorial walks through how to use [BEAST](http://beast.bio.ed.ac.uk/) and a
 
 ## Contents
 
-1. [Compile sequence data](compile-sequence-data.md)
-2. [Prepare BEAST analysis](prepare-beast-analysis.md)
-3. [Run BEAST analysis](run-beast-analysis.md)
-4. [Examine MCMC output](examine-mcmc-output.md)
-5. [Examine tree output](examine-tree-output.md)
-6. [Analyze vaccine strain choice](analyze-vaccine-strain-choice.md)
+1. [Compile sequence data](data.md)
+2. [Prepare BEAST analysis](beauti.md)
+3. [Run BEAST analysis](beast.md)
+4. [Examine MCMC output](tracer.md)
+5. [Examine tree output](figtree.md)
+6. [Analyze vaccine strain choice](vaccine.md)
 
 ### Next section
 
-* [Compile sequence data](compile-sequence-data.md)
+* [Compile sequence data](data.md)
