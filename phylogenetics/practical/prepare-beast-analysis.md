@@ -1,4 +1,4 @@
-## Prepare a skyline analysis
+## Prepare BEAST analysis
 
 ### Load data
 
