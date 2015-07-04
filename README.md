@@ -40,7 +40,7 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 
 ## Day 2: Evolution and selection
 
-### [Flu and its evolution](flu/)
+### [Influenza](flu/)
 
 * Introduction to influenza and its evolution
 
@@ -48,22 +48,26 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 
 * Introduction to Wright-Fisher model
 * Wright-Fisher with mutation and genetic drift
-* *Exercise 1: Effects of mutation and population size on population dynamics*
+* *Exercise: Effects of mutation and population size on population dynamics*
 * Neutral expectations for population summary statistics
 * Wright-Fisher with mutation, genetic drift and selection
-* *Exercise 2: Effects of positive and negative selection on population dynamics*
+* *Exercise: Effects of positive and negative selection on population dynamics*
 * Analysis of influenza sequence data
 
 ### [The coalescent](coalescent/)
 
 * Introduction to Kingman's coalescent
 * Effective population size and demographic inference
+* Effects of selection on tree topology
 
 ### [Phylogenetics](phylogenetics/)
 
 * Introduction to phylogenetic inference
-* Introduction to BEAST and Bayesian inference
-* *Exercise 3: BEAST influenza practical*
+* *Exercise: Parsimony reconstruction*
+* Maximum likelihood and Bayesian methods
+* *Exercise: Bayes' rule*
+* Introduction to BEAST and coalescent inference
+* *Exercise: BEAST practical*
 
 ## Day 3: Immunity
 
@@ -71,6 +75,7 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 
 * Serological binding and neutralization data
 * Antigenic cartography
+* *Exercise: Antigenic map*
 * Original antigenic sin
 
 ### B cells (Sarah)
