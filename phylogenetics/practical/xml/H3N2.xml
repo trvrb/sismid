@@ -2804,7 +2804,7 @@
 
 
 		<!-- write tree log to file                                                  -->
-		<logTree id="treeFileLog" logEvery="10000" nexusFormat="true" fileName="H3N2.trees" sortTranslationTable="true">
+		<logTree id="treeFileLog" logEvery="50000" nexusFormat="true" fileName="H3N2.trees" sortTranslationTable="true">
 			<treeModel idref="treeModel"/>
 			<trait name="rate" tag="H3N2.rate">
 				<strictClockBranchRates idref="H3N2.branchRates"/>
