@@ -12,7 +12,7 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 
 * The dangers of intuition
 * The biological basis of antigenic diversity: innate, cellular, and humoral responses
-* Antigenically variable pathogens
+* Antigenically (and otherwise) variable pathogens
 
 ### [Multistrain models](models/)
 * Statistical, compartmental, and agent-based models

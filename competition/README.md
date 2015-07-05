@@ -1,6 +1,6 @@
 # Immune-mediated competition
 
-* [Slides](slides.html)
+* [Slides](http://bedford.io/projects/sismid/competition/slides.html)
 
 ### Additional resources
 
