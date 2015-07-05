@@ -1,5 +1,7 @@
 # Immune-mediated competition
 
-### Slides
+* [Slides](slides.html)
 
 ### Additional resources
+
+[Viral zone](http://viralzone.expasy.org/)

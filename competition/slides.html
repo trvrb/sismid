@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Immune-mediated competition</title>
+
+		<meta name="author" content="Sarah Cobey">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../reveal/css/reveal.min.css">
+		<link rel="stylesheet" href="../reveal/css/theme/trvrb.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				
+				<section data-background="#CC3333">
+					<h2 class="title">Immune-mediated competition</h2>
+				</section>
+				
+				<section>
+					<h3>Influenza in St. Petersburg, 1968-2005</h3>
+					<img class="stretch" src="images/leningrad_flu.png">
+				</section>
+				
+				<section>
+					<h3>Infections in Seattle, 1924-1933</h3>
+					<img class="stretch" src="images/seattle_ts.png">
+					<div class="citation">
+						<a href="http://www.tycho.pitt.edu/">
+							Project Tycho
+						</a>
+					</div>
+				</section>
+				
+				<section>
+					<h3>Malaria and rain in India, 1987-2007</h3>
+					<img class="stretch" src="images/malaria_ts.png">
+						<div class="citation">
+							<a href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000898">
+								Laneri et al. 2010
+							</a>
+						</div>
+				</section>
+				
+				<section>
+					<img class="stretch" src="images/hare_lynx.jpg">
+					<div class="citation">
+						<a href="http://www.fftimes.com/node/209298">
+							Ben Slack (Fort Frances Times, 2008)
+						</a>
+					</div>
+				</section>
+				
+				<section>
+					<h3>Seemingly complex dynamics are common</h3>
+					<img class="stretch" src="images/maclulich.png">
+					<div class="citation">
+						<a href="">
+							Maclulich 1937
+						</a>
+					</div>
+				</section>
+				
+				<section>
+					<h3>...and correlations can mislead</h3>
+					<img class="stretch" src="images/hare_lynx_phase_portrait.png">
+				</section>
+				
+				<section>
+					<h3>Partial solution: Mechanistic models</h3>
+					<br>
+					<p> $$H'=aH-bHL$$</p>
+					<p> $$L'=cHL-dL$$</p>
+					<br>
+					<p> $H$ hares, $L$ lynxes
+					<p> hare birth rate $a$, predation rate $b$,
+					<p> consumption rate $c$, death rate $d$ </p>
+				</section>
+				
+				<section data-background="#FFFF99">
+					<p>(working hypothesis)
+					<h4> Competition for susceptible hosts shapes the ecological and evolutionary dynamics of pathogens. </h4>
+				</section>
+
+				<section>
+					<h3>Implicit assumption of SIR model</h3>
+					<p> The susceptible fraction determines a pathogen's growth rate</p>
+					<br>
+					<p>$$I' > 0 \Rightarrow \frac{\beta S}{N} > \gamma$$
+					
+				</section>
+
+				<section data-background="#99CCFF">
+					<h3>What else should we consider?</h3>
+				</section>
+				
+				<section>
+					<h3>Other possibilities</h3>
+					<p> nonequilibrium dynamics
+					<p> host population structure
+					<p> stochasticity
+					<p> virulence, resistance, tissue tropism
+					<p> (and more)
+				</section>
+				
+				<section>
+					<h3>Antigenic variation</h3>
+					<p> Formally, variation in surface proteins
+					<p> Broader concepts may be more useful
+					<div class="citation">
+						<a href="http://onlinelibrary.wiley.com/doi/10.1111/nyas.12493/abstract">
+							Cobey 2014
+						</a>, <a href="http://www.garlandscience.com/product/isbn/9780815342434;jsessionid=jUIKR3YCu+EU9PPmbulBjg__">
+							Murphy 2011
+						</a>
+					</div>
+				</section>
+				
+				<section>
+					<h3>Immunity: Coordinated innate and adaptive responses</h3>
+					<img class="stretch" src="images/innate_adaptive.png">
+						<div class="citation">
+							<a href="http://www.garlandscience.com/product/isbn/9780815342434;jsessionid=jUIKR3YCu+EU9PPmbulBjg__">
+								Murphy 2011
+							</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>Innate immunity</h3>
+					<p> Less specific
+					<p> Nearly memoryless
+					<p> Systemic or localized
+				</section>				
+
+				<section>
+					<h3>Adaptive immunity</h3>
+					<p> More specific
+					<p> Some memory
+					<p> Often systemic
+				</section>
+				
+				<section>
+					<h4>Cellular immunity: Recognition of presented peptides</h4>
+					<img class="stretch" src="images/cellular.png">
+					<div class="citation">
+						<a href="http://www.garlandscience.com/product/isbn/9780815342434;jsessionid=jUIKR3YCu+EU9PPmbulBjg__">
+							Murphy 2011
+						</a>
+					</div>
+				</section>
+
+				<section>
+					<h4>Humoral immunity: Recognition of structure</h4>
+					<img class="stretch" src="images/humoral.png">
+					<div class="citation">
+						<a href="http://www.garlandscience.com/product/isbn/9780815342434;jsessionid=jUIKR3YCu+EU9PPmbulBjg__">
+							Murphy 2011
+						</a>
+					</div>
+				</section>
+				
+				<section>
+					<h3>Escaping adaptive immunity</h3>
+					<p> Hide
+					<p> Suppress
+					<p> Distract
+					<p> Disguise
+					<p> Outrun
+				</section>
+
+			<section data-background="#99CCFF">
+				<h4> What are the most common pathogens in humans?</h4>
+				<h4> What does their abundance have to do with their immune interactions?</h4>
+			</section>
+
+			<section>
+				<h3>Human papillomaviruses</h3>
+				<p> Nearly 100% prevalence, but slow evolution</p>
+				<img class="stretch" src="images/pv_phylogeny.png">
+				<div class="citation">
+					<a href="http://emph.oxfordjournals.org/content/2015/1/32.full.pdf">
+						Bravo and Félez-Sánchez 2015
+					</a>
+				</div>
+			</section>
+			
+			<section>
+				<h3>Enteroviruses: Common colds</h3>
+				<img class="stretch" src="images/enterovirus_ts.jpg">
+					<div class="citation">
+						<a href="http://www.virologyj.com/content/10/1/305">
+							Garcia et al. 2013
+						</a>
+					</div>
+			</section>
+			
+			<section>
+				<h3>Rhinoviruses include >100 serotypes</h3>
+				<img class="stretch" src="images/rhinovirus_phylogeny.png">
+					<div class="citation">
+						<a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3923423/">
+							Palmenberg et al. 2009
+						</a>
+				</div>
+			</section>
+			
+			<section>
+				<h3>>90 serotypes of <i>Streptococcus pneumoniae</i></h3>
+				<img class="stretch" src="images/pneumo.png">
+			</section>
+			
+			<section>
+				<p> Competition for susceptible hosts generates complex dynamics
+				<p> Mechanistic models beat intuition
+				<p> Pathogens interact with multiple immune populations
+				<p> Pathogens show extensive diversity, including antigenic
+			</div>
+
+		</div>
+
+		<script src="../reveal/lib/js/head.min.js"></script>
+		<script src="../reveal/js/reveal.min.js"></script>
+		<script src="../reveal/js/config.js"></script>
+
+	</body>
+</html>
