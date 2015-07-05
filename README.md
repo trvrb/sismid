@@ -44,20 +44,11 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 
 * Introduction to influenza and its evolution
 
-### [Wright-Fisher Dynamics](wright-fisher/)
-
-* Introduction to Wright-Fisher model
-* Wright-Fisher with mutation and genetic drift
-* *Exercise: Effects of mutation and population size on population dynamics*
-* Neutral expectations for population summary statistics
-* Wright-Fisher with mutation, genetic drift and selection
-* *Exercise: Effects of positive and negative selection on population dynamics*
-* Analysis of influenza sequence data
-
 ### [The coalescent](coalescent/)
 
 * Introduction to Kingman's coalescent
 * Effective population size and demographic inference
+* *Exercise: Skyline plots*
 * Effects of selection on tree topology
 
 ### [Phylogenetics](phylogenetics/)
@@ -68,6 +59,17 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * *Exercise: Bayes' rule*
 * Introduction to BEAST and coalescent inference
 * *Exercise: BEAST practical*
+* Covers molecular clock, demographic models and discrete trait estimation
+
+### [Wright-Fisher Dynamics](wright-fisher/)
+
+* Introduction to Wright-Fisher model
+* Wright-Fisher with mutation and genetic drift
+* *Exercise: Effects of mutation and population size on population dynamics*
+* Neutral expectations for population summary statistics
+* Wright-Fisher with mutation, genetic drift and selection
+* *Exercise: Effects of positive and negative selection on population dynamics*
+* Analysis of influenza sequence data
 
 ## Day 3: Immunity
 
