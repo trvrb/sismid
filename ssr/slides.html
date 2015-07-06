@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>State-space reconstruction</title>
+
+		<meta name="author" content="Sarah Cobey">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../reveal/css/reveal.min.css">
+		<link rel="stylesheet" href="../reveal/css/theme/trvrb.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				
+				<section data-background="#CC3333">
+					<h2 class="title">State-space reconstruction</h2>
+				</section>
+				
+				<section>
+					<h3>A system with two state variables</h3>
+					<br>
+					<p> $$H'=aH-bHL$$</p>
+					<p> $$L'=cHL-dL$$</p>
+					<br>
+					<p> $H$ hares, $L$ lynxes
+					<p> hare birth rate $a$, predation rate $b$,
+					<p> consumption rate $c$, death rate $d$ </p>
+				</section>
+				
+				<section>
+					<h3>Solve for H(t), L(t) by numerical integration</h3>
+					<img class="stretch" src="images/hare_lynx_ts.png">
+				</section>
+				
+				<section>
+					<h3>Attractor is a limit cycle</h3>
+					<img class="stretch" src="images/hare_lynx_phase_portrait.png">
+				</section>
+				
+				<section>
+					<h3>A more complex system</h3>
+					<br>
+					<p> $$x'=\sigma(y-x)$$</p>
+					<p> $$y'=x(\rho-z)-y$$</p>
+					<p> $$z'=xy-\beta z$$</p>
+					<br>
+				</section>
+				
+				<section>
+					<h3>The Lorenz attractor</h3>
+					<img class="stretch" src="images/lorenz.png">
+				</section>
+				
+				<section>
+					<h3>Nonlinear forecasting</h3>
+					<p>Reconstruct attractor ("library") from time series
+					<p>Use attractor to make short-term predictions</p>
+					<a href="http://simplex.ucsd.edu/SugiMay-Chaos.pdf">(Sugihara and May, 1990)</a>
+					</section>
+				
+
+				<section>
+					<h3>Why short-term?</h3>
+					<p>Trajectories in chaotic attractors diverge
+					<p> $$ \lvert \delta \textbf{Z}(t)\rvert \approx e^{\lambda t}\lvert\delta\textbf{Z}_0\rvert$$
+					<p> $\lambda$ is the Lyapunov exponent
+					<p> (so with chaos, $\lambda>0$)
+				</section>
+				
+				<section>
+					<h3>How to forecast</h3>
+					<ul>
+					<li>Choose an embedding dimension $E$ and lag $\tau$</li>
+					<li>Each point in $E$-dimensional space: $\{x_t,x_{t-\tau},x_{t-2\tau},...,x_{t-(E-1)\tau}\}$</li>
+					<li>Construct these points from the time series</li>
+					<li>Define a point to predict ("predictee")</li>
+					<li>See where predictee's $E+1$ nearest neighbors wind up $t$ steps into the future</li>
+					<li>Measure correlations $\rho$ between predictee's observed future state and neighbors' weighted predictions</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Choosing $E$ and $\tau$</h3>
+					<p>An unsolved problem
+					<p>Use $E$ (and $\tau$) that yield best predictions</p>
+					<img class="stretch" src="images/E_selection.png">
+					<div class="citation">
+						<a href="http://simplex.ucsd.edu/SugiMay-Chaos.pdf">Sugihara and May, 1990</a>
+					</div>
+				</section>
+				
+				<section>
+					<h3>Observational noise v. chaos</h3>
+					<img class="stretch" src="images/chaos_noise.png">
+					<div class="citation">
+						<a href="http://simplex.ucsd.edu/SugiMay-Chaos.pdf">Sugihara and May, 1990</a>
+					</div>
+				</section>
+
+			<section>
+					<h3>So... this isn't a module on prediction per se</h3>
+				</section>
+			
+			<section>
+				<h3>Implications of state-space reconstruction</h3>
+				<p>We can detect underlying structure
+				<p>We can detect and predict without understanding
+				<p>New claim: We can infer causal interactions
+				</section>
+
+				<section>
+					<h3>Takens' theorem</h3>
+						<p>Very roughly, the system's attractor is <b>diffeomorphic to</b> (can be mapped without loss of information) to the individual attractors of the state variables in some delay-embedding space.
+						<div class="citation">
+							<a href="http://crcv.ucf.edu/gauss/info/Takens.pdf">
+				Takens 1981
+						</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>Manifolds and shadow manifolds</h3>
+					<img class="stretch" src="images/manifolds.png">
+						<div class="citation">
+							<a href="http://www.sciencemag.org/content/338/6106/496.long">
+								Sugihara et al. 2012
+							</a>
+						</div>
+					</section>
+				
+				<section>
+					<h3><a href="https://www.youtube.com/watch?v=rs3gYeZeJcw">Introduction to Takens' Theorem</a></h3>
+				</section>
+
+				<section>
+					<h3>Causal inference</h3>
+					<p>Through their shadow manifolds, variables in the same dynamical system can predict each other.
+					<p>If $X$ drives $Y$, increasing the number of observations of $Y$ should improve predictions of states of $X$.
+					<div class="citation">
+						<a href="http://www.sciencemag.org/content/338/6106/496.long">
+							Sugihara et al. 2012
+						</a>
+					</div>
+				</section>
+				
+				<section>
+					<h3>Convergent cross-mapping</h3>
+					<p>To infer if $X$ drives $Y$:
+					<ul>
+						<li>Construct the shadow manifold of $Y$, $\pmb{M}_Y$ (for some $E$, $\tau$). (Each point in $\pmb{M}_Y$ is given by $\vec{y}(t) = \{y_t,y_{t-\tau},y_{t-2\tau},...,y_{t-(E-1)\tau}\}$.)</li>
+						<li>For each $X(t)$, identify its analogues $\vec{x}(t)$ and $\vec{y}(t)$.</li>
+						<li>Find the $E+1$ nearest neighbors of $\vec{y}(t)$ and weight them by their Euclidean distances to $\vec{y}(t)$.</li>
+						<li>To make a prediction $\hat{X}(t)$, multiply these weights by the respective points in $\pmb{M}_X$.  Let $\rho$ be the correlation between $\vec{x}(t)$ and $\hat{X}(t)$. </li>
+						<li>First make predictions from $\pmb{M}_Y$ constructed with only a few points in the time series, $L_\text{min}$, and then with many, $L_\text{max}$.  </li>
+						<li>If $\rho$ increases with more information on $\pmb{M}_Y$, $X$ drives $Y$.</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3><a href="https://www.youtube.com/watch?v=NrFdIz-D2yM">Introduction to convergent cross-mapping</a></h3>
+				</section>
+				
+				<section data-background="#99CCFF">
+					<h3>What do you expect $\rho$ to converge to?</h3>
+				</section>
+				
+				<section>
+					<h3>Deterministic toy model</h3>
+					<img class="stretch" src="images/toy_ts.png">
+						<div class="citation">
+						<a href="http://www.sciencemag.org/content/338/6106/496.long">
+							Sugihara et al. 2012
+						</a>
+					</div>
+				</section>
+				
+				<section>
+					<h3>Under determinism, perfect predictability</h3>
+					<img class="stretch" src="images/toy_rho.png">
+						<div class="citation">
+							<a href="http://www.sciencemag.org/content/338/6106/496.long">
+								Sugihara et al. 2012
+							</a>
+						</div>
+				</section>
+				
+				<section data-background="#99CCFF">
+					<h3>What will observation error do?</h3>
+				</section>
+				
+				<section>
+					<h3>$X$ and $Y$ do not interact but share a driver</h3>
+					<img class="stretch" src="images/shared_driver.png">
+						<div class="citation">
+							<a href="http://www.sciencemag.org/content/338/6106/496.long">
+								Sugihara et al. 2012
+							</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>Applied to predator-prey cycles</h3>
+					<img class="stretch" src="images/gause.png">
+						<div class="citation">
+							<a href="http://www.sciencemag.org/content/338/6106/496.long">
+								Sugihara et al. 2012
+							</a>
+						</div>
+						</section>
+
+				<section>
+					<h3>Anchovies, sardines, and SST</h3>
+					<img class="stretch" src="images/anchovy.png">
+					<div class="citation">
+						<a href="http://www.sciencemag.org/content/338/6106/496.long">
+						Sugihara et al. 2012
+					</a>
+					</div>
+			</section>
+				
+				<section>
+					<h3>This is tempting, but first...</h3>
+			<img class="stretch" src="images/seattle_ts.png">
+					</section>
+
+
+			<section data-background="#99CCFF">
+				<h3> What are the assumptions?</h3>
+			</section>
+
+			</div>
+
+		</div>
+
+		<script src="../reveal/lib/js/head.min.js"></script>
+		<script src="../reveal/js/reveal.min.js"></script>
+		<script src="../reveal/js/config.js"></script>
+
+	</body>
+</html>

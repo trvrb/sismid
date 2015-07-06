@@ -1,7 +1,7 @@
 # State-space reconstruction
 
-### Slides
+* [Slides](slides.html)
 
-### Exercise 4
+### Exercise
 
 ### Additional resources
