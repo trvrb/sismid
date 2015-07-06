@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Multistrain models</title>
+
+		<meta name="author" content="Sarah Cobey">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../reveal/css/reveal.min.css">
+		<link rel="stylesheet" href="../reveal/css/theme/trvrb.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				
+				<section data-background="#CC3333">
+					<h2 class="title">Multistrain models</h2>
+				</section>
+				
+				<section>
+					<h3>Model types are fuzzy</h3>
+					<br>
+					<p> Statistical
+					<p> Mechanistic (mathematical v. agent-based)
+				</section>
+				
+				<section data-background="#99CCFF">
+					<h3>Advantages and disadvantages of each?</h3>
+				</section>
+				
+				<section>
+					<h3>History-based models</h3>
+					<br>
+					<p> Track individuals' histories of infection, $S_{(0)}, S_{(1)}, S_{(1,2)},...$
+					<p> Cross-immunity reduces probability of infection or infectiousness
+					<p> Numerically unwieldy: $2^n$ histories for $n$ strains
+				</section>
+
+				
+				<section>
+					<h3>Status-based models</h3>
+					<br>
+					<p> Track individuals S, I, or R to each strain, so $O(n)$ equations
+					<p> "Polarized" immunity: If $i$ and $j$ cross-react, infection with $j$ leads to perfect immunity to $i$ in some fraction of hosts
+						<div class="citation">
+							<a href="http://www.researchgate.net/profile/Jonathan_Swinton/publication/11423071_A_status-based_approach_to_multiple_strain_dynamics/links/00b4953286a83c0863000000.pdf">Gog and Swinton, 2002</a>
+						</div>
+				</section>
+				
+				
+				<section>
+					<h3>A "simple" status-based model</h3>
+					<img class="stretch" src="images/status-based.png">
+				</section>
+				
+				<section>
+					<h3>Implicit assumption</h3>
+					<p>Probability of an individual being infected with time</p>
+					<img class="stretch" src="images/status-v-history.png">
+						<div class="citation">
+							<a href="http://www.researchgate.net/profile/Jonathan_Swinton/publication/11423071_A_status-based_approach_to_multiple_strain_dynamics/links/00b4953286a83c0863000000.pdf">Gog and Swinton, 2002</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>Subtle differences change dynamics</h3>
+					<img class="stretch" src="images/outcomes.png">
+						<p>Cross-immunity</p>
+						<div class="citation">
+							<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007426">Ballesteros et al., 2009</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>Know your assumptions</h3>
+					<p>Does this model have a bias for extinction, coexistence, or neither?</p>
+					<img class="stretch" src="images/lipsitch_1.png">
+						<div class="citation">
+							<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007426">Lipsitch et al. 2009</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>Which one promotes coexistence?</h3>
+					<img class="stretch" src="images/lipsitch_2.jpg">
+						<div class="citation">
+							<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007426">Lipsitch et al. 2009</a>
+						</div>
+						</section>
+				
+				<section>
+					<h3>Multiplicity of infection</h3>
+					<img class="stretch" src="images/lipsitch_3.png">
+						<div class="citation">
+							<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007426">Lipsitch et al. 2009</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>Immune response to flu</h3>
+					<img class="stretch" src="images/immune_space.png">
+						<div class="citation">
+							<a href="http://onlinelibrary.wiley.com/doi/10.1111/nyas.12493/abstract">Cobey 2014</a>
+						</div>
+				</section>
+				
+				
+				<section>
+					<h3>The question of strain space</h3>
+					<p> Continuous or discrete?
+					<p> How many dimensions?
+				</section>
+				
+				<section>
+					<h3>Continuous space</h3>
+					<img class="stretch" src="images/canalization.png">
+					<div class="citation">
+						<a href="http://www.biomedcentral.com/1741-7007/10/38">Bedford et al. 2012</a>
+					</div>
+				</section>
+				
+				<section>
+					<h3>Discrete space</h3>
+					<img class="stretch" src="images/heterogeneity.png">
+						<div class="citation">
+							<a href="http://www.sciencedirect.com/science/article/pii/S0022519310005941">Cobey and Pascual 2010</a>
+						</div>
+				</section>
+				
+				<section>
+					<h4>Immunodominance and breadth affect diversity</h4>
+					<img class="stretch" src="images/bifs.png">
+						<div class="citation">
+							<a href="http://www.sciencedirect.com/science/article/pii/S0022519310005941">Cobey and Pascual 2010</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>Agent-based models</h3>
+					<p>Potentially most efficient with many strains
+					<p>Support complex interactions
+					<p>Naturally incorporate demographic stochasticity
+				</section>
+				
+				<section>
+					<h3>Analytic approaches</h3>
+					<p>Equilibria: Solve for $S_{i}'=I_{i}'=...=0$
+					<p>Stability analysis: Linearize at equilibria
+					<p>Invasion analysis: Is $I_{2}'>0$ at $I_{1}^*$?
+					<p>Integration: Calculate $I_{1}(t), I_{2}(t),...$
+				</section>
+				
+				<section>
+					<h3>Numerical integration</h3>
+					<p>Approximate solution to $N'=f(N)$:
+					<p>$$N(t_0+\Delta t) \approx N_0+ f(N_0) \Delta t = N_1$$</p>
+					<p>Re-iterating, we get</p>
+					<p>$$N_{z+1} \approx N_{z}+f(N_{z}) \Delta t$$</p>
+				</section>
+				
+				<section>
+					<p>$$N_{z+1} \approx N_{z}+f(N_{z}) \Delta t$$</p>
+					<p>We could assume $f(x)$ is constant for $\Delta t$ (Euler's method)
+					<p>Even better, average over multiple points!
+				</section>
+				
+				<section>
+					<h3>A second-order method</h3>
+					<p>$$N_{z+1} \approx N_{z}+f(N_{z}) \Delta t$$</p>
+					<p>$$M_{z+1}=N_z+f(N_{z}) \Delta t$$
+					<p>$$N_{z+1}=N_z+\frac{1}{2}\left[ f(N_{z})+f(M_{z+1})\right] \Delta t$$
+				</section>
+				
+				<section>
+					<h3>4th-order Runge-Kutta</h3>
+					<p>$$k_1=f(N_z) \Delta t$$
+					<p>$$k_2=f\left(N_z+\frac{1}{2}k_1 \right) \Delta t$$
+					<p>$$k_3=f\left(N_z+\frac{1}{2}k_2 \right) \Delta t$$
+					<p>$$k_4=f\left(N_z+k_3 \right) \Delta t$$
+					<p>$$N_{z+1}=N_z+\frac{1}{6}(k_1+2k_2+2k_3+k_4)$$
+				</section>
+				
+				<section data-background="#99CCFF">
+					<h3>Why not just pick an extremely small $\Delta t$?</h3>
+				</section>
+				
+
+			<section>
+				<h3>Considerations for multistrain models</h3>
+				<p>Form of immunity (duration, strength, polarity)
+				<p>Effect of immunity (susceptibility, infectiousness, clearance)
+				<p>Coinfections and timing of interactions
+				<p>Accuracy for individuals v. populations
+				<p>Dimensionality and discretization of strain space
+				<p>Analytic and numeric approaches, including stochasticity
+			</section>
+
+			</div>
+
+		</div>
+
+		<script src="../reveal/lib/js/head.min.js"></script>
+		<script src="../reveal/js/reveal.min.js"></script>
+		<script src="../reveal/js/config.js"></script>
+
+	</body>
+</html>
