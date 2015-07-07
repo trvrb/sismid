@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Fitting mechanistic models</title>
+
+		<meta name="author" content="Sarah Cobey">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../reveal/css/reveal.min.css">
+		<link rel="stylesheet" href="../reveal/css/theme/trvrb.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				
+				<section data-background="#CC3333">
+					<h2 class="title">Fitting mechanistic models</h2>
+				</section>
+
+			<section data-background="images/map.jpg">
+			</section>
+			
+			
+				<section>
+					<h3>Maximum likelihood</h3>
+					<p>Parameter values that make the observed data most likely
+				</section>
+				
+				<section>
+					<h3>Notation</h3>
+					<p>Observed variable $D$ depends on unknown parameter $\theta$
+					<p>Probability density function of $D$ is $f_{\theta}$
+					<p>$$L_d(\theta)=f_{\theta}(d)$$
+				</section>
+				
+				<section>
+					<h3>What's $D$?</h3>
+					<p>Case counts at different times
+					<p>or infection times with different strains at different times
+					<p>or some composite of observations
+				</section>
+				
+				<section>
+					<h3>Maximizing the likelihood</h3>
+					<p>means maximizing the log-likelihood
+					<p>or minimizing the negative log-likelihood
+				</section>
+				
+				<section>
+					<h3>Finding the MLE</h3>
+					<p>Can be analytically tractable
+					<p>For our models, it's not
+				</section>
+				
+				<section>
+					<h3>Likelihood optimization</h3>
+					<p>Brute force
+					<p>Derivative-based methods
+					<p>Simplex
+					<p>Simulated annealing (Metropolis algorithm)
+					<p>Sequential Monte Carlo
+					<p>Many others... but for us, few tried and true
+				</section>
+				
+				<section>
+					<h3>Likelihood profiles</h3>
+					<p>Hold parameter(s) constant, fit the rest
+					<img class="stretch" src="images/profile.png">
+						<div class="citation">
+							<a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3730691/pdf/rsif20130414.pdf">
+								Reich et al. 2013
+							</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>Interacting dengue serotypes</h3>
+					<img class="stretch" src="images/dengue.png">
+						<div class="citation">
+							<a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3730691/pdf/rsif20130414.pdf">
+								Reich et al. 2013
+							</a>
+						</div>
+				</section>
+				
+				
+				<section>
+					<h3>Bayesian approaches</h3>
+					<br>
+					<p>Assume prior expectations about our parameters, $p(\theta)$
+					<br>
+					<br>
+					<p>$$p(\theta\rvert D) \propto p(D\rvert\theta)p(\theta)$$
+					<br>
+					<p>where $p(D\rvert\theta)$ is the likelihood
+					<p>and $p(\theta\rvert D)$ is the posterior density
+				</section>
+				
+				<section>
+					<h3>Bayesian optimization</h3>
+					<p>Markov Chain Monte Carlo
+					<p>Metropolis-Hastings MCMC
+					<p>Particle MCMC
+					<p>Hybrid/Hamiltonian Monte Carlo
+					<p>Many others
+				</section>
+				
+				<section>
+					<h3><a href="http://cobeylab.uchicago.edu/mcmc/intro/">Introduction to MCMC</a></h3>
+				</section>
+				
+				<section>
+					<h3>Example with hybrid Monte Carlo</h3>
+					<p>Data: Infection times and covariates $\theta$ for >4000 people</li>
+					<p>Model: Force of infection $\lambda_i=\sigma\beta I$ with $\beta=f(\beta_i,\theta)$</li>
+				</section>
+				
+				<section>
+					<h3>Probes and arbitrary metrics</h3>
+					<p>Approximate Bayesian Computation
+					<p>Time-series probes
+				</section>
+				
+				<section>
+					<h3>Phases insufficient to infer interaction</h3>
+					<img class="stretch" src="images/phase.png">
+					<div class="citation">
+						<a href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002135">
+							Shrestha et al. 2011
+						</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>Challenges fitting multistrain models</h3>
+					<p>Many parameters
+					<p>Multiple minima
+					<p>Noise, nonstationarity, etc.
+				</section>
+
+				<section data-background="#99CCFF">
+					<h3>When should we trust a model?</h3>
+				</section>
+				
+				<section>
+					<h3>Model "validation"</h3>
+					<p>Confirm convergence
+					<p>AIC and WAIC
+					<p>Leave-one-out cross-validation
+					<p>Out-of-sample prediction
+					<p>Replicate on simulated data
+				</section>
+				
+				<section>
+					<h3>Gauge the power of your data</h3>
+					<img class="stretch" src="images/ts_length.png">
+						<div class="citation">
+							<a href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002135">
+								Shrestha et al. 2011
+							</a>
+						</div>
+				</section>
+				
+				
+				<section>
+					<h3>Tips and tricks</h3>
+					<p>Predict something else
+					<p>Natural and unnatural disturbances
+				</section>
+				
+				<section>
+				<h3><i>Streptococcus pneumoniae</i></h3>
+					<p>Carried by 20-80% of young children
+					<p>Transmitted mostly between healthy carriers
+					<p>>90 serotypes
+					<p>Some serotypes seem better at everything
+				</section>
+				
+				<section>
+					<h3>Little evidence for anticapsular immunity</h3>
+					<img class="stretch" src="images/anticapsular.png">
+						<div class="citation">
+							<a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3142570/">
+								Weinberger et al. 2008
+							</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>Non-serotype-specific immunity</h3>
+					<img class="stretch" src="images/nonspecific.png">
+						<div class="citation">
+							<a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1829115/">
+								Hogberg et al. 2007
+							</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>Fitted duration of carriage</h3>
+						<img class="stretch" src="images/carriage.png">
+						<div class="citation">
+							<a href="http://www.ncbi.nlm.nih.gov/pubmed/22383809">
+								Cobey and Lipsitch 2012
+							</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>Approach</h3>
+					<p>For each value of serotype-specific immunity, $\sigma$
+					<p>Fit the transmission rate to obtain 40% prevalence in kids
+					<p>(Later, sensitivity analysis on fixed parameters)
+				</section>
+				
+				<section>
+					<h3>Model reproduces diversity</h3>
+					<img class="stretch" src="images/simpson.png">
+						<div class="citation">
+							<a href="http://www.ncbi.nlm.nih.gov/pubmed/22383809">
+								Cobey and Lipsitch 2012
+							</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>...including rank-frequency</h3>
+					<img class="stretch" src="images/rank_freq.png">
+						<div class="citation">
+							<a href="http://www.ncbi.nlm.nih.gov/pubmed/22383809">
+								Cobey and Lipsitch 2012
+							</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>Other matched patterns</h3>
+					<p>Increase in serotype diversity with age
+					<p>Stable rank order
+					<p>Decrease in carriage duration with age
+					<p>Frequency of co-colonizations
+					<p>Epidemics of rarer serotypes
+					</section>
+				
+				<section>
+					<h3>Vaccinations as natural experiments</h3>
+					<img class="stretch" src="images/pcv7.png">
+						<div class="citation">
+							<a href="http://www.ncbi.nlm.nih.gov/pubmed/22383809">
+								Cobey and Lipsitch 2012
+							</a>
+						</div>
+				</section>
+				
+	
+			</div>
+
+		</div>
+
+		<script src="../reveal/lib/js/head.min.js"></script>
+		<script src="../reveal/js/reveal.min.js"></script>
+		<script src="../reveal/js/config.js"></script>
+
+	</body>
+</html>

@@ -1,9 +1,10 @@
 # Fitting mechanistic models
 
-### Slides
+* [Slides](slides.html)
 
-### Exercise 2
-
-### Exercise 3
+### Exercise
 
 ### Additional resources
+* Ionides pomp tutorials
+* Hybrid Monte Carlo tutorial
+* Multistrain models
