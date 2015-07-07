@@ -22,12 +22,9 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * *Exercise: Dynamics of a multistrain SIR system*
 
 ### [Fitting mechanistic models](fitting/)
-* Deterministic skeletons
-* Nonlinear least squares and maximum likelihood with population data
+* Maximum likelihood
 * *Exercise: Inference for a multistrain SIR model*
-* GLMs with longitudinal data
-* Hybrid Monte Carlo with Stan: HPV as a case study
-* Probes and arbitrary metrics
+* Bayesian approaches
 * When to trust a model
 * Tips & tricks: insights from natural experiments
 
