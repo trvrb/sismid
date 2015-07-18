@@ -24,21 +24,22 @@ Compare answers with your neighbors, and be sure to raise any interesting points
 Let's assume we think this model is a pretty good starting point for testing hypotheses.
 We'll numerically integrate these equations to see what they predict.
 Open `two_strain.py` and `plot_two_strain_ts.py` and examine the code.
-The function takes the time steps at which to produce estimates of the state variables (`steps`--note this is not the time step used for solving the system), the parameters (`params`), and the initial conditions (`ic`).
-The integration is performed by an ODE solver [`odeint`](http://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html#scipy.integrate.odeint) in [`scipy.integrate`](http://docs.scipy.org/doc/scipy/reference/integrate.html). 
-This solver by default uses an adaptive step.
+It uses the [Euler method](https://en.wikipedia.org/wiki/Euler_method) to solve the system.
+The function calculates the state variables over time at `step_size` intervals.
+Note that it produces estimates of the state variables over a differen schedule (`t=0` to `t=end_time` at intervals of `output_interval`).
+In addition to the step sizes for integration and outputs, the `two_strain` function requires parameters and initial conditions.
 
 **(4) Modify the parameters so that the strains do not interact, and examine the resulting time series. How can you confirm that the integration is accurate?**
 
 **(5) Without allowing for interaction, see if you can adjust the parameters to obtain the following scenarios: (i) the strains have biennial, out-of-phase dynamics, and (ii) both strains are chaotic. Do you see any recurring patterns in the chaotic dynamics?** 
 
-**(6) Now change `alpha` and `a` to make the strains interact. How do the dynamics differ? Do comparable changes in `alpha` and `a` produce the same dynamics?**
+**(6) Now change `alpha` and `a` to make the strains interact. How do the dynamics differ? Do you see differences in the dynamics when you change `alpha` v. `a`?**
 
-**(Optional) Consulting [the documentation](http://docs.scipy.org/doc/scipy-0.15.1/reference/generated/scipy.integrate.odeint.html), examine the step sizes (in `hu`) used to solve the system. Investigate the consequences of changing the tolerance limits (`rtol` and `atol`) and acceptable step sizes (`hmin` and `hmax`) of the solver. These equations are said to be [stiff](http://www.mathworks.com/company/newsletters/articles/stiff-differential-equations.html).**
+**(Optional) Consult [the documentation](http://docs.scipy.org/doc/scipy-0.15.1/reference/generated/scipy.integrate.odeint.html) for SciPy's' ODE solver [`odeint`](http://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html#scipy.integrate.odeint) in [`scipy.integrate`](http://docs.scipy.org/doc/scipy/reference/integrate.html). This solver uses an adaptive step size. See if you can implement the model using the solver--most of the content of `two_strain.py` can be copied and pasted. Investigate the consequences of changing the tolerance limits (`rtol` and `atol`) and acceptable step sizes (`hmin` and `hmax`) of the solver. These equations are said to be [stiff](http://www.mathworks.com/company/newsletters/articles/stiff-differential-equations.html).**
 
 As you've probably discovered, SIR-type models with seasonal forcing can generate diverse patterns.
-We'll create bifurcation diagrams over several of the parameters we're interested in to summarize these behaviors.
-Bifurcation diagrams summarize the *equilibrium* behavior of a system as one parameter is varied.
+To summarize these patterns, we'll create bifurcation diagrams over several of the parameters we're interested in.
+Bifurcation diagrams show the *equilibrium* behavior of a system as one parameter is varied.
 These summaries are often "strobes" of the system (e.g., the number of cases every Jan. 1), but they can also show all maxima and minima over some period.
 Often, for each value of the varied parameter, the system is simulated to equilibrium from different starting conditions.
 This approach can reveal the presence of multiple stable states or attractors, as shown in the diagram below for a single-strain model ([Earn et al. 2001](http://www.sciencemag.org/cgi/pmidlookup?view=long&pmid=10650003)).
@@ -48,7 +49,7 @@ This approach can reveal the presence of multiple stable states or attractors, a
 For simplicity, we'll create our bifurcation diagrams using the same initial conditions throughout. 
 We won't measure precisely whether we have obtained equilibrium conditions--we'll simply simulate for a long time, and sample the few final time points.
 
-**(7) Carefully choose reasonable default values for all your parameters. Then create bifurcation diagrams (`plot_two_strain_bd.py`), independently sweeping over `alpha`, `a`, and `beta`. Check your results by simulating a few time series at different points.**
+**(7) Carefully choose reasonable default values for all your parameters. Then create bifurcation diagrams (`plot_two_strain_bd.py`), independently sweeping over `alpha`, `a`, and `beta` for one strain. Be modest in creating your first diagram, and record how long it takes to run. Check your results by simulating a few time series at different points.**
 
 **(8) Is reduced transmission following infection with the heterologous strain dynamically equivalent to reduced susceptibility?**
 
