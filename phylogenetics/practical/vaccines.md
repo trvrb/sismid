@@ -8,8 +8,6 @@ Historical vaccine choices can be found [here](http://www.fludb.org/brc/vaccineR
 
 ![](images/vaccine_tree.png)
 
-*Right click and open in new window to see a larger version.*
-
 Thus, we had 8 updates between 1995 and 2011.
 
 Each major antigenic cluster transition occurs on the trunk of the phylogeny. This indicates that the new antigenic cluster takes over the virus population and outcompetes the previously circulating cluster. Also evident, there is generally ~2 years of co-circulation of old cluster and new cluster. This fits the previous results of low standing genetic diversity and rapid population turnover.
