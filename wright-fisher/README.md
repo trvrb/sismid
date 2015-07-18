@@ -19,7 +19,9 @@ Run script with:
 
  * [Visualization of Wright-Fisher haplotype dynamics](http://bedford.io/projects/haplotypes/)
 
-### [Neutral expectations for population summary statistics](summary-statistics.md)
+### Neutral expectations for population summary statistics
+
+* [Notes](summary-statistics.md)
 
 ### Wright-Fisher model with mutation, genetic drift and selection
 

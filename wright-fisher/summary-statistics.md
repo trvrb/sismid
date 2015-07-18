@@ -8,7 +8,7 @@ This is all assuming a Wright-Fisher population of discrete non-overlapping gene
 
 * Mutations enter the population at a rate of *&mu;* mutations per individual per site per generation.
 
-* In a haploid population (usually the case for pathogens), we summarize the population with the parameter *&theta;*, which equals 2*N&mu;*. Without temporally resolved data, it's not possible to separately estimate *N* and *&mu;*; in most population genetic circumstances, we can only estimate *&theta;*. With temporally resolved data we can separate *&theta;* into *N* and *&mu;*.
+* In a haploid population (usually the case for pathogens), we summarize the population with the parameter *&theta;*, which equals 2<i>N&mu;</i>. Without temporally resolved data, it's not possible to separately estimate *N* and *&mu;*; in most population genetic circumstances, we can only estimate *&theta;*. With temporally resolved data we can separate *&theta;* into *N* and *&mu;*.
 
 ## Diversity
 
@@ -20,7 +20,7 @@ Genetic diversity is most commonly summarized with the statistic *&pi;*, which i
 
 ## Unique variants
 
-The number of unique haplotypes in a sample of *n* sequences can be estimated from [Ewen's sampling formula](https://en.wikipedia.org/wiki/Ewens's_sampling_formula). Ewen's sampling formula gives the probability of observing `$a_1$` copies of haplotype 1, `$a_2$` copies of haplotype 2, etc... in a sample of *n* sequences. The sole parameter of the sampling formula is *&theta;*. Thus *&theta;* is sufficient to predict the entire distribution of haplotype frequencies. The expectation of *k* unique haplotypes follows:
+The number of unique haplotypes in a sample of *n* sequences can be estimated from [Ewen's sampling formula](https://en.wikipedia.org/wiki/Ewens's_sampling_formula). Ewen's sampling formula gives the probability of observing *a*<sub>1</sub> copies of haplotype 1, *a*<sub>2</sub> copies of haplotype 2, etc... in a sample of *n* sequences. The sole parameter of the sampling formula is *&theta;*. Thus *&theta;* is sufficient to predict the entire distribution of haplotype frequencies. The expectation of *k* unique haplotypes follows:
 
 `$$ E[k] = \sum^{n}_{i=1} \frac{\theta}{\theta + i - 1} $$`.
 
@@ -44,7 +44,7 @@ Similarly, if a mutant is at population frequency *p*, then it has a *p* chance 
 
 ## Time to fixation
 
-Conditioned on a neutral mutant fixing, the expected time to fixation is 2*N* generations. Thus, the rate of population turnover scales inversely with population size. This time to fixation is also a measure of the strength of random genetic drift.
+Conditioned on a neutral mutant fixing, the expected time to fixation is 2<i>N</i> generations. Thus, the rate of population turnover scales inversely with population size. This time to fixation is also a measure of the strength of random genetic drift.
 
 With *&theta;* = 1 and *N* = 20, haplotypes emerge and disappear rapidly.
 
