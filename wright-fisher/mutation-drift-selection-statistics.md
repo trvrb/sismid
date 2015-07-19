@@ -34,7 +34,7 @@ We also know the general probability of an allele fixing that is at current freq
 
 This gives the following relationship between *Ns* and *p* and chance of fixation.
 
-![](images/chance_of_fixation_starting_general.png)
+![](images/chance_of_fixation_general.png)
 
 Here, you can see that *N* and *s* only appear together as *Ns*. This means that for probability of fixation, only the scaled selective effect matters. Furthermore, it can be seen that once a positively selected allele reaches appreciable frequency in the population it will almost certainly fix. This is because at this point deterministic selective effects take over from random genetic drift that can cause an allele to be randomly lost while it's still at low frequency.
  

@@ -63,10 +63,8 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Introduction to Wright-Fisher model
 * Wright-Fisher with mutation and genetic drift
 * *Exercise: Effects of mutation and population size on population dynamics*
-* Neutral expectations for population summary statistics
 * Wright-Fisher with mutation, genetic drift and selection
 * *Exercise: Effects of positive and negative selection on population dynamics*
-* Analysis of influenza sequence data
 
 ## Day 3: Immunity
 
