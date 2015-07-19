@@ -27,4 +27,4 @@ A/Perth/16/2009     | 2009
 
 It appears that WHO vaccine updates closely mirror observed antigenic transitions in H3N2.
 
-**Discussion question, given this phylogeny and analysis, what general steps be taken to improve influenza vaccine strain selection?**
+> Discussion question, given this phylogeny and analysis, what general steps be taken to improve influenza vaccine strain selection?

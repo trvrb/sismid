@@ -26,8 +26,9 @@ python mutation-genetic-drift.py --pop_size 50 --mutation_rate 0.0001 --seq_leng
 
 Again, these parameters give *&theta;* = 1.
 
-1. **Keeping the above parameters as baseline, adjust population size up and down to vary *&theta;* between ~0.2 and ~5. What happens to diversity, divergence and haplotype dynamics?**
-2. **Keeping the above parameters as baseline, adjust mutation rate up and down to vary *&theta;* between ~0.2 and ~5. Again, what happens to diversity, divergence and haplotype dynamics?**
+> (1) Keeping the above parameters as baseline, adjust population size up and down to vary *&theta;* between ~0.2 and ~5. What happens to diversity, divergence and haplotype dynamics?
+
+> (2) Keeping the above parameters as baseline, adjust mutation rate up and down to vary *&theta;* between ~0.2 and ~5. Again, what happens to diversity, divergence and haplotype dynamics?
 
 You might try increasing `generations` to something greater than 500 to get a better feel for equilibrium divergence and diversity, say `--generations 2500`. In this case, it may be easier to not plot the haplotype trajectories. This can be done with `--no_hap`, like so:
 
