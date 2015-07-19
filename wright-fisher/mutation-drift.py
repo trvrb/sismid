@@ -1,5 +1,6 @@
 # packages
 import numpy as np
+import itertools
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import argparse
@@ -108,7 +109,7 @@ def get_diversity_trajectory():
 def diversity_plot(xlabel="generation"):
     mpl.rcParams['font.size']=14
     trajectory = get_diversity_trajectory()
-    plt.plot(trajectory)    
+    plt.plot(trajectory, "#447CCD")    
     plt.ylabel("diversity")
     plt.xlabel(xlabel)
     
@@ -128,7 +129,7 @@ def get_divergence_trajectory():
 def divergence_plot(xlabel="generation"):
     mpl.rcParams['font.size']=14
     trajectory = get_divergence_trajectory()
-    plt.plot(trajectory)
+    plt.plot(trajectory, "#447CCD")
     plt.ylabel("divergence")
     plt.xlabel(xlabel) 
 
@@ -151,15 +152,54 @@ def get_all_haplotypes():
             haplotypes.add(haplotype)
     return haplotypes
 
-def stacked_trajectory_plot():
-	colors = ["#781C86", "#571EA2", "#462EB9", "#3F47C9", "#3F63CF", "#447CCD", "#4C90C0", "#56A0AE", "#63AC9A", "#72B485", "#83BA70", "#96BD60", "#AABD52", "#BDBB48", "#CEB541", "#DCAB3C", "#E49938", "#E68133", "#E4632E", "#DF4327", "#DB2122"]
+def stacked_trajectory_plot(xlabel="generation"):
+	colors_lighter = ["#A567AF", "#8F69C1", "#8474D1", "#7F85DB", "#7F97DF", "#82A8DD", "#88B5D5", "#8FC0C9", "#97C8BC", "#A1CDAD", "#ACD1A0", "#B9D395", "#C6D38C", "#D3D285", "#DECE81", "#E8C77D", "#EDBB7A", "#EEAB77", "#ED9773", "#EA816F", "#E76B6B"]
 	mpl.rcParams['font.size']=18
 	haplotypes = get_all_haplotypes()
 	trajectories = [get_trajectory(haplotype) for haplotype in haplotypes]
-	plt.stackplot(range(generations), trajectories, colors=colors)
+	plt.stackplot(range(generations), trajectories, colors=colors_lighter)
 	plt.ylim(0, 1)
 	plt.ylabel("frequency")
-	plt.xlabel("generation")
+	plt.xlabel(xlabel)
+
+# plot snp trajectories
+def get_snp_frequency(site, generation):
+    minor_allele_frequency = 0.0
+    pop_at_generation = history[generation]
+    for haplotype in pop_at_generation.keys():
+        allele = haplotype[site]
+        frequency = pop_at_generation[haplotype] / float(pop_size)
+        if allele != "A":
+            minor_allele_frequency += frequency
+    return minor_allele_frequency
+
+def get_snp_trajectory(site):
+    trajectory = [get_snp_frequency(site, gen) for gen in range(generations)]
+    return trajectory
+
+def get_all_snps():
+    snps = set()   
+    for generation in history:
+        for haplotype in generation:
+            for site in range(seq_length):
+                if haplotype[site] != "A":
+                    snps.add(site)
+    return snps
+
+def snp_trajectory_plot(xlabel="generation"):
+	colors = ["#781C86", "#571EA2", "#462EB9", "#3F47C9", "#3F63CF", "#447CCD", "#4C90C0", "#56A0AE", "#63AC9A", "#72B485", "#83BA70", "#96BD60", "#AABD52", "#BDBB48", "#CEB541", "#DCAB3C", "#E49938", "#E68133", "#E4632E", "#DF4327", "#DB2122"]
+	mpl.rcParams['font.size']=18
+	snps = get_all_snps()
+	trajectories = [get_snp_trajectory(snp) for snp in snps]
+	data = []
+	for trajectory, color in itertools.izip(trajectories, itertools.cycle(colors)):
+		data.append(range(generations))
+		data.append(trajectory)    
+		data.append(color)
+	plt.plot(*data)   
+	plt.ylim(0, 1)
+	plt.ylabel("frequency")
+	plt.xlabel(xlabel)
 
 if __name__=="__main__":
 	parser = argparse.ArgumentParser(description = "run wright-fisher simulation with mutation and genetic drift")
@@ -184,10 +224,12 @@ if __name__=="__main__":
 		plt.subplot2grid((2,1), (1,0))
 		divergence_plot()
 	else:	
-		plt.subplot2grid((2,2), (0,0), colspan=2)
-		stacked_trajectory_plot()
-		plt.subplot2grid((2,2), (1,0))
+		plt.subplot2grid((3,2), (0,0), colspan=2)
+		stacked_trajectory_plot(xlabel="")
+		plt.subplot2grid((3,2), (1,0), colspan=2)
+		snp_trajectory_plot(xlabel="")
+		plt.subplot2grid((3,2), (2,0))
 		diversity_plot()
-		plt.subplot2grid((2,2), (1,1))
+		plt.subplot2grid((3,2), (2,1))
 		divergence_plot()
 	plt.show()		
