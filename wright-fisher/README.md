@@ -16,10 +16,13 @@ There are *N* individuals in the population. Every generation, each individual h
 
  * [*Exercise on the effects of population size and mutation rate on population dynamics*](mutation-drift-exercise.md)
 
- * [Neutral expectations for population summary statistics](summary-statistics.md)
+ * [Neutral expectations for population summary statistics](mutation-drift-statistics.md)
 
 ### Wright-Fisher model with mutation, genetic drift and selection
 
  * [iPython notebook](https://github.com/trvrb/sismid/blob/master/wright-fisher/mutation-drift-selection.ipynb)
 
  * [*Exercise on the effects of positive and negative selection on population dynamics*](mutation-drift-selection-exercise.md)
+
+ * [Probability of fixation of selected alleles](mutation-drift-selection-statistics.md)
+ 
