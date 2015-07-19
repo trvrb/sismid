@@ -33,4 +33,4 @@ What should we make of these trends? Let's work with simulated time series to ge
 
 > (Optional) Reconstruct some of the trajectories in state-space.
 
-* Unfortunately, this exercise requires the Anaconda distribution of Python 2.7.x to run (type `$ python --version` to see if you have it). We'll be working through this mostly as a class.
+\* Unfortunately, this exercise requires the Anaconda distribution of Python 2.7.x to run (type `$ python --version` to see if you have it). We'll be working through this mostly as a class.
