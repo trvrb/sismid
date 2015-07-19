@@ -8,7 +8,7 @@ With our code* (mostly by Ed Baskerville), this requires a few steps:
 2. Run CCM on the inputs using [`ccm.py`](https://github.com/trvrb/sismid/blob/master/ssr/exercise/ccm.py), specifying the embedding dimension (`E`), lag (`t`), library lengths at which to calculate the correlation (`L`), the number of replicates per library length (`R`), the columns to use (`C`), the causality tests to run (`V`), the input databases and relevant table, and the output database. Example: `
 ccm.py --n-cores 4 -E 4 -t 1 -L "5:50:5" -R 100 -C "x,y" -V "x:y,y:x" input.sqlite time_series output.sqlite`. Note that we're not trying to identify the best embedding dimension or lag at this point, although this is an important step in state-space reconstruction. For now, estimate reasonable values for `E` and `t`.
 
-3. Plot the results using `plot_rhos.py`. Specify the database with the CCM results and the name of the file where the plot will be saved, e.g., `plot_rhos.py input_db.sqlite outputfile.png`.
+3. Plot the results using [`plot_rhos.py`](https://github.com/trvrb/sismid/blob/master/ssr/exercise/plot_rhos.py). Specify the database with the CCM results and the name of the file where the plot will be saved, e.g., `plot_rhos.py input_db.sqlite outputfile.png`.
 
 Several of the pathogens below, which we saw in the morning, are reputed to interact ([Rohani et al. 2003](http://www.ncbi.nlm.nih.gov/pubmed/12712203), [Mina et al. 2015](http://www.sciencemag.org/content/348/6235/694)).
 
