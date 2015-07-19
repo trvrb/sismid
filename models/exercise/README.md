@@ -5,7 +5,7 @@ To develop expectations of the possible behaviors of two strains, we build a sim
 The one below has been adapted from [Keeling & Rohani (2007)](http://homepages.warwick.ac.uk/~masfz/ModelingInfectiousDiseases/Chapter4/Program_4.1/index.html).
 Subscript indices refer to the status with respect to strains 1 and 2, respectively.
 
-![](images/equations.png)
+![](../images/equations.png)
 
 > (1) Draw the compartmental diagram for this model, adding parameters to the flows. Interpret each parameter. What kinds of restrictions (e.g., bounded between 0 and 1) make sense for each? Is this a history-based or status-based model?
 
@@ -22,7 +22,7 @@ We'll numerically integrate these equations to see what they predict.
 Open [`two_strain.py`](https://github.com/trvrb/sismid/blob/master/models/exercise/two_strain.py) and [`plot_two_strain_ts.py`](https://github.com/trvrb/sismid/blob/master/models/exercise/plot_two_strain_ts.py) and examine the code.
 It uses the [Euler method](https://en.wikipedia.org/wiki/Euler_method) to solve the system.
 The function calculates the state variables over time at `step_size` intervals.
-Note that it produces estimates of the state variables over a differen schedule (`t=0` to `t=end_time` at intervals of `output_interval`).
+Note that it produces estimates of the state variables over a different schedule (`t=0` to `t=end_time` at intervals of `output_interval`).
 In addition to the step sizes for integration and outputs, the `two_strain` function requires parameters and initial conditions.
 
 > (4) Modify the parameters so that the strains do not interact, and examine the resulting time series. How can you confirm that the integration is accurate?
@@ -40,7 +40,7 @@ These summaries are often "strobes" of the system (e.g., the number of cases eve
 Often, for each value of the varied parameter, the system is simulated to equilibrium from different starting conditions.
 This approach can reveal the presence of multiple stable states or attractors, as shown in the diagram below for a single-strain model ([Earn et al. 2001](http://www.sciencemag.org/cgi/pmidlookup?view=long&pmid=10650003)).
 
-![](images/earn_bd.jpg)
+![](../images/earn_bd.jpg)
 
 For simplicity, we'll create our bifurcation diagrams using the same initial conditions throughout. 
 We won't measure precisely whether we have obtained equilibrium conditions--we'll simply simulate for a long time, and sample the few final time points.
