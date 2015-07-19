@@ -11,11 +11,15 @@ seq_length = 100
 alphabet = ['A', 'T', 'G', 'C']
 mutation_rate = 0.0001 # per gen per individual per site
 generations = 500
+fitness_effect = 1.1 # fitness effect if a functional mutation occurs
+fitness_chance = 0.1 # chance that a mutation has a fitness effect
 
 # population
 base_haplotype = ''.join(["A" for i in range(seq_length)])
 pop = {}
 pop[base_haplotype] = pop_size
+fitness = {}
+fitness[base_haplotype] = 1.0
 history = []
 
 # mutation
@@ -26,6 +30,8 @@ def get_mutation_count():
 def get_random_haplotype():
     haplotypes = pop.keys() 
     frequencies = [x/float(pop_size) for x in pop.values()]
+    total = sum(frequencies)
+    frequencies = [x / total for x in frequencies]
     return np.random.choice(haplotypes, p=frequencies)
 
 def get_mutant(haplotype):
@@ -36,6 +42,13 @@ def get_mutant(haplotype):
     new_haplotype = haplotype[:site] + mutation + haplotype[site+1:]
     return new_haplotype
 
+def get_fitness(haplotype):
+    old_fitness = fitness[haplotype]
+    if (np.random.random() < fitness_chance):
+        return old_fitness * fitness_effect
+    else:
+        return old_fitness
+
 def mutation_event():
     haplotype = get_random_haplotype()
     if pop[haplotype] > 1:
@@ -45,17 +58,23 @@ def mutation_event():
             pop[new_haplotype] += 1
         else:
             pop[new_haplotype] = 1
+        if new_haplotype not in fitness:
+            fitness[new_haplotype] = get_fitness(haplotype)
 
 def mutation_step():
     mutation_count = get_mutation_count()
     for i in range(mutation_count):
         mutation_event()
 
-# genetic drift
+# genetic drift and selection
 def get_offspring_counts():
-    haplotypes = pop.keys() 
-    frequencies = [x/float(pop_size) for x in pop.values()]
-    return list(np.random.multinomial(pop_size, frequencies))
+    haplotypes = pop.keys()
+    frequencies = [pop[haplotype]/float(pop_size) for haplotype in haplotypes]
+    fitnesses = [fitness[haplotype] for haplotype in haplotypes]
+    weights = [x * y for x,y in zip(frequencies, fitnesses)]
+    total = sum(weights)
+    weights = [x / total for x in weights]
+    return list(np.random.multinomial(pop_size, weights))
 
 def offspring_step():
     counts = get_offspring_counts()
@@ -203,18 +222,22 @@ def snp_trajectory_plot(xlabel="generation"):
 
 if __name__=="__main__":
 	parser = argparse.ArgumentParser(description = "run wright-fisher simulation with mutation and genetic drift")
-	parser.add_argument('--pop_size', type = int, default = 50.0, help = "population size")
+	parser.add_argument('--pop_size', type = int, default = 100.0, help = "population size")
 	parser.add_argument('--mutation_rate', type = float, default = 0.0001, help = "mutation rate")
 	parser.add_argument('--seq_length', type = int, default = 100, help = "sequence length")
 	parser.add_argument('--generations', type = int, default = 500, help = "generations")
+	parser.add_argument('--fitness_effect', type = float, default = 1.1, help = "fitness effect")
+	parser.add_argument('--fitness_chance', type = float, default = 0.1, help = "fitness chance")	
 	parser.add_argument('--summary', action = "store_true", default = False, help = "don't plot trajectories")		
 
 	params = parser.parse_args()
 	pop_size = params.pop_size
 	mutation_rate = params.mutation_rate
 	seq_length = params.seq_length
-	generations = params.generations		
-	
+	generations = params.generations
+	fitness_effect = params.fitness_effect
+	fitness_chance = params.fitness_chance
+
 	simulate()
 
 	plt.figure(num=None, figsize=(14, 10), dpi=80, facecolor='w', edgecolor='k')

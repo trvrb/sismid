@@ -14,10 +14,12 @@ There are *N* individuals in the population. Every generation, each individual h
 
  * [Visualization of Wright-Fisher haplotype dynamics](http://bedford.io/projects/haplotypes/)
 
- * [*Exercise on the effects of population size and mutation rate on haplotype dynamics*](mutation-drift-exercise.md)
+ * [*Exercise on the effects of population size and mutation rate on population dynamics*](mutation-drift-exercise.md)
 
  * [Neutral expectations for population summary statistics](summary-statistics.md)
 
 ### Wright-Fisher model with mutation, genetic drift and selection
 
  * [iPython notebook](https://github.com/trvrb/sismid/blob/master/wright-fisher/mutation-drift-selection.ipynb)
+
+ * [*Exercise on the effects of positive and negative selection on population dynamics*](mutation-drift-selection-exercise.md)

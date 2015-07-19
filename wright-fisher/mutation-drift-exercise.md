@@ -1,4 +1,4 @@
-# Exercise: effects of population size and mutation rate on observed haplotype dynamics
+# Exercise: effects of population size and mutation rate on population dynamics
 
 We'll go into this further in the next section, but a very important parameter is *&theta;*, which is equal to 2<i>N&mu;</i>, where *N* is equal to the population size and *&mu;* is equal to mutations per generation. If there are 100 sites and a per-site per-gen mutation rate of 0.0001, then *&mu;* = 0.01. If there are 50 individuals in the population, then *&theta;* = 2<i>N&mu;</i> = 1.
 
@@ -16,8 +16,8 @@ Again, these parameters give *&theta;* = 1.
 
 > (3) Adjust *N* and *&mu;* up and down, while keeping *&theta;* = 1, to explore high *N* / low *&mu;* and low  *N* / high *&mu;* scenarios. What happens to diversity, divergence and haplotype dynamics?
 
-You might try increasing `generations` to something greater than 500 to get a better feel for equilibrium divergence and diversity, say `--generations 2500`. In this case, it may be easier to not plot the haplotype trajectories. This can be done with `--no_hap`, like so:
+You might try increasing `generations` to something greater than 500 to get a better feel for equilibrium divergence and diversity, say `--generations 2500`. In this case, it may be easier to not plot the haplotype trajectories. This can be done with `--summary`, like so:
 
 ```
-python mutation-drift.py --pop_size 50 --mutation_rate 0.0001 --seq_length 100 --generations 2500 --no_hap
+python mutation-drift.py --pop_size 50 --mutation_rate 0.0001 --seq_length 100 --generations 2500 --summary
 ```
