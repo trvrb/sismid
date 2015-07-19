@@ -14,6 +14,8 @@ Again, these parameters give *&theta;* = 1.
 
 > (2) Keeping the above parameters as baseline, adjust mutation rate up and down to vary *&theta;* between ~0.2 and ~5. Again, what happens to diversity, divergence and haplotype dynamics?
 
+> (3) Adjust *N* and *&mu;* up and down, while keeping *&theta;* = 1, to explore high *N* / low *&mu;* and low  *N* / high *&mu;* scenarios. What happens to diversity, divergence and haplotype dynamics?
+
 You might try increasing `generations` to something greater than 500 to get a better feel for equilibrium divergence and diversity, say `--generations 2500`. In this case, it may be easier to not plot the haplotype trajectories. This can be done with `--no_hap`, like so:
 
 ```
