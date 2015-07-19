@@ -55,7 +55,8 @@ def error_function(guess_par):
     opt_pars = np.array([gamma, mu, alpha, a, omega, beta, guess_par])
     output = run_two_strain(end_time, output_interval, step_size, opt_pars, ic)
     guess = np.asarray([output[:, 1] + output[:, 6], output[:, 3] + output[:, 4]])
-    error = np.linalg.norm(guess[1] - data[1]) ** 2
+    # error = np.linalg.norm(guess[1] - data[1]) ** 2  # fit to first strain
+    error = np.linalg.norm(guess - data) ** 2  # fit to both strains
     return error
 
 opt = minimize(error_function, (0.7, 0.9), method='Nelder-Mead')
