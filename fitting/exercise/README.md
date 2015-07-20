@@ -26,7 +26,7 @@ Nelder-Mead is a "derivative-free" method that picks *n*+1 parameter combination
 
 Most fitting methods in use are more complex, efficient, and flexible than the Nelder-Mead simplex. [See it in action.](https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method#/media/File:Nelder_Mead2.gif)
 
-> (1) Examine the error function in [`fitting.py`](https://github.com/trvrb/sismid/blob/master/fitting/exercise/fitting.py). What are its assumptions?
+> (1) Examine the error function in [`fitting.py`](https://github.com/trvrb/sismid/blob/master/fitting/exercise/fitting.py). What are its assumptions? Note that most of the variables that are modeled are effectively latent, or unobserved. (A property of [hidden Markov models](https://en.wikipedia.org/wiki/Hidden_Markov_model).)
 
 > (2) Referencing your bifurcation diagrams, pick parameters in an area associated with stable dynamics: moving a little to the left or the right of each parameter doesn't appear to change dynamics too much. (Of course, because we've considered only a few "slices" by varying one parameter at a time, we can't be really sure how stable each area is yet.) Update the parameters in [`fitting.py`](https://github.com/trvrb/sismid/blob/master/fitting/exercise/fitting.py) with these values, and generate sample observations. Now assume we don't know the true value of one of the parameters (ideally one you have examined in a bifurcation diagram). Guess that its true value is 10-20% higher or lower than its actual value, and try to fit.  
 
@@ -42,6 +42,5 @@ Most fitting methods in use are more complex, efficient, and flexible than the N
 
 > (8) Add process noise to your model and attempt a previously successful fit.
 
-> (Optional) Change the error function so that you the maximize the likelihood (i.e., minimize the negative log-likelihood).
-
+This exercise should have efficiently demonstrated the critical importance of using inference procedures that accommodate process and observation error, as well as the challenges fitting complex dynamics.
 
