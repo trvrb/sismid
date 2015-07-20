@@ -1,5 +1,6 @@
 # packages
 import numpy as np
+import itertools
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import argparse
@@ -10,11 +11,15 @@ seq_length = 100
 alphabet = ['A', 'T', 'G', 'C']
 mutation_rate = 0.0001 # per gen per individual per site
 generations = 500
+fitness_effect = 1.1 # fitness effect if a functional mutation occurs
+fitness_chance = 0.1 # chance that a mutation has a fitness effect
 
 # population
 base_haplotype = ''.join(["A" for i in range(seq_length)])
 pop = {}
 pop[base_haplotype] = pop_size
+fitness = {}
+fitness[base_haplotype] = 1.0
 history = []
 
 # mutation
@@ -25,6 +30,8 @@ def get_mutation_count():
 def get_random_haplotype():
     haplotypes = pop.keys() 
     frequencies = [x/float(pop_size) for x in pop.values()]
+    total = sum(frequencies)
+    frequencies = [x / total for x in frequencies]
     return np.random.choice(haplotypes, p=frequencies)
 
 def get_mutant(haplotype):
@@ -35,6 +42,13 @@ def get_mutant(haplotype):
     new_haplotype = haplotype[:site] + mutation + haplotype[site+1:]
     return new_haplotype
 
+def get_fitness(haplotype):
+    old_fitness = fitness[haplotype]
+    if (np.random.random() < fitness_chance):
+        return old_fitness * fitness_effect
+    else:
+        return old_fitness
+
 def mutation_event():
     haplotype = get_random_haplotype()
     if pop[haplotype] > 1:
@@ -44,17 +58,23 @@ def mutation_event():
             pop[new_haplotype] += 1
         else:
             pop[new_haplotype] = 1
+        if new_haplotype not in fitness:
+            fitness[new_haplotype] = get_fitness(haplotype)
 
 def mutation_step():
     mutation_count = get_mutation_count()
     for i in range(mutation_count):
         mutation_event()
 
-# genetic drift
+# genetic drift and selection
 def get_offspring_counts():
-    haplotypes = pop.keys() 
-    frequencies = [x/float(pop_size) for x in pop.values()]
-    return list(np.random.multinomial(pop_size, frequencies))
+    haplotypes = pop.keys()
+    frequencies = [pop[haplotype]/float(pop_size) for haplotype in haplotypes]
+    fitnesses = [fitness[haplotype] for haplotype in haplotypes]
+    weights = [x * y for x,y in zip(frequencies, fitnesses)]
+    total = sum(weights)
+    weights = [x / total for x in weights]
+    return list(np.random.multinomial(pop_size, weights))
 
 def offspring_step():
     counts = get_offspring_counts()
@@ -108,7 +128,7 @@ def get_diversity_trajectory():
 def diversity_plot(xlabel="generation"):
     mpl.rcParams['font.size']=14
     trajectory = get_diversity_trajectory()
-    plt.plot(trajectory)    
+    plt.plot(trajectory, "#447CCD")    
     plt.ylabel("diversity")
     plt.xlabel(xlabel)
     
@@ -128,7 +148,7 @@ def get_divergence_trajectory():
 def divergence_plot(xlabel="generation"):
     mpl.rcParams['font.size']=14
     trajectory = get_divergence_trajectory()
-    plt.plot(trajectory)
+    plt.plot(trajectory, "#447CCD")
     plt.ylabel("divergence")
     plt.xlabel(xlabel) 
 
@@ -151,43 +171,88 @@ def get_all_haplotypes():
             haplotypes.add(haplotype)
     return haplotypes
 
-def stacked_trajectory_plot():
-	colors = ["#781C86", "#571EA2", "#462EB9", "#3F47C9", "#3F63CF", "#447CCD", "#4C90C0", "#56A0AE", "#63AC9A", "#72B485", "#83BA70", "#96BD60", "#AABD52", "#BDBB48", "#CEB541", "#DCAB3C", "#E49938", "#E68133", "#E4632E", "#DF4327", "#DB2122"]
+def stacked_trajectory_plot(xlabel="generation"):
+	colors_lighter = ["#A567AF", "#8F69C1", "#8474D1", "#7F85DB", "#7F97DF", "#82A8DD", "#88B5D5", "#8FC0C9", "#97C8BC", "#A1CDAD", "#ACD1A0", "#B9D395", "#C6D38C", "#D3D285", "#DECE81", "#E8C77D", "#EDBB7A", "#EEAB77", "#ED9773", "#EA816F", "#E76B6B"]
 	mpl.rcParams['font.size']=18
 	haplotypes = get_all_haplotypes()
 	trajectories = [get_trajectory(haplotype) for haplotype in haplotypes]
-	plt.stackplot(range(generations), trajectories, colors=colors)
+	plt.stackplot(range(generations), trajectories, colors=colors_lighter)
 	plt.ylim(0, 1)
 	plt.ylabel("frequency")
-	plt.xlabel("generation")
+	plt.xlabel(xlabel)
+
+# plot snp trajectories
+def get_snp_frequency(site, generation):
+    minor_allele_frequency = 0.0
+    pop_at_generation = history[generation]
+    for haplotype in pop_at_generation.keys():
+        allele = haplotype[site]
+        frequency = pop_at_generation[haplotype] / float(pop_size)
+        if allele != "A":
+            minor_allele_frequency += frequency
+    return minor_allele_frequency
+
+def get_snp_trajectory(site):
+    trajectory = [get_snp_frequency(site, gen) for gen in range(generations)]
+    return trajectory
+
+def get_all_snps():
+    snps = set()   
+    for generation in history:
+        for haplotype in generation:
+            for site in range(seq_length):
+                if haplotype[site] != "A":
+                    snps.add(site)
+    return snps
+
+def snp_trajectory_plot(xlabel="generation"):
+	colors = ["#781C86", "#571EA2", "#462EB9", "#3F47C9", "#3F63CF", "#447CCD", "#4C90C0", "#56A0AE", "#63AC9A", "#72B485", "#83BA70", "#96BD60", "#AABD52", "#BDBB48", "#CEB541", "#DCAB3C", "#E49938", "#E68133", "#E4632E", "#DF4327", "#DB2122"]
+	mpl.rcParams['font.size']=18
+	snps = get_all_snps()
+	trajectories = [get_snp_trajectory(snp) for snp in snps]
+	data = []
+	for trajectory, color in itertools.izip(trajectories, itertools.cycle(colors)):
+		data.append(range(generations))
+		data.append(trajectory)    
+		data.append(color)
+	plt.plot(*data)   
+	plt.ylim(0, 1)
+	plt.ylabel("frequency")
+	plt.xlabel(xlabel)
 
 if __name__=="__main__":
 	parser = argparse.ArgumentParser(description = "run wright-fisher simulation with mutation and genetic drift")
-	parser.add_argument('--pop_size', type = int, default = 50.0, help = "population size")
+	parser.add_argument('--pop_size', type = int, default = 100.0, help = "population size")
 	parser.add_argument('--mutation_rate', type = float, default = 0.0001, help = "mutation rate")
 	parser.add_argument('--seq_length', type = int, default = 100, help = "sequence length")
 	parser.add_argument('--generations', type = int, default = 500, help = "generations")
-	parser.add_argument('--no_hap', action = "store_true", default = False, help = "don't plot haplotypes")		
+	parser.add_argument('--fitness_effect', type = float, default = 1.1, help = "fitness effect")
+	parser.add_argument('--fitness_chance', type = float, default = 0.1, help = "fitness chance")	
+	parser.add_argument('--summary', action = "store_true", default = False, help = "don't plot trajectories")		
 
 	params = parser.parse_args()
 	pop_size = params.pop_size
 	mutation_rate = params.mutation_rate
 	seq_length = params.seq_length
-	generations = params.generations		
-	
+	generations = params.generations
+	fitness_effect = params.fitness_effect
+	fitness_chance = params.fitness_chance
+
 	simulate()
 
 	plt.figure(num=None, figsize=(14, 10), dpi=80, facecolor='w', edgecolor='k')
-	if params.no_hap:
+	if params.summary:
 		plt.subplot2grid((2,1), (0,0))
 		diversity_plot()
 		plt.subplot2grid((2,1), (1,0))
 		divergence_plot()
 	else:	
-		plt.subplot2grid((2,2), (0,0), colspan=2)
-		stacked_trajectory_plot()
-		plt.subplot2grid((2,2), (1,0))
+		plt.subplot2grid((3,2), (0,0), colspan=2)
+		stacked_trajectory_plot(xlabel="")
+		plt.subplot2grid((3,2), (1,0), colspan=2)
+		snp_trajectory_plot(xlabel="")
+		plt.subplot2grid((3,2), (2,0))
 		diversity_plot()
-		plt.subplot2grid((2,2), (1,1))
+		plt.subplot2grid((3,2), (2,1))
 		divergence_plot()
 	plt.show()		
