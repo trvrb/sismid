@@ -13,3 +13,4 @@
 * Approximate Bayesian Computation: [Toni et al. 2009](http://rsif.royalsocietypublishing.org/content/6/31/187)
 * Probes: [Kendall et al. 1997](http://www.esajournals.org/doi/abs/10.1890/0012-9658%281999%29080%5B1789%3AWDPCAS%5D2.0.CO%3B2)
 * Synthetic likelihood: [Wood 2010](http://www.nature.com/nature/journal/v466/n7310/full/nature09319.html)
+* WAIC and cross-validation: [Vehtari and Gelman 2014](http://www.stat.columbia.edu/~gelman/research/unpublished/waic_stan.pdf)
