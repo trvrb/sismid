@@ -135,9 +135,11 @@
 				</section>
 				
 				<section>
-					<h3>Example with hybrid Monte Carlo</h3>
-					<p>Data: Infection times and covariates $\theta$ for >4000 people</li>
-					<p>Model: Force of infection $\lambda_i=\sigma\beta I$ with $\beta=f(\beta_i,\theta)$</li>
+					<h3>Likelihood with longitudinal data</h3>
+					<p>Data: Infection and clearance times ($t_i$, $t_c$) and covariates $\vec{\theta}$
+					<p>Model: Force of infection $\lambda_i=\sigma\beta I_i$ with $\beta=f(\beta_i,\vec{\theta})$
+					<p>Gamma-distributed duration of infection (shape $k$, scale $\theta$)
+					<img src="images/sylvia_likelihood.png">
 				</section>
 				
 				<section>
