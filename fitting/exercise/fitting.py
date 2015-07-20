@@ -1,5 +1,6 @@
 ############################################################
-# Very simple fitting with Nelder-Mead
+# Very simple and wrong fitting with Nelder-Mead
+# (an inoculation)
 ############################################################
 
 import numpy as np
