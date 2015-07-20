@@ -10,6 +10,18 @@ ccm.py --n-cores 4 -E 4 -t 1 -L "5:50:5" -R 100 -C "x,y" -V "x:y,y:x" input.sqli
 
 3. Plot the results using [`plot_rhos.py`](https://github.com/trvrb/sismid/blob/master/ssr/exercise/plot_rhos.py). Specify the database with the CCM results and the name of the file where the plot will be saved, e.g., `plot_rhos.py input_db.sqlite outputfile.png`.
 
+As a test, run CCM on prepared inputs with:
+
+```
+python ccm.py --n-cores 4 -E 4 -t 1 -L "10:50:10" -R 100 -C "measles,chickenpox" -V "measles:chickenpox,chickenpox:measles" measles_chickenpox.sqlite time_series output.sqlite
+```
+
+And then visualize the results with:
+
+```
+python plot_rhos.py output.sqlite output.png
+```
+
 Several of the pathogens below, which we saw in the morning, are reputed to interact ([Rohani et al. 2003](http://www.ncbi.nlm.nih.gov/pubmed/12712203), [Mina et al. 2015](http://www.sciencemag.org/content/348/6235/694)).
 
 ![](../images/seattle_ts.png)
