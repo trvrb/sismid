@@ -60,5 +60,5 @@ def error_function(guess_par):
     error = np.linalg.norm(guess - data) ** 2  # fit to both strains
     return error
 
-opt = minimize(error_function, (0.7, 0.9), method='Nelder-Mead')
+opt = minimize(error_function, 0.7, method='Nelder-Mead')
 print opt
