@@ -62,10 +62,10 @@
 				</section>
 
 				<section>
-					<h4>History-based models with reduced dimensions</h4>
+					<h3>Dimensional reduction</h3>
 					<br>
 					<p> Requires cross-immunity through reduced transmission (only)
-					<p> Cross-immunity must be defined in context of antigenic "neighborhoods"
+					<p> Cross-immunity must be in context of antigenic "neighborhoods"
 					<p> (with $n$ strains in $m$ neighborhoods, system is $n$ x $(m+1)$)
 					<p> Impossible to calculate immunity to new strains
 					<div class="citation">
@@ -93,7 +93,7 @@
 				
 				<section>
 					<h3>Implicit assumption</h3>
-					<p>Probability of an individual remaining susceptible with time</p>
+					<p>Proportion of population not infected by second strain</p>
 					<img class="stretch" src="images/status-v-history.png">
 						<div class="citation">
 							<a href="http://www.researchgate.net/profile/Jonathan_Swinton/publication/11423071_A_status-based_approach_to_multiple_strain_dynamics/links/00b4953286a83c0863000000.pdf">Gog and Swinton, 2002</a>
@@ -101,7 +101,7 @@
 				</section>
 				
 				<section>
-					<h3>Options for multistrain models</h3>
+					<h3>Some options for multistrain models</h3>
 					<img class="stretch" src="images/model_table.png">
 						<div class="citation">
 							<a href="http://download.springer.com/static/pdf/165/art%253A10.1007%252Fs00285-015-0873-4.pdf?originUrl=http%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs00285-015-0873-4&token2=exp=1437315487~acl=%2Fstatic%2Fpdf%2F165%2Fart%25253A10.1007%25252Fs00285-015-0873-4.pdf%3ForiginUrl%3Dhttp%253A%252F%252Flink.springer.com%252Farticle%252F10.1007%252Fs00285-015-0873-4*~hmac=8582f13c147cd45495cae3e1ae346ecd07d6c9e9d8ca3f3551937d33b560356e">Kucharski et al. 2015</a>
@@ -118,28 +118,93 @@
 				</section>
 				
 				<section>
-					<h3>Know your assumptions</h3>
-					<p>Does this model have a bias for extinction, coexistence, or neither?</p>
-					<img class="stretch" src="images/lipsitch_1.png">
-						<div class="citation">
-							<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007426">Lipsitch et al. 2009</a>
-						</div>
+					<section>
+						<h3>Know your assumptions</h3>
+						<p>Does this model have a bias for extinction, coexistence, or neither?</p>
+						<img class="stretch" src="images/lipsitch_1.png">
+							<div class="citation">
+								<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007426">Lipsitch et al. 2009</a>
+							</div>
+					</section>
+					
+					<section>
+						<h3>Equations</h3>
+						<p>Does this model have a bias for extinction, coexistence, or neither?</p>
+						<img class="stretch" src="images/lipsitch_3b_ode.png">
+							<div class="citation">
+								<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007426">Lipsitch et al. 2009</a>
+							</div>
+					</section>
+					
+					<section>
+						<h3>Equations</h3>
+						<p>Ecological dynamics depend on strain composition</p>
+						<img class="stretch" src="images/lipsitch_3b_N.png">
+							<div class="citation">
+								<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007426">Lipsitch et al. 2009</a>
+							</div>
+					</section>
 				</section>
 				
 				<section>
-					<h3>Which one promotes coexistence?</h3>
-					<img class="stretch" src="images/lipsitch_2.jpg">
-						<div class="citation">
-							<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007426">Lipsitch et al. 2009</a>
-						</div>
+					<section>
+						<h3>Which one promotes coexistence?</h3>
+						<img class="stretch" src="images/lipsitch_2.jpg">
+							<div class="citation">
+								<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007426">Lipsitch et al. 2009</a>
+							</div>
+					</section>
+					
+					<section>
+						<h3>Model A</h3>
+						<img class="stretch" src="images/lipsitch_A_ode.png">
+							<div class="citation">
+								<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007426">Lipsitch et al. 2009</a>
+							</div>
+					</section>
+					
+					<section>
+						<h3>Model B</h3>
+						<img class="stretch" src="images/lipsitch_B_ode.png">
+							<div class="citation">
+								<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007426">Lipsitch et al. 2009</a>
+							</div>
 						</section>
+				</section>
 				
 				<section>
-					<h3>Multiplicity of infection</h3>
-					<img class="stretch" src="images/lipsitch_3.png">
-						<div class="citation">
-							<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007426">Lipsitch et al. 2009</a>
-						</div>
+					<section>
+						<h3>Multiplicity of infection</h3>
+						<img class="stretch" src="images/lipsitch_3.png">
+							<div class="citation">
+								<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007426">Lipsitch et al. 2009</a>
+							</div>
+					</section>
+					
+					<section>
+						<h3>ODEs</h3>
+						<img class="stretch" src="images/lipsitch_nn_ode.png">
+							<div class="citation">
+								<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007426">Lipsitch et al. 2009</a>
+							</div>
+					</section>
+					
+					<section>
+						<h3>Ecological dynamics</h3>
+						<img class="stretch" src="images/lipsitch_nn_n.png">
+							<div class="citation">
+								<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007426">Lipsitch et al. 2009</a>
+							</div>
+					</section>
+					
+					<section>
+						<h3>Ancestor tracing</h3>
+						<img class="stretch" src="images/lipsitch_nn_at.png">
+							<div class="citation">
+								<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0007426">Lipsitch et al. 2009</a>
+							</div>
+						</section>
+					
 				</section>
 				
 				<section>
