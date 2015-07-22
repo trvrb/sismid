@@ -12,7 +12,7 @@ Despite these methods' power, complex models, including multistrain models, may 
 In our limited time, we'll briefly practice fitting our model using a simple error function and simple optimization routines for minimizing the error.
 (This function can be extended to a likelihood if we have time.)
 The main motivation for these choices is to give you a sense of (1) where optimizers can get stuck, and which parameters and dynamical regimes are most challenging to fit, and (2) the dangers of model misspecification, especially assumptions related to noise.
-**In other words, this tutorial is meant to teach you through vivid example what ***not*** to do.**
+**In other words, this tutorial is meant to teach you through vivid example what not to do.**
 The methods we'll use' are available in the [scipy.optimize](http://docs.scipy.org/doc/scipy/reference/tutorial/optimize.html) package.
 Once you understand their performance, it might be fun to try to improve on the fits to the same data set using pomp or other methods on your own.
 

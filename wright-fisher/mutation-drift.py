@@ -24,9 +24,11 @@ def get_mutation_count():
     return np.random.poisson(mean)
 
 def get_random_haplotype():
-    haplotypes = pop.keys() 
-    frequencies = [x/float(pop_size) for x in pop.values()]
-    return np.random.choice(haplotypes, p=frequencies)
+	haplotypes = pop.keys() 
+	frequencies = [x/float(pop_size) for x in pop.values()]
+	total = sum(frequencies)
+	frequencies = [x / total for x in frequencies]
+	return np.random.choice(haplotypes, p=frequencies)
 
 def get_mutant(haplotype):
     site = np.random.randint(seq_length)
@@ -53,9 +55,11 @@ def mutation_step():
 
 # genetic drift
 def get_offspring_counts():
-    haplotypes = pop.keys() 
-    frequencies = [x/float(pop_size) for x in pop.values()]
-    return list(np.random.multinomial(pop_size, frequencies))
+	haplotypes = pop.keys() 
+	frequencies = [x/float(pop_size) for x in pop.values()]
+	total = sum(frequencies)
+	frequencies = [x / total for x in frequencies]
+	return list(np.random.multinomial(pop_size, frequencies))
 
 def offspring_step():
     counts = get_offspring_counts()
