@@ -45,6 +45,13 @@
 			<section data-background="images/map.jpg">
 			</section>
 			
+			<section>
+				<h3>A general approach to model fitting</h3>
+				<p>Simulate data given a model and some parameters
+				<p>Evaluate how likely the observed data are, given the simulated data
+				<p>Tweak the parameters/model to make the observations more likely
+				<p>Is this model a superior explanation than other models?
+			</section>
 			
 				<section>
 					<h3>Maximum likelihood</h3>
@@ -142,6 +149,22 @@
 					<img src="images/sylvia_likelihood.png">
 				</section>
 				
+				<section data-background="#99CCFF">
+					<h3>This model is biased. Can you see why?</h3>
+				</section>
+				
+				<section>
+					<h3>Simulated-based inference</h3>
+					<p>e.g., R-package <a href="https://cran.r-project.org/web/packages/pomp/index.html">pomp</a>
+					<p>Fit models to time series or (new) longitudinal data
+					<div class="citation">
+						<a href="http://kingaa.github.io/sbied/">
+							King and Ionides (SISMID module)
+						</a>
+					</div>
+				</section>
+				
+				
 				<section>
 					<h3>Probes and arbitrary metrics</h3>
 					<p>Approximate Bayesian Computation
@@ -189,10 +212,200 @@
 				</section>
 				
 				
+				<section data-background="#99CCFF">
+					<h3>(but this sounds so hard)</h3>
+				</section>
+				
+				
+				<section data-background="#CC3333">
+					<h2 class="title">State-space reconstruction</h2>
+				</section>
+				
 				<section>
-					<h3>Tips and tricks</h3>
+					<h3>A system with two state variables</h3>
+					<br>
+					<p> $$H'=aH-bHL$$</p>
+					<p> $$L'=cHL-dL$$</p>
+					<br>
+					<p> $H$ hares, $L$ lynxes
+					<p> hare birth rate $a$, predation rate $b$,
+					<p> consumption rate $c$, death rate $d$ </p>
+				</section>
+				
+				<section>
+					<h3>Solve for H(t), L(t) by numerical integration</h3>
+					<img class="stretch" src="images/hare_lynx_ts.png">
+						</section>
+				
+				<section>
+					<h3>Attractor is a limit cycle</h3>
+					<img class="stretch" src="images/hare_lynx_phase_portrait.png">
+						</section>
+				
+				<section>
+					<h3>A more complex system</h3>
+					<br>
+					<p> $$x'=\sigma(y-x)$$</p>
+					<p> $$y'=x(\rho-z)-y$$</p>
+					<p> $$z'=xy-\beta z$$</p>
+					<br>
+				</section>
+				
+				<section>
+					<h3>The Lorenz attractor</h3>
+					<img class="stretch" src="images/lorenz.png">
+						</section>
+				<section>
+					<h3>Implications of state-space reconstruction</h3>
+					<p>We can detect underlying structure
+					<p>We can detect and predict without understanding
+					<p>New claim: We can infer causal interactions
+				</section>
+				
+				<section>
+					<h3>Takens' theorem</h3>
+					<p>Very roughly, the system's attractor is <b>diffeomorphic to</b> (can be mapped without loss of information) to the individual attractors of the state variables in some delay-embedding space.
+					<div class="citation">
+						<a href="http://crcv.ucf.edu/gauss/info/Takens.pdf">
+							Takens 1981
+						</a>
+					</div>
+				</section>
+				
+				<section>
+					<h3>Manifolds and shadow manifolds</h3>
+					<img class="stretch" src="images/manifolds.png">
+						<div class="citation">
+							<a href="http://www.sciencemag.org/content/338/6106/496.long">
+								Sugihara et al. 2012
+							</a>
+						</div>
+						</section>
+				
+				<section>
+					<h3><a href="https://www.youtube.com/watch?v=rs3gYeZeJcw">Introduction to Takens' Theorem</a></h3>
+				</section>
+				
+				<section>
+					<h3>Causal inference</h3>
+					<p>Through their shadow manifolds, variables in the same dynamical system can predict each other.
+					<p>If $X$ drives $Y$, increasing the number of observations of $Y$ should improve predictions of states of $X$.
+					<div class="citation">
+						<a href="http://www.sciencemag.org/content/338/6106/496.long">
+							Sugihara et al. 2012
+						</a>
+					</div>
+				</section>
+				
+				<section>
+					<h3>Convergent cross-mapping</h3>
+					<p>To infer if $X$ drives $Y$:
+					<ul>
+						<li>Construct the shadow manifold of $Y$, $\pmb{M}_Y$ (for some $E$, $\tau$). (Each point in $\pmb{M}_Y$ is given by $\vec{y}(t) = \{y_t,y_{t-\tau},y_{t-2\tau},...,y_{t-(E-1)\tau}\}$.)</li>
+						<li>For each $X(t)$, identify its analogues $\vec{x}(t)$ and $\vec{y}(t)$.</li>
+						<li>Find the $E+1$ nearest neighbors of $\vec{y}(t)$ and weight them by their Euclidean distances to $\vec{y}(t)$.</li>
+						<li>To make a prediction $\hat{X}(t)$, multiply these weights by the respective points in $\pmb{M}_X$.  Let $\rho$ be the correlation between $\vec{x}(t)$ and $\hat{X}(t)$. </li>
+						<li>First make predictions from $\pmb{M}_Y$ constructed with only a few points in the time series, $L_\text{min}$, and then with many, $L_\text{max}$.  </li>
+						<li>If $\rho$ increases with more information on $\pmb{M}_Y$, $X$ drives $Y$.</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3><a href="https://www.youtube.com/watch?v=NrFdIz-D2yM">Introduction to convergent cross-mapping</a></h3>
+				</section>
+				
+				<section data-background="#99CCFF">
+					<h3>What do you expect $\rho$ to converge to?</h3>
+				</section>
+				
+				<section>
+					<h3>Deterministic toy model</h3>
+					<img class="stretch" src="images/toy_ts.png">
+						<div class="citation">
+							<a href="http://www.sciencemag.org/content/338/6106/496.long">
+								Sugihara et al. 2012
+							</a>
+						</div>
+						</section>
+				
+				<section>
+					<h3>Under determinism, perfect predictability</h3>
+					<img class="stretch" src="images/toy_rho.png">
+						<div class="citation">
+							<a href="http://www.sciencemag.org/content/338/6106/496.long">
+								Sugihara et al. 2012
+							</a>
+						</div>
+						</section>
+				
+				<section data-background="#99CCFF">
+					<h3>What will observation error do?</h3>
+				</section>
+				
+				<section>
+					<h3>$X$ and $Y$ do not interact but share a driver</h3>
+					<img class="stretch" src="images/shared_driver.png">
+						<div class="citation">
+							<a href="http://www.sciencemag.org/content/338/6106/496.long">
+								Sugihara et al. 2012
+							</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>Applied to predator-prey cycles</h3>
+					<img class="stretch" src="images/gause.png">
+						<div class="citation">
+							<a href="http://www.sciencemag.org/content/338/6106/496.long">
+								Sugihara et al. 2012
+							</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>Cross-map lag shows direction</h3>
+					<img class="stretch" src="images/crossmap_lag.png">
+						<div class="citation">
+							<a href="http://www.nature.com/articles/srep14750">
+								Ye et al. 2015
+							</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>Anchovies, sardines, and SST</h3>
+					<img class="stretch" src="images/anchovy.png">
+						<div class="citation">
+							<a href="http://www.sciencemag.org/content/338/6106/496.long">
+								Sugihara et al. 2012
+							</a>
+						</div>
+						</section>
+				
+				
+				<section data-background="#99CCFF">
+					<h3> What are the assumptions?</h3>
+				</section>
+
+
+				<section>
+				<h3>Application to real time series</h3>
+					<img class="stretch" src="images/ccm_ny_chicago.png">
+					<div class="citation">
+						<a href="https://arxiv.org/abs/1601.00716">
+							Cobey and Baskerville (in review)
+						</a>
+					</div>
+				</section>
+				
+				<section data-background="#CC3333">
+					<h2 class="title">Back to mechanistic models, then...</h2>
+				</section>
+
+				<section>
+					<h3>Building confidence in your model</h3>
 					<p>Predict something else
-					<p>Natural and unnatural disturbances
+					<p>Exploit natural and unnatural disturbances
 				</section>
 				
 				<section>
