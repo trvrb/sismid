@@ -6,67 +6,16 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 
 # Outline
 
-## Day 1: Competitive dynamics
+## Day 1
 
-### [Immune-mediated competition](competition/) 
+### [Pathogen diversity](pathogens/)
 
-* The dangers of intuition
-* The biological basis of antigenic diversity: innate, cellular, and humoral responses
 * Antigenically (and otherwise) variable pathogens
+* *Exercise: Assigning study groups and picking pathogens*
 
-### [Multistrain models](models/)
-* Statistical, compartmental, and agent-based models
-* The many forms of competition
-* Analytic solutions
-* Numerical integration
-* *Exercise: Dynamics of a multistrain SIR system*
+### [Immunity and Immune-mediated competition](immunity/) 
 
-### [Fitting mechanistic models](fitting/)
-* Maximum likelihood
-* *Exercise: Inference for a multistrain SIR model*
-* Bayesian approaches
-* When to trust a model
-* Tips & tricks: insights from natural experiments
-
-### [State-space reconstruction](ssr/)
-* State space and attractors
-* Prediction
-* Takens theorem
-* Convergent cross-mapping for causal inference
-* *Exercise: Attractor reconstruction and convergent cross-mapping*
-
-## Day 2: Evolution and selection
-
-### [Influenza](flu/)
-
-* Introduction to influenza and its evolution
-
-### [The coalescent](coalescent/)
-
-* Introduction to Kingman's coalescent
-* Effective population size and demographic inference
-* *Exercise: Skyline plots*
-* Effects of selection on tree topology
-
-### [Phylogenetics](phylogenetics/)
-
-* Introduction to phylogenetic inference
-* *Exercise: Parsimony reconstruction*
-* Maximum likelihood and Bayesian methods
-* *Exercise: Bayes' rule*
-* Introduction to BEAST and coalescent inference
-* *Exercise: BEAST practical*
-* Covers molecular clock, demographic models and discrete trait estimation
-
-### [Wright-Fisher Dynamics](wright-fisher/)
-
-* Introduction to Wright-Fisher model
-* Wright-Fisher with mutation and genetic drift
-* *Exercise: Effects of mutation and population size on population dynamics*
-* Wright-Fisher with mutation, genetic drift and selection
-* *Exercise: Effects of positive and negative selection on population dynamics*
-
-## Day 3: Immunity
+* The biological basis of antigenic diversity: innate, cellular, and humoral responses
 
 ### [Serology](serology/)
 
@@ -74,6 +23,59 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Antigenic cartography
 * *Exercise: Antigenic map*
 * Original antigenic sin
+* *Exercise: Serological data for chosen pathogens*
+
+### [Multistrain models](models/)
+
+* Statistical, compartmental, and agent-based models
+* The many forms of competition
+* Analytic solutions
+* Numerical integration
+* *Exercise: Dynamics of a multistrain SIR system*
+
+## Day 2
+
+### [Timeseries analysis](timeseries/)
+
+* Maximum likelihood
+* *Exercise: Inference for a multistrain SIR model*
+* Bayesian approaches
+* When to trust a model
+* Tips & tricks: insights from natural experiments
+* State-space reconstruction
+* *Exercise: Attractor reconstruction and convergent cross-mapping*
+* *Exercise: Timeseries data for chosen pathogens*
+
+### [The coalescent and phylogenetics](sequences/)
+
+* Introduction to Kingman's coalescent
+* Effective population size and demographic inference
+* *Exercise: Skyline plots*
+* Effects of selection on tree topology
+* Introduction to phylogenetic inference
+* *Exercise: Parsimony reconstruction*
+* Maximum likelihood and Bayesian methods
+* *Exercise: Bayes' rule*
+
+### [Selection and wright-Fisher Dynamics](selection/)
+
+* Introduction to Wright-Fisher model
+* Wright-Fisher with mutation and genetic drift
+* *Exercise: Effects of mutation and population size on population dynamics*
+* Wright-Fisher with mutation, genetic drift and selection
+* *Exercise: Effects of positive and negative selection on population dynamics*
+* Tests of selection
+* *Exercise: Genetic data for chosen pathogens*
+
+### [Forecasting](forecasting/)
+
+* TBD
+
+## Day 3
+
+### [Synthesis](synthesis/)
+
+* Group presentations on specific pathogens
 
 ### [B cell selection and evolution](bcells/)
 
