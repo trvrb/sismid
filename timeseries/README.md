@@ -2,8 +2,6 @@
 
 * [Slides](slides.html)
 
-* [Exercise](exercise/)
-
 
 ### Additional resources
 
