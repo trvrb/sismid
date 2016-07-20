@@ -82,3 +82,7 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * VDJ recombination and somatic hypermutation
 * Clonal dynamics and repertoire diversity
 * Unsolved problems and vaccine design
+
+-----------------------------------
+
+All ccontents including slides, course materials and code are copyright 2015-2016 Sarah Cobey and Trevor Bedford. All slides / course materials (files ending in `.html` and `.md`) are licensed under [Creative Commons Attribution 4.0](CC-LICENSE.txt) and all code (files ending in `.py` and `.ipynb`) is licensed under an [MIT License](MIT-LICENSE.txt).
