@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Forecasting</title>
+
+		<meta name="author" content="Sarah Cobey">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../reveal/css/reveal.min.css">
+		<link rel="stylesheet" href="../reveal/css/theme/trvrb.css" id="theme">
+		<link rel="stylesheet" href="../reveal/css/font-awesome/css/font-awesome.min.css">			
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div style="position: absolute; top:10px; left:10px; z-index:100;">
+			<a href="http://bedford.io/projects/sismid/forecasting">
+				<i class="fa fa-times-circle" style="color: #bbb;"></i>
+			</a>
+		</div>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				
+				<section data-background="#CC3333">
+					<h2 class="title">Forecasting</h2>
+				</section>
+				
+				<section>
+					<h3>Forecasting is a big problem</h3>
+					<img class="stretch" src="images/globe.png">
+				</section>
+				
+				<section>
+					<h3>General, overlapping approaches</h3>
+					<p>Machine learning
+					<p>Statistical models
+					<p>Nonlinear forecasting
+					<p>"Mechanistic" modeling
+				</section>
+				
+				<section>
+					<h3>DREAM challenges</h3>
+					<p>Inference of gene regulatory networks
+					<p>from knockout, observational, and synthetic data
+					<img src="images/dream.png">
+					<div class="citation">
+						<a href="http://bioinformatics.oxfordjournals.org/content/early/2012/03/29/bioinformatics.bts143.full.pdf">
+							Kuffner et al. 2012
+						</a>
+					</div>
+					<p>Compete Lasso, random forests, Bayesian networks, mutual information, ANOVA, etc.
+				</section>
+				
+				<section>
+					<h3>Ecological niche modeling</h3>
+					<img src="images/channel.png">
+						<div class="citation">
+							<a href="http://www.nature.com/nmeth/journal/v9/n6/full/nmeth.1975.html">
+								Larsen et al. 2012
+							</a>
+						</div>
+						<p>An artificial neural network that included microbial interactions performed best.
+				</section>
+				
+				<section>
+					<h3>Nonlinear forecasting</h3>
+					<p>Reconstruct attractor ("library") from time series
+					<p>Use attractor to make short-term predictions</p>
+					<div class="citation">
+						<a href="http://www.nature.com/nature/journal/v344/n6268/abs/344734a0.html">
+							Sugihara and May 1990
+						</a>
+					</div>
+				</section>
+				
+				<section>
+					<h3>The Lorenz attractor</h3>
+					<img class="stretch" src="images/lorenz.png">
+				</section>
+				
+				<section>
+					<h3>Why short-term?</h3>
+					<p>Trajectories in chaotic attractors diverge
+					<p> $$ \lvert \delta \textbf{Z}(t)\rvert \approx e^{\lambda t}\lvert\delta\textbf{Z}_0\rvert$$
+					<p> $\lambda$ is the Lyapunov exponent
+					<p> (so with chaos, $\lambda>0$)
+				</section>
+				
+				<section>
+					<h3>How to forecast</h3>
+					<ul>
+						<li>Choose an embedding dimension $E$ and lag $\tau$</li>
+						<li>Each point in $E$-dimensional space: $\{x_t,x_{t-\tau},x_{t-2\tau},...,x_{t-(E-1)\tau}\}$</li>
+						<li>Construct these points from the time series</li>
+						<li>Define a point to predict ("predictee")</li>
+						<li>See where predictee's $E+1$ nearest neighbors wind up $t$ steps into the future</li>
+						<li>Measure correlations $\rho$ between predictee's observed future state and neighbors' weighted predictions</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Choosing $E$ and $\tau$</h3>
+					<p>An unsolved problem
+					<p>Use $E$ (and $\tau$) that yield best predictions</p>
+					<img class="stretch" src="images/E_selection.png">
+						<div class="citation">
+							<a href="http://www.nature.com/nature/journal/v344/n6268/abs/344734a0.html">Sugihara and May 1990</a>
+						</div>
+						</section>
+				
+				<section>
+					<h3>Observational noise v. chaos</h3>
+					<img class="stretch" src="images/chaos_noise.png">
+						<div class="citation">
+							<a href="http://www.nature.com/nature/journal/v344/n6268/abs/344734a0.html">Sugihara and May 1990</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>Forecasting communities</h3>
+					<img class="stretch" src="images/community.jpg">
+						<div class="citation">
+							<a href="http://rspb.royalsocietypublishing.org/content/283/1822/20152258">Deyle et al. 2015</a>
+						</div>
+				</section>
+
+				
+				<section>
+					<h3>Predicting flu in Hong King</h3>
+					<p>Aim: Predict peak timing and magnitude
+					<img src="images/hongkong.png" style="width: 50%; height: 50%;">
+						<div class="citation">
+							<a href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004383">
+								Yang et al. 2015
+							</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>Mechanistic model and particle filter</h3>
+					<img src="images/SI_equations.png">
+						<div class="citation">
+							<a href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004383">
+								Yang et al. 2015
+							</a>
+						</div>
+						<p>37% accuracy with 1-3 week lead, ~50% at 0 week lead
+					</section>
+				
+				
+				<section>
+					<h3><a href="http://predict.phiresearchlab.org/flu/index.html">FluSight</a></h3>
+				</section>
+				
+				<section>
+					<h3>Predicting flu evolution</h3>
+					<img src="images/clades.png" style="width: 35%; height: 35%;">
+						<div class="citation">
+							<a href="https://www.google.com/?ion=1&espv=2#q=predictive%20fitness%20luksza">
+								Luksza and Lassig 2014
+							</a>
+						</div>
+					<p>Approach: Use clade growth rates
+					<p>Favor clades with epitope changes
+					<p>Disfavor clades with other substitutions
+				</section>
+				
+				<section>
+					<h3>Model selection</h3>
+					<img src="images/luksza_models.png">
+						<div class="citation">
+							<a href="https://www.google.com/?ion=1&espv=2#q=predictive%20fitness%20luksza">
+								Luksza and Lassig 2014
+							</a>
+						</div>
+				</section>
+				
+				<section>
+					<h3>Performance</h3>
+					<img src="images/luksza_performance.png">
+						<div class="citation">
+							<a href="https://www.google.com/?ion=1&espv=2#q=predictive%20fitness%20luksza">
+								Luksza and Lassig 2014
+							</a>
+						</div>
+						</section>
+				
+				<section data-background="#99CCFF">
+					<h3>What other models would you test?</h3>
+				</section>
+				
+				<section data-background="#99CCFF">
+					<h3>What limits prediction with other pathogens?</h3>
+				</section>
+
+
+		</div>
+
+		<script src="../reveal/lib/js/head.min.js"></script>
+		<script src="../reveal/js/reveal.min.js"></script>
+		<script src="../reveal/js/config.js"></script>
+
+	</body>
+</html>
