@@ -1,4 +1,4 @@
-# Summary statistics of population models with selection.
+# Summary statistics of population models with selection
 
 This is all assuming a Wright-Fisher population of discrete non-overlapping generations. Generally, although it's possible to describe in neutral population dynamics in analytic detail, very little cannot be done directly once selection is involved.
 
