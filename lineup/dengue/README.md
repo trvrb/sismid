@@ -7,7 +7,7 @@
 
 ### Important features
 
-* [Antibody dependent enhancement](https://en.wikipedia.org/wiki/Antibody-dependent_enhancement)
+* [Antibody dependent enhancement](https://en.wikipedia.org/wiki/Antibody-dependent_enhancement). What's going on here?
 
 ### Serology
 
