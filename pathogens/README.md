@@ -3,6 +3,7 @@
 ### Introduction to pathogen diversity
 
 * [Slides](http://bedford.io/projects/sismid/pathogens/slides.html)
+* *Exercise: Assigning study groups and picking pathogens*
 
 ### Additional resources
 
