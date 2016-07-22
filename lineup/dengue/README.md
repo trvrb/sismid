@@ -1,25 +1,25 @@
 # Dengue
 
-## Introduction
+### Introduction
 
 * [ViralZone: Flavivirus](http://viralzone.expasy.org/all_by_protein/24.html)
 * [Wikipedia: Dengue virus](https://en.wikipedia.org/wiki/Dengue_virus)
 
-## Important features
+### Important features
 
 * [Antibody dependent enhancement](https://en.wikipedia.org/wiki/Antibody-dependent_enhancement)
 
-## Serology
+### Serology
 
 * Fig 2 in [Katzelnick et al. 2015.](katzelnick-dengue-serology.pdf)
 
-## Timeseries
+### Timeseries
 
 * Fig 1 in [Reich et al. 2013.](reich-dengue-timeseries.pdf)
 * Fig 1 in [Recker et al. 2009.](recker-dengue-timeseries.pdf)
 * Fig 1 in [Adams et al. 2006.](adams-dengue-genetics.pdf)
 
-## Genetics
+### Genetics
 
 * Fig 1 in [Adams et al. 2006.](adams-dengue-genetics.pdf)
 * Fig 4 in [Rasmussen et al. 2013](rasmussen-dengue-sequence.pdf)
