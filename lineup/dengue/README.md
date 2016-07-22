@@ -11,16 +11,16 @@
 
 ## Serology
 
-* Fig 2 in [Katzelnick et al. 2015. "Dengue viruses cluster antigenically but not as discrete serotypes".](katzelnick-dengue-serology.pdf)
+* Fig 2 in [Katzelnick et al. 2015.](katzelnick-dengue-serology.pdf)
 
 ## Timeseries
 
-* Fig 1 in [Reich et al. 2013. "Interactions between serotypes of dengue highlight epidemiological impact of cross-immunity".](reich-dengue-timeseries.pdf)
-* Fig 1 in [Recker et al. 2009. "Immunological serotype interactions and their effect on the epidemiological pattern of dengue".](recker-dengue-timeseries.pdf)
-* Fig 1 in [Adams et al. 2006. "Cross-protective immunity can account for the alternating epidemic pattern of dengue virus serotypes circulating in Bangkok".](adams-dengue-genetics.pdf)
+* Fig 1 in [Reich et al. 2013.](reich-dengue-timeseries.pdf)
+* Fig 1 in [Recker et al. 2009.](recker-dengue-timeseries.pdf)
+* Fig 1 in [Adams et al. 2006.](adams-dengue-genetics.pdf)
 
 ## Genetics
 
-* Fig 1 in [Adams et al. 2006. "Cross-protective immunity can account for the alternating epidemic pattern of dengue virus serotypes circulating in Bangkok".](adams-dengue-genetics.pdf)
-* Fig 4 in [Rasmussen et al. "Reconciling Phylodynamics with Epidemiology: The Case of Dengue Virus in Southern Vietnam".](rasmussen-dengue-sequence.pdf)
-* Fig 1 and 2 in [Pyke et al. "Highly divergent dengue virus type 1 genotype sets a new distance record".](pyke-dengue-genetics.pdf)
+* Fig 1 in [Adams et al. 2006.](adams-dengue-genetics.pdf)
+* Fig 4 in [Rasmussen et al. 2013](rasmussen-dengue-sequence.pdf)
+* Fig 1 and 2 in [Pyke et al. 2016](pyke-dengue-genetics.pdf)
