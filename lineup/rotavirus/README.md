@@ -25,4 +25,5 @@
 ### Genetics 
 
 * Figures in [McDonald et al. 2009](http://journals.plos.org/plospathogens/article?id=10.1371%2Fjournal.ppat.1000634)
+* Figure 5 in [Dennis et al. 2014](http://jvi.asm.org/content/88/7/3789.long)
 
