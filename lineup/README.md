@@ -1,9 +1,10 @@
 # Lineup of example pathogens
 
 * [Dengue](dengue/)
-* [Norovirus](norovirus/)
-* [Swine flu](swine-flu/)
+* [Enterovirus 71](enterovirus/)
+* [HIV](hiv/)
 * [Malaria](malaria/)
+* [Norovirus](norovirus/)
 * [Pneumococcus](pneumo/)
 * [Rotavirus](rotavirus/)
-* [Enterovirus 71](enterovirus/)
+* [Swine flu](swine-flu/)
