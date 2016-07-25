@@ -23,7 +23,7 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Antigenic cartography
 * *Exercise: Antigenic map*
 * Original antigenic sin
-* *Exercise: Serological data for chosen pathogens*
+* *Exercise: Review serological data for chosen pathogens*
 
 ### [Multistrain models](models/)
 
@@ -44,7 +44,7 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Tips & tricks: insights from natural experiments
 * State-space reconstruction
 * *Exercise: Attractor reconstruction and convergent cross-mapping*
-* *Exercise: Timeseries data for chosen pathogens*
+* *Exercise: Reviewing timeseries data for chosen pathogens*
 
 ### [The coalescent and phylogenetics](sequences/)
 
@@ -65,17 +65,19 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Wright-Fisher with mutation, genetic drift and selection
 * *Exercise: Effects of positive and negative selection on population dynamics*
 * Tests of selection
-* *Exercise: Genetic data for chosen pathogens*
+* *Exercise: Reviewing genetic data for chosen pathogens*
 
 ### [Forecasting](forecasting/)
 
-* TBD
+* Mechanistic models
+* Nonlinear forecasting
+* Fitness model projections
 
 ## Day 3
 
-### [Synthesis](synthesis/)
+### [Synthesis](https://github.com/trvrb/sismid/wiki/Synthesis/)
 
-* Group presentations on specific pathogens
+* *Exercise: Group presentations on specific pathogens*
 
 ### [B cell selection and evolution](bcells/)
 
@@ -83,6 +85,10 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Clonal dynamics and repertoire diversity
 * Unsolved problems and vaccine design
 
+## Resources
+
+* [Pathogen lineup](lineup/)
+
 -----------------------------------
 
-All ccontents including slides, course materials and code are copyright 2015-2016 Sarah Cobey and Trevor Bedford. All slides / course materials (files ending in `.html` and `.md`) are licensed under [Creative Commons Attribution 4.0](CC-LICENSE.txt) and all code (files ending in `.py` and `.ipynb`) is licensed under an [MIT License](MIT-LICENSE.txt).
+All contents including slides, course materials and code are copyright 2015-2016 Sarah Cobey and Trevor Bedford. All slides / course materials (files ending in `.html` and `.md`) are licensed under [Creative Commons Attribution 4.0](CC-LICENSE.txt) and all code (files ending in `.py` and `.ipynb`) is licensed under an [MIT License](MIT-LICENSE.txt).
