@@ -1,5 +1,7 @@
 # Enterovirus 71
 
+![](enterovirus.jpg)
+
 ### Introduction
 
 * [Wikipedia: Enterovirus 71](https://en.wikipedia.org/wiki/Enterovirus_71)

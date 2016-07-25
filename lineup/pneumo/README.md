@@ -1,5 +1,7 @@
 # Pneumococcus
 
+![](pneumo.jpg)
+
 ### Introduction
 
 * [Wikipedia: Streptococcus pneumoniae](https://en.wikipedia.org/wiki/Streptococcus_pneumoniae)

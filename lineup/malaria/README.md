@@ -1,5 +1,7 @@
 # Malaria
 
+![](malaria.png)
+
 ### Introduction
 
 * [CDC: Malaria life cycle](https://www.cdc.gov/malaria/about/biology/)

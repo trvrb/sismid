@@ -1,5 +1,7 @@
 # Rotavirus
 
+![](rotavirus.jpg)
+
 ### Introduction
 
 * [Wikipedia: Rotavirus](https://en.wikipedia.org/wiki/Rotavirus)

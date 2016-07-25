@@ -1,5 +1,7 @@
 # Dengue
 
+![](dengue.png)
+
 ### Introduction
 
 * [ViralZone: Flavivirus](http://viralzone.expasy.org/all_by_protein/24.html)

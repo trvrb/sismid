@@ -1,7 +1,10 @@
 # Swine flu
 
+![](flu.jpg)
+
 ### Introduction
 
+* [ViralZone: Influenza A](http://viralzone.expasy.org/all_by_species/6.html)
 * [Wikipedia: Swine Influenza](https://en.wikipedia.org/wiki/Swine_influenza)
 
 ### Important features

@@ -1,5 +1,7 @@
 # Norovirus
 
+![](norovirus.jpg)
+
 ### Introduction
 
 * [ViralZone: Norovirus](http://viralzone.expasy.org/all_by_species/194.html)
