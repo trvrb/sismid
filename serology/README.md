@@ -4,4 +4,7 @@
 
  * [Slides](http://bedford.io/projects/sismid/serology/slides.html)
 
-### Exercise: investigate pathogen-specific serological data
+### Serological data across pathogens
+
+ * *Exercise: investigate pathogen-specific serological data*
+ 
