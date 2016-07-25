@@ -2,11 +2,11 @@
 
 ### Introduction to phylogenetic inference
 
- * [Slides](http://bedford.io/projects/sismid/sequences/phylogenetics.html)
+ * [Slides](phylogenetics.html)
  
 ### Introduction to Kingman's coalescent
 
- * [Slides](http://bedford.io/projects/sismid/sequences/coalescent.html)
+ * [Slides](coalescent.html)
 
 ### BEAST Practical
 

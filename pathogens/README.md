@@ -2,7 +2,7 @@
 
 ### Introduction to pathogen diversity
 
-* [Slides](http://bedford.io/projects/sismid/pathogens/slides.html)
+* [Slides](slides.html)
 
 ### Pathogen comparison
 

@@ -28,4 +28,4 @@ There are *N* individuals in the population. Every generation, each individual h
  
 ### Conclusions on effects of selection and how to detect them
 
- * [Tests of selection](http://bedford.io/projects/sismid/selection/tests-of-selection.html)
+ * [Tests of selection](tests-of-selection.html)
