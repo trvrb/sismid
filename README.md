@@ -38,12 +38,9 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 ### [Timeseries analysis](timeseries/)
 
 * Maximum likelihood
-* *Exercise: Inference for a multistrain SIR model*
-* Bayesian approaches
 * When to trust a model
 * Tips & tricks: insights from natural experiments
 * State-space reconstruction
-* *Exercise: Attractor reconstruction and convergent cross-mapping*
 * *Exercise: Reviewing timeseries data for chosen pathogens*
 
 ### [The coalescent and phylogenetics](sequences/)
