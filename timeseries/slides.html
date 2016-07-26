@@ -50,7 +50,7 @@
 				<p>Simulate data given a model and some parameters
 				<p>Evaluate how likely the observed data are, given the simulated data
 				<p>Tweak the parameters/model to make the observations more likely
-				<p>Is this model a superior explanation than other models?
+				<p>Is this model superior to other models?
 			</section>
 			
 				<section>
@@ -68,7 +68,8 @@
 				<section>
 					<h3>What's $D$?</h3>
 					<p>Case counts at different times
-					<p>or infection times with different strains at different times
+					<p>Sequences
+					<p>Titers
 					<p>or some composite of observations
 				</section>
 				
@@ -79,7 +80,7 @@
 				</section>
 				
 				<section>
-					<h3>Finding the MLE</h3>
+					<h3>Finding the maximum likelihood</h3>
 					<p>Can be analytically tractable
 					<p>For our models, it's not
 				</section>
@@ -89,15 +90,14 @@
 					<p>Brute force
 					<p>Derivative-based methods
 					<p>Simplex
-					<p>Simulated annealing (Metropolis algorithm)
+					<p>Simulated annealing
 					<p>Sequential Monte Carlo
 					<p>Many others... but for us, few tried and true
 				</section>
 				
 				<section>
-					<h3>Likelihood profiles</h3>
-					<p>Hold parameter(s) constant, fit the rest
-					<img class="stretch" src="images/profile.png">
+					<h3>Interacting dengue serotypes</h3>
+					<img class="stretch" src="images/dengue.png">
 						<div class="citation">
 							<a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3730691/pdf/rsif20130414.pdf">
 								Reich et al. 2013
@@ -106,8 +106,9 @@
 				</section>
 				
 				<section>
-					<h3>Interacting dengue serotypes</h3>
-					<img class="stretch" src="images/dengue.png">
+					<h3>Likelihood profiles</h3>
+					<p>Hold parameter(s) constant, fit the rest
+					<img class="stretch" src="images/profile.png">
 						<div class="citation">
 							<a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3730691/pdf/rsif20130414.pdf">
 								Reich et al. 2013
@@ -143,8 +144,8 @@
 				
 				<section>
 					<h3>Likelihood with longitudinal data</h3>
-					<p>Data: Infection and clearance times ($t_i$, $t_c$) and covariates $\vec{\theta}$
-					<p>Model: Force of infection $\lambda_i=\sigma\beta I_i$ with $\beta=f(\beta_i,\vec{\theta})$
+					<p>Data: Infection and clearance times ($t_i$, $t_c$) for many people
+					<p>Model: Force of infection $\lambda_i=\beta I_i$
 					<p>Gamma-distributed duration of infection (shape $k$, scale $\theta$)
 					<img src="images/sylvia_likelihood.png">
 				</section>
@@ -339,7 +340,7 @@
 						</section>
 				
 				<section data-background="#99CCFF">
-					<h3>What will observation error do?</h3>
+					<h3>What about non-interacting variables sharing a driver?</h3>
 				</section>
 				
 				<section>
