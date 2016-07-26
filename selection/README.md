@@ -10,7 +10,7 @@ There are *N* individuals in the population. Every generation, each individual h
 
 ### Wright-Fisher model with mutation and genetic drift
 
- * [iPython notebook](https://github.com/trvrb/sismid/blob/master/wright-fisher/mutation-drift.ipynb)
+ * [iPython notebook](https://github.com/trvrb/sismid/blob/master/selection/mutation-drift.ipynb)
 
  * [Visualization of Wright-Fisher haplotype dynamics](http://bedford.io/projects/haplotypes/)
 
@@ -20,7 +20,7 @@ There are *N* individuals in the population. Every generation, each individual h
 
 ### Wright-Fisher model with mutation, genetic drift and selection
 
- * [iPython notebook](https://github.com/trvrb/sismid/blob/master/wright-fisher/mutation-drift-selection.ipynb)
+ * [iPython notebook](https://github.com/trvrb/sismid/blob/master/selection/mutation-drift-selection.ipynb)
 
  * [*Exercise on the effects of positive and negative selection on population dynamics*](mutation-drift-selection-exercise.md)
 
