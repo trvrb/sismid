@@ -16,6 +16,7 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 ### [Immunity and Immune-mediated competition](immunity/) 
 
 * The biological basis of antigenic diversity: innate, cellular, and humoral responses
+* *Exercise: Review main immune interactions for chosen pathogens*
 
 ### [Serology](serology/)
 
