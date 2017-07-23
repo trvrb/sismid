@@ -15,7 +15,7 @@
 
 		<link rel="stylesheet" href="../reveal/css/reveal.min.css">
 		<link rel="stylesheet" href="../reveal/css/theme/trvrb.css" id="theme">
-		<link rel="stylesheet" href="../reveal/css/font-awesome/css/font-awesome.min.css">			
+		<link rel="stylesheet" href="../reveal/css/font-awesome/css/font-awesome.min.css">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
@@ -41,10 +41,10 @@
 				<section data-background="#7F85DB">
 					<h2 class="title">Serology</h2>
 				</section>
-				
+
 				<section>
 					<h3>Serological assays measure circulating antibodies that bind to or neutralize a specific antigen</h3>
-				</section>				
+				</section>
 
 				<section>
 					<h3>Antibody response curve</h3>
@@ -60,7 +60,7 @@
 						</a>
 					</div>
 				</section>
-				
+
 				<section>
 					<h3>Antibodies bind to virus</h3>
 					<img class="stretch" src="images/antibody_contact.jpg">
@@ -69,7 +69,7 @@
 							Lee et al. 2012
 						</a>
 					</div>
-				</section>				
+				</section>
 
 				<section>
 					<h3>Influenza hemagglutination inhibition (HI) assay</h3>
@@ -127,20 +127,20 @@
 							<td><b>Serum A</b></td>
 							<td><b>Serum B</b></td>
 						</tr>
-				
+
 						<tr>
 							<td><b>Virus A</b></td>
 							<td>2560</td>
-							<td>80</td>						
+							<td>80</td>
 						</tr>
 						<tr>
 							<td><b>Virus B</b></td>
 							<td>160</td>
-							<td>1280</td>						
-						</tr>	
+							<td>1280</td>
+						</tr>
 					</table>
 				</section>
-				
+
 				<section>
 					<h3><i>Cartography exercise: example</i></h3>
 					<br>
@@ -153,20 +153,20 @@
 							<td><b>Serum A</b></td>
 							<td><b>Serum B</b></td>
 						</tr>
-				
+
 						<tr>
 							<td><b>Virus A</b></td>
 							<td>0</td>
-							<td>4</td>						
+							<td>4</td>
 						</tr>
 						<tr>
 							<td><b>Virus B</b></td>
 							<td>4</td>
-							<td>0</td>						
-						</tr>	
+							<td>0</td>
+						</tr>
 					</table>
 				</section>
-				
+
 				<section>
 					<h3><i>Cartography exercise: example</i></h3>
 					<br>
@@ -174,7 +174,7 @@
 					Position elements in 2D space so that distances are recapitulated.
 					</p>
 					<img class="stretch" src="images/cartography_example.png">
-				</section>								
+				</section>
 
 				<section>
 					<h3><i>Cartography exercise: data</i></h3>
@@ -187,41 +187,36 @@
 							<td><b>Serum C</b></td>
 							<td><b>Serum D</b></td>
 						</tr>
-				
+
 						<tr>
 							<td><b>Virus A</b></td>
 							<td>2560</td>
-							<td>80</td>	
+							<td>80</td>
 							<td>640</td>
-							<td>640</td>						
+							<td>320</td>
 						</tr>
 						<tr>
 							<td><b>Virus B</b></td>
 							<td>160</td>
-							<td>1280</td>	
-							<td>640</td>	
-							<td>640</td>				
+							<td>1280</td>
+							<td>160</td>
+							<td>80</td>
 						</tr>
 						<tr>
 							<td><b>Virus C</b></td>
 							<td>320</td>
-							<td>160</td>
+							<td>40</td>
 							<td>5120</td>
-							<td>640</td>						
-						</tr>	
+							<td>40</td>
+						</tr>
 						<tr>
 							<td><b>Virus D</b></td>
-							<td>640</td>
 							<td>320</td>
-							<td>1280</td>	
-							<td>2560</td>					
-						</tr>													
+							<td>40</td>
+							<td>80</td>
+							<td>2560</td>
+						</tr>
 					</table>
-					<br>
-					<p>
-						Hints: Titers won't match perfectly, but will match well. All points can 
-						fit in previous slide's grid. 
-					</p>
 				</section>
 
 				<section>
@@ -229,73 +224,9 @@
 					<img class="stretch" src="images/cartography_3.png">
 					<div class="citation">
 						<a href="http://www.sciencemag.org/content/305/5682/371.short">
-							Smith et al. 2004
+							Smith et al 2004
 						</a>
 					</div>
-				</section>
-
-				<section>
-					<h3>Bayesian MDS model</h3>
-					<img class="stretch" src="images/bmds_cartography_1.png">
-					<div class="citation">
-						<a href="http://elifesciences.org/content/3/e01914">
-							Bedford et al. 2014
-						</a>
-					</div>
-				</section>
-
-				<section>
-					<h3>BMDS model for H3N2 influenza</h3>
-					<img class="stretch" src="images/bmds_cartography_2.png">
-					<div class="citation">
-						<a href="http://elifesciences.org/content/3/e01914">
-							Bedford et al. 2014
-						</a>
-					</div>
-				</section>
-
-				<section>
-					<h3>H3N2 cartography shows antigenic drift</h3>
-					<img class="stretch" src="images/bmds_cartography_3.png">
-				</section>
-
-				<section data-background="#7F97DF">
-					<h2 class="title">Integrating phylogeny and cartography</h2>
-				</section>
-
-				<section>
-					<h3>H3N2 phylogeny</h3>
-					<img class="stretch" src="images/cartography_diffusion_1.png">
-				</section>
-
-				<section>
-					<h3>BMDS model with phylogenetic diffusion prior</h3>
-					<img class="stretch" src="images/cartography_diffusion_2.png">
-				</section>
-
-				<section>
-					<h3>Phylogenetic diffusion process</h3>
-					<img class="stretch" src="images/cartography_diffusion_3.png">
-					<div class="citation">
-						<a href="http://mbe.oxfordjournals.org/content/27/8/1877.short">
-							Lemey et al. 2010
-						</a>
-					</div>					
-				</section>
-
-				<section>
-					<h3>H3N2 cartographic diffusion</h3>
-					<img class="stretch" src="images/cartography_diffusion_4.png">
-					<div class="citation">
-						<a href="http://elifesciences.org/content/3/e01914">
-							Bedford et al. 2014
-						</a>
-					</div>					
-				</section>
-
-				<section>
-					<h3>Antigenic drift occurs on the trunk of the phylogeny</h3>
-					<img class="stretch" src="images/cartography_diffusion_5.png">
 				</section>
 
 				<section>
@@ -303,38 +234,38 @@
 					<img class="stretch" src="images/russell_map.png">
 					<div class="citation">
 						<a href="http://www.sciencemag.org/content/320/5874/340.short">
-							Russell et al. 2008
+							Russell et al 2008
 						</a>
-					</div>					
+					</div>
 				</section>
-				
+
 				<section>
 					<h3>Primitive lineages die out, while advanced lineages persist</h3>
-					<img class="stretch" src="images/russell_tree.png">				
-				</section>			
-
-				<section>
-					<h3>Other human influenza lineages</h3>
-					<img class="stretch" src="images/lineages_cartography_1.png">				
-				</section>
-				
-				<section>
-					<h3>Each lineage evolves antigenically</h3>
-					<img class="stretch" src="images/lineages_cartography_2.png">				
-				</section>	
-				
-				<section>
-					<h3>But at different rates</h3>
-					<img class="stretch" src="images/lineages_cartography_3.png">				
+					<img class="stretch" src="images/russell_tree.png">
 				</section>
 
-				<section data-background="#82A8DD">
-					<h2 class="title">Original antigenic sin</h2>				
+				<section>
+					<h3>Antigenic evolution leads to clade turnover</h3>
+					<img class="stretch" src="images/flu_h3n2_tree.png">
 				</section>
-				
-				<section data-background="images/garden.jpg">		
-				</section>				
-				
+
+				<section>
+					<h3>The WHO has to keep updating vaccine strain to keep up with ongoing evolution</h3>
+					<img class="stretch" src="images/flu_vaccine_updates.png">
+				</section>
+
+				<section>
+					<h3>Vaccine strains map to drift events</h3>
+					<img class="stretch" src="images/flu_h3n2_tree_vaccines.png">
+				</section>
+
+				<section>
+					<h2>Original antigenic sin</h2>
+				</section>
+
+				<section data-background="images/garden.jpg">
+				</section>
+
 				<section>
 					<p>
 						"Humans vaccinated against influenza produce antibodies against the immunizing antigen, but
@@ -345,48 +276,48 @@
 						<a href="http://jem.rupress.org/content/124/3/331.abstract">
 							Fazekas de St. Groth and Webster 1966
 						</a>
-					</div>					
-				</section>				
+					</div>
+				</section>
 
 				<section>
 					<h3>Plotting human HI titers through time</h3>
-					<img class="stretch" src="images/landscapes_1.png">	
+					<img class="stretch" src="images/landscapes_1.png">
 					<div class="citation">
 						<a href="http://www.sciencemag.org/content/346/6212/996.abstract">
-							Fonville et al. 2014
+							Fonville et al 2014
 						</a>
-					</div>								
+					</div>
 				</section>
-				
+
 				<section>
 					<h3>Infection transiently raises titers</h3>
-					<img class="stretch" src="images/landscapes_2.png">	
+					<img class="stretch" src="images/landscapes_2.png">
 					<div class="citation">
 						<a href="http://www.sciencemag.org/content/346/6212/996.abstract">
-							Fonville et al. 2014
+							Fonville et al 2014
 						</a>
-					</div>								
+					</div>
 				</section>
-				
+
 				<section>
 					<h3>Vaccination shows a similar effect</h3>
-					<img class="stretch" src="images/landscapes_3.png">	
+					<img class="stretch" src="images/landscapes_3.png">
 					<div class="citation">
 						<a href="http://www.sciencemag.org/content/346/6212/996.abstract">
-							Fonville et al. 2014
+							Fonville et al 2014
 						</a>
-					</div>								
-				</section>	
-				
+					</div>
+				</section>
+
 				<section>
 					<h3>Titers increase more to older viruses, not to antigenically matched viruses</h3>
-					<img class="stretch" src="images/landscapes_4.png">	
+					<img class="stretch" src="images/landscapes_4.png">
 					<div class="citation">
 						<a href="http://www.sciencemag.org/content/346/6212/996.abstract">
-							Fonville et al. 2014
+							Fonville et al 2014
 						</a>
-					</div>								
-				</section>											
+					</div>
+				</section>
 
 			</div>
 
