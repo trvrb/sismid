@@ -14,15 +14,15 @@ This is all assuming a Wright-Fisher population of discrete non-overlapping gene
 
 A new mutant appears in the population at an initial frequency *p* of `$1/N$`. It has a chance of fixing of
 
-`$$ \mathrm{Pr}(\mathrm{fix}) = \frac{ 1-e^{-2s} }{ 1-e^{-2Ns} } $$`.
+{% eq \mathrm{Pr}(\mathrm{fix}) = \frac{ 1-e^{-2s} }{ 1-e^{-2Ns} } %}
 
-In the limit as `$\lim_{N \to \infty}$`, this becomes `$\mathrm{Pr}(\mathrm{fix}) \approx 2s$`.
+In the limit as {% eqinline \lim_{N \to \infty} %}, this becomes {% eqinline \mathrm{Pr}(\mathrm{fix}) \approx 2s %}.
 
 With different fixed population sizes, it's clear that larger selective effects lead to greater probabilities of fixation:
 
 ![](images/chance_of_fixation_starting.png)
 
-Looking at this as in terms of log fixation probability, it's clear that negative selection is more efficient than positive selection. 
+Looking at this as in terms of log fixation probability, it's clear that negative selection is more efficient than positive selection.
 
 ![](images/chance_of_fixation_starting_log.png)
 
@@ -30,11 +30,10 @@ It's also clear that larger population sizes are more efficient at purging delet
 
 We also know the general probability of an allele fixing that is at current frequency *p*. This is
 
-`$$ \mathrm{Pr}(\mathrm{fix}) = \frac{ 1-e^{-2Nsp} }{ 1-e^{-2Ns} } $$`.
+{% eq \mathrm{Pr}(\mathrm{fix}) = \frac{ 1-e^{-2Nsp} }{ 1-e^{-2Ns} } %}.
 
 This gives the following relationship between *Ns* and *p* and chance of fixation.
 
 ![](images/chance_of_fixation_general.png)
 
 Here, you can see that *N* and *s* only appear together as *Ns*. This means that for probability of fixation, only the scaled selective effect matters. Furthermore, it can be seen that once a positively selected allele reaches appreciable frequency in the population it will almost certainly fix. This is because at this point deterministic selective effects take over from random genetic drift that can cause an allele to be randomly lost while it's still at low frequency.
- 
