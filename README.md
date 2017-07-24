@@ -89,6 +89,7 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * [Pathogen lineup](lineup/)
 * [Pathogen wiki](https://github.com/trvrb/sismid/wiki/Synthesis)
 * [PDF slides](https://github.com/trvrb/sismid/tree/master/slides)
+* [Python notes](python.md)
 
 -----------------------------------
 
