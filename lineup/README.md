@@ -5,6 +5,7 @@
 * [HIV](hiv/)
 * [Malaria](malaria/)
 * [Norovirus](norovirus/)
+* [Pertussis](pertussis/)
 * [Pneumococcus](pneumo/)
 * [Rotavirus](rotavirus/)
 * [Swine flu](swine-flu/)
