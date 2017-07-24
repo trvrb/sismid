@@ -6,12 +6,13 @@ This gives the full stack of scientific Python software: https://www.continuum.i
 
 ## More future-proof install on Mac
 
-* Install [Homebrew](https://brew.sh/)
+Install [Homebrew](https://brew.sh/)
 
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-* Install Python with Homebrew
+
+Install Python with Homebrew
 
 ```
 brew install gcc
@@ -19,7 +20,7 @@ brew install python
 brew install zmq
 ```
 
-* Install Python packages
+Install Python packages
 
 ```
 pip install numpy
