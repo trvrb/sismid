@@ -27,6 +27,12 @@ The function calculates the state variables over time at `step_size` intervals.
 Note that it produces estimates of the state variables over a different schedule (`t=0` to `t=end_time` at intervals of `output_interval`).
 In addition to the step sizes for integration and outputs, the `two_strain` function requires parameters and initial conditions.
 
+Run this with:
+
+```
+python plot_two_strain_ts.py
+```
+
 > (4) Modify the parameters so that the strains do not interact, and examine the resulting time series. How can you confirm that the integration is accurate?
 
 > (5) Without allowing for interaction, see if you can adjust the parameters to obtain the following scenarios: (i) the strains have biennial, out-of-phase dynamics, and (ii) both strains are chaotic. Do you see any recurring patterns in the chaotic dynamics?
@@ -48,6 +54,12 @@ For simplicity, we'll create our bifurcation diagrams using the same initial con
 We won't measure precisely whether we have obtained equilibrium conditions--we'll simply simulate for a long time, and sample the few final time points.
 
 > (7) Carefully choose reasonable default values for all your parameters. Then create bifurcation diagrams (`plot_two_strain_bd.py`), independently sweeping over `alpha`, `a`, and `beta` for one strain. Be modest in creating your first diagram, and record how long it takes to run. Check your results by simulating a few time series at different points.
+
+Run this with:
+
+```
+python plot_two_strain_bd.py 
+```
 
 > (8) Is reduced transmission following infection with the heterologous strain dynamically equivalent to reduced susceptibility?
 
