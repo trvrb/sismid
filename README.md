@@ -13,7 +13,7 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Antigenically (and otherwise) variable pathogens
 * *Exercise: Assigning study groups and picking pathogens*
 
-### [Immunity and Immune-mediated competition](immunity/) 
+### [Immunity and Immune-mediated competition](immunity/)
 
 * The biological basis of antigenic diversity: innate, cellular, and humoral responses
 * *Exercise: Review main immune interactions for chosen pathogens*
@@ -88,6 +88,7 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 
 * [Pathogen lineup](lineup/)
 * [Pathogen wiki](https://github.com/trvrb/sismid/wiki/Synthesis)
+* [PDF slides](https://github.com/trvrb/sismid/tree/master/slides)
 
 -----------------------------------
 
