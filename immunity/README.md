@@ -2,6 +2,12 @@
 
 * [Slides](slides.html)
 
+
+### Pathogen comparison
+
+* *Exercise: Review main immune interactions for chosen pathogens*
+ * *Question: What is the main source of immunity against the pathogen? Primarily B cell or primarily T cell?*
+
 ### Additional resources
 
 * New special issue of the *Philosophical Transactions of the Royal Society*, [Within-host dynamics of infection: from ecological insights to evolutionary predictions](http://rstb.royalsocietypublishing.org/content/370/1675)
