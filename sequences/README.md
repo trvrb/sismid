@@ -1,12 +1,12 @@
 # Sequence analysis
 
-### Introduction to phylogenetic inference
-
- * [Slides](phylogenetics.html)
- 
 ### Introduction to Kingman's coalescent
 
  * [Slides](coalescent.html)
+
+### Introduction to phylogenetic inference
+
+ * [Slides](phylogenetics.html)
 
 ### BEAST Practical
 
