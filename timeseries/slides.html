@@ -15,7 +15,7 @@
 
 		<link rel="stylesheet" href="../reveal/css/reveal.min.css">
 		<link rel="stylesheet" href="../reveal/css/theme/trvrb.css" id="theme">
-		<link rel="stylesheet" href="../reveal/css/font-awesome/css/font-awesome.min.css">			
+		<link rel="stylesheet" href="../reveal/css/font-awesome/css/font-awesome.min.css">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
@@ -28,7 +28,7 @@
 	<body>
 
 		<div style="position: absolute; top:10px; left:10px; z-index:100;">
-			<a href="http://bedford.io/projects/sismid/fitting/">
+			<a href="http://bedford.io/projects/sismid/timeseries/">
 				<i class="fa fa-times-circle" style="color: #bbb;"></i>
 			</a>
 		</div>
@@ -37,14 +37,14 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				
+
 				<section data-background="#CC3333">
 					<h2 class="title">Fitting mechanistic models</h2>
 				</section>
 
 			<section data-background="images/map.jpg">
 			</section>
-			
+
 			<section>
 				<h3>A general approach to model fitting</h3>
                 <p>Pick a model and some parameters
@@ -52,19 +52,19 @@
 				<p>Tweak the parameters/model to make the observations more likely
 				<p>Is this model superior to other models?
 			</section>
-			
+
 				<section>
 					<h3>Maximum likelihood</h3>
 					<p>Parameter values that make the observed data most likely
 				</section>
-				
+
 				<section>
 					<h3>Notation</h3>
 					<p>Observed variable $D$ depends on unknown parameter $\theta$
 					<p>Probability density function of $D$ is $f_{\theta}$
 					<p>$$L_d(\theta)=f_{\theta}(d)$$
 				</section>
-				
+
 				<section>
 					<h3>What's $D$?</h3>
 					<p>Case counts at different times
@@ -72,19 +72,19 @@
 					<p>Titers
 					<p>or some composite of observations
 				</section>
-				
+
 				<section>
 					<h3>Maximizing the likelihood</h3>
 					<p>means maximizing the log-likelihood
 					<p>or minimizing the negative log-likelihood
 				</section>
-				
+
 				<section>
 					<h3>Finding the maximum likelihood</h3>
 					<p>Can be analytically tractable
 					<p>For our models, it's not
 				</section>
-				
+
 				<section>
 					<h3>Likelihood optimization</h3>
 					<p>Brute force
@@ -94,7 +94,7 @@
 					<p>Sequential Monte Carlo
 					<p>Many others... but few tried and true
 				</section>
-				
+
 				<section>
 					<h3>Interacting dengue serotypes</h3>
 					<img class="stretch" src="images/dengue.png">
@@ -104,7 +104,7 @@
 							</a>
 						</div>
 				</section>
-				
+
 				<section>
 					<h3>Likelihood profiles</h3>
 					<p>Hold parameter(s) constant, fit the rest
@@ -115,8 +115,8 @@
 							</a>
 						</div>
 				</section>
-				
-				
+
+
 				<section>
 					<h3>Bayesian approaches</h3>
 					<br>
@@ -128,7 +128,7 @@
 					<p>where $p(D\rvert\theta)$ is the likelihood
 					<p>and $p(\theta\rvert D)$ is the posterior density
 				</section>
-				
+
 				<section>
 					<h3>Bayesian optimization</h3>
 					<p>Markov Chain Monte Carlo
@@ -137,11 +137,11 @@
 					<p>Hybrid/Hamiltonian Monte Carlo
 					<p>Many others
 				</section>
-				
+
 				<section>
 					<h3><a href="http://cobeylab.uchicago.edu/mcmc/intro/">Introduction to MCMC</a></h3>
 				</section>
-				
+
 				<section>
 					<h3>Likelihood with longitudinal data</h3>
 					<p>Data: Infection and clearance times ($t_i$, $t_c$) for many people
@@ -149,11 +149,11 @@
 					<p>Gamma-distributed duration of infection (shape $k$, scale $\theta$)
 					<img src="images/sylvia_likelihood.png">
 				</section>
-				
+
 				<section data-background="#99CCFF">
 					<h3>This model is biased. Can you see why?</h3>
 				</section>
-				
+
 				<section>
 					<h3>Simulation-based inference</h3>
 					<p>e.g., R-package <a href="https://cran.r-project.org/web/packages/pomp/index.html">pomp</a>
@@ -164,7 +164,7 @@
 						</a>
 					</div>
 				</section>
-				
+
                 <section>
                     <h3>A simple model of HPV</h3>
                     <img src="images/hpv_schematic.png">
@@ -175,7 +175,7 @@
                         </a>
                     </div>
                 </section>
-                
+
                 <section>
                     <h3>Past infection raises risk, even for celibate</h3>
                     <img class="stretch" src="images/hpv_profiles.png">
@@ -185,13 +185,13 @@
                             </a>
                         </div>
                 </section>
-				
+
 				<section>
 					<h3>Probes and arbitrary metrics</h3>
 					<p>Approximate Bayesian Computation
 					<p>Time-series probes
 				</section>
-				
+
 				<section>
 					<h3>Phases insufficient to infer interaction</h3>
 					<img class="stretch" src="images/phase.png">
@@ -201,7 +201,7 @@
 						</a>
 						</div>
 				</section>
-				
+
 				<section>
 					<h3>Challenges fitting multistrain models</h3>
 					<p>Many parameters
@@ -212,7 +212,7 @@
 				<section data-background="#99CCFF">
 					<h3>When should we trust a model?</h3>
 				</section>
-				
+
 				<section>
 					<h3>Model "validation"</h3>
 					<p>Confirm convergence
@@ -221,7 +221,7 @@
 					<p>Out-of-sample prediction
 					<p>Replicate on simulated data
 				</section>
-				
+
 				<section>
 					<h3>Gauge the power of your data</h3>
 					<img class="stretch" src="images/ts_length.png">
@@ -231,17 +231,17 @@
 							</a>
 						</div>
 				</section>
-				
-				
+
+
 				<section data-background="#99CCFF">
 					<h3>(but this sounds so hard)</h3>
 				</section>
-				
-				
+
+
 				<section data-background="#CC3333">
 					<h2 class="title">State-space reconstruction</h2>
 				</section>
-				
+
 				<section>
 					<h3>A system with two state variables</h3>
 					<br>
@@ -252,17 +252,17 @@
 					<p> hare birth rate $a$, predation rate $b$,
 					<p> consumption rate $c$, death rate $d$ </p>
 				</section>
-				
+
 				<section>
 					<h3>Solve for H(t), L(t) by numerical integration</h3>
 					<img class="stretch" src="images/hare_lynx_ts.png">
 						</section>
-				
+
 				<section>
 					<h3>Attractor is a limit cycle</h3>
 					<img class="stretch" src="images/hare_lynx_phase_portrait.png">
 						</section>
-				
+
 				<section>
 					<h3>A more complex system</h3>
 					<br>
@@ -271,7 +271,7 @@
 					<p> $$z'=xy-\beta z$$</p>
 					<br>
 				</section>
-				
+
 				<section>
 					<h3>The Lorenz attractor</h3>
 					<img class="stretch" src="images/lorenz.png">
@@ -282,7 +282,7 @@
 					<p>We can detect and predict without understanding
 					<p>New claim: We can infer causal interactions
 				</section>
-				
+
 				<section>
 					<h3>Takens' theorem</h3>
 					<p>Very roughly, the system's attractor is <b>diffeomorphic to</b> (can be mapped without loss of information) to the individual attractors of the state variables in some delay-embedding space.
@@ -292,7 +292,7 @@
 						</a>
 					</div>
 				</section>
-				
+
 				<section>
 					<h3>Manifolds and shadow manifolds</h3>
 					<img class="stretch" src="images/manifolds.png">
@@ -302,11 +302,11 @@
 							</a>
 						</div>
 						</section>
-				
+
 				<section>
 					<h3><a href="https://www.youtube.com/watch?v=rs3gYeZeJcw">Introduction to Takens' Theorem</a></h3>
 				</section>
-				
+
 				<section>
 					<h3>Causal inference</h3>
 					<p>Through their shadow manifolds, variables in the same dynamical system can predict each other.
@@ -317,7 +317,7 @@
 						</a>
 					</div>
 				</section>
-				
+
 				<section>
 					<h3>Convergent cross-mapping</h3>
 					<p>To infer if $X$ drives $Y$:
@@ -330,15 +330,15 @@
 						<li>If $\rho$ increases with more information on $\pmb{M}_Y$, $X$ drives $Y$.</li>
 					</ul>
 				</section>
-				
+
 				<section>
 					<h3><a href="https://www.youtube.com/watch?v=NrFdIz-D2yM">Introduction to convergent cross-mapping</a></h3>
 				</section>
-				
+
 				<section data-background="#99CCFF">
 					<h3>What do you expect $\rho$ to converge to?</h3>
 				</section>
-				
+
 				<section>
 					<h3>Deterministic toy model</h3>
 					<img class="stretch" src="images/toy_ts.png">
@@ -348,7 +348,7 @@
 							</a>
 						</div>
 						</section>
-				
+
 				<section>
 					<h3>Under determinism, perfect predictability</h3>
 					<img class="stretch" src="images/toy_rho.png">
@@ -358,11 +358,11 @@
 							</a>
 						</div>
 						</section>
-				
+
 				<section data-background="#99CCFF">
 					<h3>What about non-interacting variables sharing a driver?</h3>
 				</section>
-				
+
 				<section>
 					<h3>$X$ and $Y$ do not interact but share a driver</h3>
 					<img class="stretch" src="images/shared_driver.png">
@@ -372,7 +372,7 @@
 							</a>
 						</div>
 				</section>
-				
+
 				<section>
 					<h3>Applied to predator-prey cycles</h3>
 					<img class="stretch" src="images/gause.png">
@@ -382,7 +382,7 @@
 							</a>
 						</div>
 				</section>
-				
+
 				<section>
 					<h3>Cross-map lag shows direction</h3>
 					<img class="stretch" src="images/crossmap_lag.png">
@@ -392,7 +392,7 @@
 							</a>
 						</div>
 				</section>
-				
+
 				<section>
 					<h3>Anchovies, sardines, and SST</h3>
 					<img class="stretch" src="images/anchovy.png">
@@ -402,8 +402,8 @@
 							</a>
 						</div>
 						</section>
-				
-				
+
+
 				<section data-background="#99CCFF">
 					<h3> What are the assumptions?</h3>
 				</section>
@@ -418,7 +418,7 @@
 						</a>
 					</div>
 				</section>
-                
+
                 <section>
                     <h3>Claim: Absolute humidity drives influenza</h3>
                     <img class="stretch" src="images/deyle_pnas.jpg">
@@ -428,7 +428,7 @@
                             </a>
                         </div>
                 </section>
-				
+
                 <section>
                     <h3>But does flu drive humidity?</h3>
                     <img src="images/baskerville_pnas.gif">
@@ -438,7 +438,7 @@
                             </a>
                         </div>
                 </section>
-                
+
 				<section data-background="#CC3333">
 					<h2 class="title">Back to mechanistic models, then...</h2>
 				</section>
@@ -448,7 +448,7 @@
 					<p>Predict something else
 					<p>Exploit natural and unnatural disturbances
 				</section>
-				
+
 				<section>
 				<h3><i>Streptococcus pneumoniae</i></h3>
 					<p>Carried by 20-80% of young children
@@ -456,7 +456,7 @@
 					<p>>90 serotypes
 					<p>Some serotypes seem better at everything
 				</section>
-				
+
 				<section>
 					<h3>Little evidence for anticapsular immunity</h3>
 					<img class="stretch" src="images/anticapsular.png">
@@ -466,7 +466,7 @@
 							</a>
 						</div>
 				</section>
-				
+
 				<section>
 					<h3>Non-serotype-specific immunity</h3>
 					<img class="stretch" src="images/nonspecific.png">
@@ -476,7 +476,7 @@
 							</a>
 						</div>
 				</section>
-				
+
 				<section>
 					<h3>Fitted duration of carriage</h3>
 						<img class="stretch" src="images/carriage.png">
@@ -486,14 +486,14 @@
 							</a>
 						</div>
 				</section>
-				
+
 				<section>
 					<h3>Approach</h3>
 					<p>For each value of serotype-specific immunity, $\sigma$
 					<p>Fit the transmission rate to obtain 40% prevalence in kids
 					<p>(Later, sensitivity analysis on fixed parameters)
 				</section>
-				
+
 				<section>
 					<h3>Model reproduces diversity</h3>
 					<img class="stretch" src="images/simpson.png">
@@ -503,7 +503,7 @@
 							</a>
 						</div>
 				</section>
-				
+
 				<section>
 					<h3>...including rank-frequency</h3>
 					<img class="stretch" src="images/rank_freq.png">
@@ -513,7 +513,7 @@
 							</a>
 						</div>
 				</section>
-				
+
 				<section>
 					<h3>Other matched patterns</h3>
 					<p>Increase in serotype diversity with age
@@ -522,7 +522,7 @@
 					<p>Frequency of co-colonizations
 					<p>Epidemics of rarer serotypes
 					</section>
-				
+
 				<section>
 					<h3>Vaccinations as natural experiments</h3>
 					<img class="stretch" src="images/pcv7.png">
@@ -532,8 +532,8 @@
 							</a>
 						</div>
 				</section>
-				
-	
+
+
 			</div>
 
 		</div>

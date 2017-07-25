@@ -20,6 +20,12 @@ brew install python
 brew install zmq
 ```
 
+Install pip package manager
+
+```
+sudo easy_install pip
+```
+
 Install Python packages
 
 ```

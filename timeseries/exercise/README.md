@@ -3,10 +3,10 @@
 You saw earlier that depending on the parameters, you could expect annual, biennial, or more complex dynamics from two interacting strains--or from a single strain with seasonal forcing.
 The differences in these dynamics and the uncertainties of our parameter estimates make it essential to fit models rather than rely on correlations and other (often incorrect) rules of thumb.
 
-One of the most powerful methods for analyzing time series is a [sequential Monte Carlo](https://en.wikipedia.org/wiki/Particle_filter) (a.k.a. particle filtering) method, multiple iterated filtering for partial observed Markov Processes (MIF for [POMP](http://kingaa.github.io/pomp/)). 
-It's powerful because it incorporates both process noise and sampling error, thus reducing bias and overconfidence in the estimated parameters. 
+One of the most powerful methods for analyzing time series is a [sequential Monte Carlo](https://en.wikipedia.org/wiki/Particle_filter) (a.k.a. particle filtering) method, multiple iterated filtering for partial observed Markov Processes (MIF for [POMP](http://kingaa.github.io/pomp/)).
+It's powerful because it incorporates both process noise and sampling error, thus reducing bias and overconfidence in the estimated parameters.
 Links to tutorials on pomp are in the Additional Resources, and the developers (Ed Ionides and Aaron King) teach an entire SISMID course on the method, which this brief exercise doesn't replace!
-Pomp and its ilk are among the best methods for fitting stochastic nonlinear models, although they can be a little difficult to use in practice--they're computationally intense. 
+Pomp and its ilk are among the best methods for fitting stochastic nonlinear models, although they can be a little difficult to use in practice--they're computationally intense.
 Despite these methods' power, complex models, including multistrain models, may not converge in the time scale we care about.
 
 In our limited time, we'll briefly practice fitting our model using a simple error function and simple optimization routines for minimizing the error.
@@ -26,13 +26,15 @@ Nelder-Mead is a "derivative-free" method that picks *n*+1 parameter combination
 
 Most fitting methods in use are more complex, efficient, and flexible than the Nelder-Mead simplex. [See it in action.](https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method#/media/File:Nelder_Mead2.gif)
 
-> (1) Examine the error function in [`fitting.py`](https://github.com/trvrb/sismid/blob/master/fitting/exercise/fitting.py). What are its assumptions? Note that most of the variables that are modeled are effectively latent, or unobserved. (A property of [hidden Markov models](https://en.wikipedia.org/wiki/Hidden_Markov_model).)
+For this next section you'll need to download a Python script. You can download it [here](http://github.com/trvrb/sismid/blob/master/timeseries/exercise.zip). Download this and uncompress it.
 
-> (2) Referencing your bifurcation diagrams, pick parameters in an area associated with stable dynamics: moving a little to the left or the right of each parameter doesn't appear to change dynamics too much. (Of course, because we've considered only a few "slices" by varying one parameter at a time, we can't be really sure how stable each area is yet.) Update the parameters in [`fitting.py`](https://github.com/trvrb/sismid/blob/master/fitting/exercise/fitting.py) with these values, and generate sample observations. Now assume we don't know the true value of one of the parameters (ideally one you have examined in a bifurcation diagram). Guess that its true value is 10-20% higher or lower than its actual value, and try to fit.  
+> (1) Examine the error function in [`fitting.py`](http://github.com/trvrb/sismid/blob/master/fitting/exercise/fitting.py). What are its assumptions? Note that most of the variables that are modeled are effectively latent, or unobserved. (A property of [hidden Markov models](https://en.wikipedia.org/wiki/Hidden_Markov_model).)
+
+> (2) Referencing your bifurcation diagrams, pick parameters in an area associated with stable dynamics: moving a little to the left or the right of each parameter doesn't appear to change dynamics too much. (Of course, because we've considered only a few "slices" by varying one parameter at a time, we can't be really sure how stable each area is yet.) Update the parameters in [`fitting.py`](http://github.com/trvrb/sismid/blob/master/fitting/exercise/fitting.py) with these values, and generate sample observations. Now assume we don't know the true value of one of the parameters (ideally one you have examined in a bifurcation diagram). Guess that its true value is 10-20% higher or lower than its actual value, and try to fit.  
 
 > (3) Now try again, starting from a slightly different location.
 
-> (4) If your fits have been pretty good so far, start from a very different point, ideally one corresponding to different dynamics. 
+> (4) If your fits have been pretty good so far, start from a very different point, ideally one corresponding to different dynamics.
 
 > (5) Assume you have incorrectly estimated the duration of infection, but you do not know you've made a mistake. Change its value in `error_function`, but do not fit it. Repeat a successful optimization from step 2. How are your results affected?
 
@@ -43,4 +45,3 @@ Most fitting methods in use are more complex, efficient, and flexible than the N
 > (8) Add process noise to your model and attempt a previously successful fit.
 
 This exercise should have efficiently demonstrated the critical importance of using inference procedures that accommodate process and observation error, as well as the challenges fitting complex dynamics.
-
