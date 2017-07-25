@@ -13,7 +13,7 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Antigenically (and otherwise) variable pathogens
 * *Exercise: Assigning study groups and picking pathogens*
 
-### [Immunity and Immune-mediated competition](immunity/)
+### [Immunity and immune-mediated competition](immunity/)
 
 * The biological basis of antigenic diversity: innate, cellular, and humoral responses
 * *Exercise: Review main immune interactions for chosen pathogens*
@@ -31,7 +31,6 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Statistical, compartmental, and agent-based models
 * The many forms of competition
 * Analytic solutions
-* *Exercise: Invasion analysis with the SIR*
 * Numerical integration
 * *Exercise: Dynamics of a multistrain SIR system*
 
@@ -56,7 +55,7 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Maximum likelihood and Bayesian methods
 * *Exercise: Bayes' rule*
 
-### [Selection and wright-Fisher Dynamics](selection/)
+### [Selection and Wright-Fisher Dynamics](selection/)
 
 * Introduction to Wright-Fisher model
 * Wright-Fisher with mutation and genetic drift
