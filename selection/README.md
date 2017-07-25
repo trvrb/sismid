@@ -8,8 +8,24 @@ There are *N* individuals in the population. Every generation, each individual h
 
  * [Visualization of Wright-Fisher ancestry](http://bedford.io/projects/ancestry/)
 
-#### [Wright-Fisher model with mutation and genetic drift](mutation-drift/)
+### Wright-Fisher model with mutation and genetic drift
 
-#### [Wright-Fisher model with mutation, genetic drift and selection](selection-mutation-drift/)
+ * [iPython notebook](http://github.com/trvrb/sismid/blob/master/selection/mutation-drift.ipynb)
 
-#### [Conclusions on effects of selection and how to detect them](tests-of-selection/)
+ * [Visualization of Wright-Fisher haplotype dynamics](http://bedford.io/projects/haplotypes/)
+
+ * [*Exercise on the effects of population size and mutation rate on population dynamics*](mutation-drift-exercise.md)
+
+ * [Neutral expectations for population summary statistics](mutation-drift-statistics.md)
+
+### Wright-Fisher model with mutation, genetic drift and selection
+
+ * [iPython notebook](http://github.com/trvrb/sismid/blob/master/selection/mutation-drift-selection.ipynb)
+
+ * [*Exercise on the effects of positive and negative selection on population dynamics*](mutation-drift-selection-exercise.md)
+
+ * [Population summary statistics with selection](mutation-drift-selection-statistics.md)
+
+### Conclusions on effects of selection and how to detect them
+
+ * [Tests of selection](tests-of-selection.html)

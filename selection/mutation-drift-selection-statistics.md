@@ -12,7 +12,7 @@ This is all assuming a Wright-Fisher population of discrete non-overlapping gene
 
 ## Chance of fixation
 
-A new mutant appears in the population at an initial frequency *p* of {% eqinline 1/N %}. It has a chance of fixing of
+A new mutant appears in the population at an initial frequency *p* of `$1/N$`. It has a chance of fixing of
 
 {% eq \mathrm{Pr}(\mathrm{fix}) = \frac{ 1-e^{-2s} }{ 1-e^{-2Ns} } %}
 
