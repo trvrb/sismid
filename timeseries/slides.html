@@ -47,8 +47,8 @@
 			
 			<section>
 				<h3>A general approach to model fitting</h3>
-				<p>Simulate data given a model and some parameters
-				<p>Evaluate how likely the observed data are, given the simulated data
+                <p>Pick a model and some parameters
+				<p>Evaluate how likely the observed data are, given the model
 				<p>Tweak the parameters/model to make the observations more likely
 				<p>Is this model superior to other models?
 			</section>
@@ -92,7 +92,7 @@
 					<p>Simplex
 					<p>Simulated annealing
 					<p>Sequential Monte Carlo
-					<p>Many others... but for us, few tried and true
+					<p>Many others... but few tried and true
 				</section>
 				
 				<section>
@@ -155,7 +155,7 @@
 				</section>
 				
 				<section>
-					<h3>Simulated-based inference</h3>
+					<h3>Simulation-based inference</h3>
 					<p>e.g., R-package <a href="https://cran.r-project.org/web/packages/pomp/index.html">pomp</a>
 					<p>Fit models to time series or (new) longitudinal data
 					<div class="citation">
@@ -165,6 +165,26 @@
 					</div>
 				</section>
 				
+                <section>
+                    <h3>A simple model of HPV</h3>
+                    <img src="images/hpv_schematic.png">
+                        <p>$\lambda_{i,j,t}=\lambda_{0_j}f(\overrightarrow{\theta_j} \boldsymbol{X_{it}}) + \text{I(prev. inf.)}d_{jc_i}e^{-w_j(t-t_\mathrm{clr})}$
+                    <div class="citation">
+                        <a href="https://cobeylab.uchicago.edu/publications">
+                            Ranjeva et al. (in prep.)
+                        </a>
+                    </div>
+                </section>
+                
+                <section>
+                    <h3>Past infection raises risk, even for celibate</h3>
+                    <img class="stretch" src="images/hpv_profiles.png">
+                        <div class="citation">
+                            <a href="https://cobeylab.uchicago.edu/publications">
+                                Ranjeva et al. (in prep.)
+                            </a>
+                        </div>
+                </section>
 				
 				<section>
 					<h3>Probes and arbitrary metrics</h3>
@@ -393,12 +413,32 @@
 				<h3>Application to real time series</h3>
 					<img class="stretch" src="images/ccm_ny_chicago.png">
 					<div class="citation">
-						<a href="https://arxiv.org/abs/1601.00716">
-							Cobey and Baskerville (in review)
+						<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0169050">
+							Cobey and Baskerville (2016)
 						</a>
 					</div>
 				</section>
+                
+                <section>
+                    <h3>Claim: Absolute humidity drives influenza</h3>
+                    <img class="stretch" src="images/deyle_pnas.jpg">
+                        <div class="citation">
+                            <a href="http://www.pnas.org/content/113/46/13081.short">
+                                Deyle et al. (2016)
+                            </a>
+                        </div>
+                </section>
 				
+                <section>
+                    <h3>But does flu drive humidity?</h3>
+                    <img src="images/baskerville_pnas.gif">
+                        <div class="citation">
+                            <a href="http://www.pnas.org/content/114/12/E2270.full">
+                                Baskerville and Cobey (2017)
+                            </a>
+                        </div>
+                </section>
+                
 				<section data-background="#CC3333">
 					<h2 class="title">Back to mechanistic models, then...</h2>
 				</section>
