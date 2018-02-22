@@ -93,7 +93,7 @@ def get_distance(seq_a, seq_b):
     return diffs / float(length)
 
 def get_diversity(population):
-    haplotypes = population.keys()
+    haplotypes = list(population.keys())
     haplotype_count = len(haplotypes)
     diversity = 0
     for i in range(haplotype_count):
@@ -196,7 +196,7 @@ def snp_trajectory_plot(xlabel="generation"):
 	snps = get_all_snps()
 	trajectories = [get_snp_trajectory(snp) for snp in snps]
 	data = []
-	for trajectory, color in itertools.izip(trajectories, itertools.cycle(colors)):
+	for trajectory, color in zip(trajectories, itertools.cycle(colors)):
 		data.append(range(generations))
 		data.append(trajectory)
 		data.append(color)
