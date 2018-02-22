@@ -2,7 +2,7 @@
 
 We'll go into this further in the next section, but a very important parameter is *&theta;*, which is equal to 2<i>N&mu;</i>, where *N* is equal to the population size and *&mu;* is equal to mutations per generation. If there are 100 sites and a per-site per-gen mutation rate of 0.0001, then *&mu;* = 0.01. If there are 50 individuals in the population, then *&theta;* = 2<i>N&mu;</i> = 1.
 
-This exercise can be completed by running the supplied Python script [`mutation-drift.py`](https://github.com/trvrb/sismid/blob/master/selection/mutation-drift.py). To run the script with population size of 50, per-site per-gen mutation rate of 0.0001, 100 sites and 500 generations, input:
+This exercise can be completed by running the supplied Python script [`mutation-drift.py`](mutation-drift.py). To run the script with population size of 50, per-site per-gen mutation rate of 0.0001, 100 sites and 500 generations, input:
 
 ```
 python mutation-drift.py --pop_size 50 --mutation_rate 0.0001 --seq_length 100 --generations 500
