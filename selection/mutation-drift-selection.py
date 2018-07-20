@@ -1,9 +1,13 @@
 # packages
 import numpy as np
-import itertools
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import argparse
+
+try:
+    import itertools.izip as zip
+except ImportError:
+    import itertools
 
 # global variables
 pop_size = 50
