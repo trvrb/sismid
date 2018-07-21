@@ -139,19 +139,8 @@
 				</section>
 
 				<section>
-					<h3><a href="http://cobeylab.uchicago.edu/mcmc/intro/">Introduction to MCMC</a></h3>
-				</section>
-
-				<section>
-					<h3>Likelihood with longitudinal data</h3>
-					<p>Data: Infection and clearance times ($t_i$, $t_c$) for many people
-					<p>Model: Force of infection $\lambda_i=\beta I_i$
-					<p>Gamma-distributed duration of infection (shape $k$, scale $\theta$)
-					<img src="images/sylvia_likelihood.png">
-				</section>
-
-				<section data-background="#99CCFF">
-					<h3>This model is biased. Can you see why?</h3>
+					<h3><a href="http://cobeylab.uchicago.edu/mcmc/intro/">Introduction to Monte Carlo integration</a></h3>
+                    <h3><a href="https://chi-feng.github.io/mcmc-demo/app.html">(and an even better one)</a></h3>
 				</section>
 
 				<section>
@@ -170,18 +159,18 @@
                     <img src="images/hpv_schematic.png">
                         <p>$\lambda_{i,j,t}=\lambda_{0_j}f(\overrightarrow{\theta_j} \boldsymbol{X_{it}}) + \text{I(prev. inf.)}d_{jc_i}e^{-w_j(t-t_\mathrm{clr})}$
                     <div class="citation">
-                        <a href="https://cobeylab.uchicago.edu/publications">
-                            Ranjeva et al. (in prep.)
+                        <a href="http://www.pnas.org/content/114/51/13573">
+                            Ranjeva et al. (2017)
                         </a>
                     </div>
                 </section>
 
                 <section>
-                    <h3>Past infection raises risk, even for celibate</h3>
+                    <h3>Past infection raises risk, even for celibates</h3>
                     <img class="stretch" src="images/hpv_profiles.png">
                         <div class="citation">
-                            <a href="https://cobeylab.uchicago.edu/publications">
-                                Ranjeva et al. (in prep.)
+                            <a href="http://www.pnas.org/content/114/51/13573">
+                                Ranjeva et al. (2017)
                             </a>
                         </div>
                 </section>
@@ -217,7 +206,7 @@
 					<h3>Model "validation"</h3>
 					<p>Confirm convergence
 					<p>AIC and WAIC
-					<p>Leave-one-out cross-validation
+					<p>Leave-one-out cross-validation (LOO)
 					<p>Out-of-sample prediction
 					<p>Replicate on simulated data
 				</section>
@@ -308,7 +297,7 @@
 				</section>
 
 				<section>
-					<h3>Causal inference</h3>
+					<h3>Causal inference from "ecological" data?</h3>
 					<p>Through their shadow manifolds, variables in the same dynamical system can predict each other.
 					<p>If $X$ drives $Y$, increasing the number of observations of $Y$ should improve predictions of states of $X$.
 					<div class="citation">
