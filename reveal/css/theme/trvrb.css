@@ -17,40 +17,49 @@ body {
 .reveal {
   font-family: "Lato", sans-serif;
   font-size: 34px;
-  font-weight: 300;  
+  font-weight: 300;
   color: #333333; }
 
 ::selection {
   color: white;
   background: #134674;
   text-shadow: none; }
-  
+
 /*********************************************
  * HEADERS
  *********************************************/
-.reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal h4,
-.reveal h5,
-.reveal h6 {
-  margin: 0 0 20px 0;
-  color: #333333;
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  text-shadow: none;
-  }
+ .reveal h1,
+ .reveal h2,
+ .reveal h3,
+ .reveal h4,
+ .reveal h5,
+ .reveal h6 {
+   margin: 0 0 20px 0;
+   color: #333;
+   font-family: "Lato", sans-serif;
+   font-weight: 300;
+   text-shadow: none;
+   word-wrap: break-word; }
 
 .reveal h1 {
-  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
-  
-.reveal h6 {
-	font-size: 0.5em;
-}
+  font-size: 3.3em;
+  line-height: 1.0em; }
+
+.reveal h2 {
+  font-size: 2.22em; }
+
+.reveal h3 {
+  font-size: 1.55em; }
+
+.reveal h4 {
+  font-size: 1.33em; }
+
+.reveal h1 {
+  text-shadow: none; }
 
 .reveal p {
-  line-height: 1.6em;
-}
+  margin: 20px 0;
+  line-height: 1.6em; }
 
 .citation {
 	position: absolute;
@@ -152,11 +161,11 @@ body {
  *********************************************/
 .reveal .slide-number {
   color: #3b759e; }
-  
+
 .reveal .slides section .fragment.strike-through {
 	opacity: 1;
-}  
-  
+}
+
 .reveal .slides section .fragment.strike-through.visible {
   text-decoration: line-through;
 }
@@ -175,13 +184,13 @@ body {
 .reveal .controls div.navigate-left {
   left: 24px;
   top: 66px;
-  border-right-width: 20px;  
+  border-right-width: 20px;
 }
 
 .reveal .controls div.navigate-right {
   left: 76px;
   top: 66px;
-  border-left-width: 20px;    
+  border-left-width: 20px;
 }
 
 /*********************************************
