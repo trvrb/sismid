@@ -6,7 +6,7 @@
 ### Pathogen comparison
 
 * *Exercise: Review main immune interactions for chosen pathogens*
- * *Question: What is the main source of immunity against the pathogen? Primarily B cell or primarily T cell?*
+ * *Question: What are the main immune selective pressures on the pathogen?*
 
 ### Additional resources
 
