@@ -21,3 +21,4 @@
 * Fig 2 in [Donaldson et al. 2010](donaldson-norovirus-genetics.pdf)
 * Fig 1 in [Bull et al. 2011.](bull-norovirus-genetics.pdf)
 * Fig 1 and 3 in [Fioretti et al. 2014.](fioretti-norovirus-genetics.pdf)
+* Fig 1 and 3 in [Tohma et al. 2017](tohma-norovirus-genetics.pdf)
