@@ -73,7 +73,7 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 
 ## Day 3
 
-### [Synthesis](https://github.com/trvrb/sismid/wiki/Synthesis/)
+### [Synthesis](https://github.com/trvrb/sismid/wiki/)
 
 * *Exercise: Group presentations on specific pathogens*
 
@@ -86,8 +86,8 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 ## Resources
 
 * [Pathogen lineup](lineup/)
-* [Pathogen wiki](https://github.com/trvrb/sismid/wiki/Synthesis)
-* [PDF slides](https://github.com/trvrb/sismid/tree/master/slides)
+* [Pathogen wiki](https://github.com/trvrb/sismid/wiki)
+* [PDF slides](https://s3.amazonaws.com/trvrb/sismid-slides.zip)
 * [Python notes](python.md)
 
 -----------------------------------
