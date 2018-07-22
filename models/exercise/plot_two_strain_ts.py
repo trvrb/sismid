@@ -3,12 +3,14 @@
 # Time series given some initial conditions
 ####################################################################
 
-import sys 
-import numpy as np
-import pylab as plt
-from matplotlib.font_manager import FontProperties
-from two_strain import *
+import sys
 import csv
+import numpy as np
+import matplotlib as mpl
+mpl.use('TkAgg')
+from matplotlib.font_manager import FontProperties 
+import matplotlib.pyplot as plt
+from two_strain import *
 
 # Run parameters
 run_num = 1  # sys.argv[1]
@@ -45,7 +47,7 @@ infecteds = np.asarray([output[:, 1] + output[:, 6], output[:, 3] + output[:, 4]
 times = np.arange(0,infecteds.shape[1])
 infecteds_t = np.vstack((times, infecteds))
 filename = 'infecteds_' + str(run_num) + '.csv'
-with open(filename, 'wb') as csvfile:
+with open(filename, 'w') as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(['times', 'I1', 'I2'])
     writer.writerows(infecteds_t.T)
@@ -55,7 +57,7 @@ if obs_sd > 0:
     errors = np.random.normal(1, obs_sd, infecteds.shape)
     infecteds_obs = infecteds*errors
     filename = 'infecteds_obs_' + str(run_num) + '.csv'
-    with open(filename, 'wb') as csvfile:
+    with open(filename, 'w') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(['times', 'I1', 'I2'])
         writer.writerows(infecteds_t.T)
@@ -85,7 +87,3 @@ plt.legend(loc=1, prop=FontProperties(size='smaller'))
 plt.savefig("time_series_" + str(run_num) + ".png")
 plt.show()
 plt.close()
-
-
-
-

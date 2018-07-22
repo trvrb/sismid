@@ -5,8 +5,10 @@
 
 import sys
 import numpy as np
-import pylab as plt
-from matplotlib.font_manager import FontProperties
+import matplotlib as mpl
+mpl.use('TkAgg')
+from matplotlib.font_manager import FontProperties 
+import matplotlib.pyplot as plt
 from two_strain import *
 
 # Run parameters
