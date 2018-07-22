@@ -42,25 +42,52 @@
 					<h2 class="title">Fitting mechanistic models</h2>
 				</section>
 
-			<section data-background="images/map.jpg">
-			</section>
-
-			<section>
-				<h3>A general approach to model fitting</h3>
-                <p>Pick a model and some parameters
-				<p>Evaluate how likely the observed data are, given the model
-				<p>Tweak the parameters/model to make the observations more likely
-				<p>Is this model superior to other models?
-			</section>
-
-				<section>
-					<h3>Maximum likelihood</h3>
-					<p>Parameter values that make the observed data most likely
+				<section data-background="images/map.jpg">
 				</section>
 
 				<section>
-					<h3>Notation</h3>
-					<p>Observed variable $D$ depends on unknown parameter $\theta$
+					<h3>A general approach to model fitting</h3>
+	                <p>Pick a model and some parameters
+					<p>Evaluate how likely the observed data are, given the model
+					<p>Tweak the parameters/model to make the observations more likely
+					<p>Is this model superior to other models?
+				</section>
+
+				<section>
+					<h3>Maximum likelihood (ML) inference</h3>
+					<br>
+					<p>
+					In ML, you have some set of data $D$ and a model for generating this data. This model has parameters
+					$\theta$. The probability of observing data is $\mathrm{Pr}(D \, | \, \theta)$. The best parameter
+					point estimate $\hat{\theta}$ is simply the value that maximizes $\mathrm{Pr}(D \, | \, \theta)$.
+					</p>
+				</section>
+
+				<section>
+					<h3>Maximum likelihood (ML) inference</h3>
+					<br>
+					<p>
+					For example, if we have data $D$ from a
+					<a href="https://en.wikipedia.org/wiki/Bernoulli_distribution">Bernoulli</a> observation model
+					representing $k$ successes in $n$ trials, then
+					the probability of observing $k$ and $n$ given coin flip probability parameter $p$ is simply
+					$$\mathrm{Pr}(k,n \, | \, p) = p^k \, (1-p)^{n-k}.$$
+				</section>
+
+				<section>
+					<h3>Maximum likelihood (ML) inference</h3>
+					<br>
+					<p>
+					For the Bernoulli model $\mathrm{Pr}(k,n \, | \, p) = p^k \, (1-p)^{n-k}$,
+					we have $\hat{p} = k/n$. For example, with $k=8$ and $n=10$, $\hat{p}=0.8$
+					the likelihood curve follows
+					</p>
+					<img class="stretch" src="images/bernoulli_ml.png">
+				</section>
+
+				<section>
+					<h3>Likelihood in timeseries models</h3>
+					<p>Observed trajectory $D=(t_0,...,t_n)$ depends on unknown parameter $\theta$
 					<p>Probability density function of $D$ is $f_{\theta}$
 					<p>$$L_D(\theta)=f_{\theta}(D)$$
                     <p>$$L_D(\theta)=\mathrm{Pr}(D \, | \, \theta)=\mathrm{Pr}(t_0 \, | \, \theta) \cdot \mathrm{Pr}(t_1 \, | \,t_0,\theta) \cdot \mathrm{Pr}(t_2 \, | \,t_1,\theta)...$$
@@ -117,21 +144,62 @@
 						</div>
 				</section>
 
-
 				<section>
-					<h3>Bayesian approaches</h3>
+					<h3>Bayesian inference</h3>
 					<br>
-					<p>Assume prior expectations about our parameters, $p(\theta)$
-					<br>
-					<br>
-					<p>$$p(\theta\rvert D) \propto p(D\rvert\theta)p(\theta)$$
-					<br>
-					<p>where $p(D\rvert\theta)$ is the likelihood
-					<p>and $p(\theta\rvert D)$ is the posterior density
+					<p>
+					Generally, it's difficult to make probability statements using frequentist statistics. You cannot
+					directly say that model 1 is twice as likely as model 2.
+					<a href="http://bactra.org/weblog/1111.html">People misuse <i>p</i> values in this sort of fashion all
+					the time.</a>
+					</p>
 				</section>
 
 				<section>
-					<h3>Bayesian integration</h3>
+					<h3>Bayes' rule</h3>
+					<br>
+					<p>
+					Bayes' rule forms the basis of Bayesian inference, it states:
+					$$ \mathrm{Pr}(A \, | \, B) = \cfrac{ \mathrm{Pr}(B \, | \, A) \, \mathrm{Pr}(A) }{ \mathrm{Pr}(B) } $$
+					</p>
+				</section>
+
+				<section>
+					<h3>Bayesian inference</h3>
+					<br>
+					<p>
+					Bayesian inference applies Bayes' rule in a likelihood context, so that
+					$$ \mathrm{Pr}(\theta \, | \, D) = \cfrac{ \mathrm{Pr}(D \, | \, \theta) \, \mathrm{Pr}(\theta) }{ \mathrm{Pr}(D) }, $$
+					where $D$ is data and $\theta$ are parameters. $\mathrm{Pr}(D)$ is constant with respect to $\theta$,
+					so that $ \mathrm{Pr}(\theta \, | \, D) \propto \mathrm{Pr}(D \, | \, \theta) \, \mathrm{Pr}(\theta)$.
+					This relationship is often referred to as
+					$ \mathrm{posterior} \propto \mathrm{likelihood} \times \mathrm{prior}$.
+					</p>
+				</section>
+
+				<section>
+					<h3>Bayesian inference for Bernoulli model</h3>
+					<br>
+					<p>
+					Following our previous Bernoulli example, we've observed $k$ successes in $n$ trials, and so the
+					likelihood $\mathrm{Pr}(k,n \, | \, p) = p^k \, (1-p)^{n-k}$. We'll assume a flat prior
+					$\mathrm{Pr}(p) = 1$. In this case, the marginal likelihood follows
+					$$\mathrm{Pr}(k,n) = \int_0^1 \mathrm{Pr}(k,n \, | \, p) \, \mathrm{Pr}(p) \, dp = \cfrac{k! \, (n-k)!}{(n+1)!}.$$
+					And the full posterior follows
+					$$\mathrm{Pr}(p \, | \, k,n) = \cfrac{(n+1)! \, p^k \, (1-p)^{n-k}}{k! \, (n-k)!}.$$
+				</section>
+
+				<section>
+					<h3>Bayesian inference allows for probability statements</h3>
+					<p>
+					If $k=8$ and $n=10$, the mean posterior $\mathrm{E}[p] = 0.75$, while the 95% credible interval
+					extends from $0.482$ to $0.896$, and the posterior distribution follows
+					</p>
+					<img class="stretch" src="images/bernoulli_bayesian.png">
+				</section>
+
+				<section>
+					<h3>Methods for Bayesian integration</h3>
 					<p>Markov Chain Monte Carlo
 					<p>Metropolis-Hastings MCMC
 					<p>Particle MCMC

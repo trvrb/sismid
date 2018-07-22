@@ -15,7 +15,7 @@
 
 		<link rel="stylesheet" href="../reveal/css/reveal.min.css">
 		<link rel="stylesheet" href="../reveal/css/theme/trvrb.css" id="theme">
-		<link rel="stylesheet" href="../reveal/css/font-awesome/css/font-awesome.min.css">			
+		<link rel="stylesheet" href="../reveal/css/font-awesome/css/font-awesome.min.css">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
@@ -37,7 +37,7 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				
+
 				<section data-background="#ACD1A0">
 					<h2 class="title">Phylogenetics</h2>
 				</section>
@@ -45,21 +45,21 @@
 				<section data-background="#000000">
 					<img class="stretch" src="images/darwin_phylogeny.jpg">
 				</section>
-				
+
 				<section data-background="#000000">
 					<img class="stretch" src="images/darwin_phylogeny_tattoo.jpg">
-				</section>				
+				</section>
 
 				<section data-transition="none">
 					<h3>Phylogeny describes evolutionary relationships</h3>
 					<img class="stretch" src="images/parsimony_1.png">
 				</section>
-				
+
 				<section data-transition="none">
 					<h3>Phylogeny is usually a hypothesis based on characteristics of sampled taxa</h3>
 					<img class="stretch" src="images/parsimony_2.png">
 				</section>
-				
+
 				<section data-transition="none">
 					<h3>Phylogeny implies a series of mutational events leading to observed tip states</h3>
 					<img class="stretch" src="images/parsimony_3.png">
@@ -67,10 +67,10 @@
 
 				<section>
 					<h3>
-					<a href="https://en.wikipedia.org/wiki/Maximum_parsimony_(phylogenetics)">Parsimony</a> is 
+					<a href="https://en.wikipedia.org/wiki/Maximum_parsimony_(phylogenetics)">Parsimony</a> is
 					based on <a href="https://en.wikipedia.org/wiki/Occam's_razor">Occam's razor</a></h3>
 					<p>
-					Among competing 
+					Among competing
 					hypotheses that predict equally well, the one with the fewest assumptions should be selected.</p>
 				</section>
 
@@ -78,104 +78,71 @@
 					<h3>Parsimony suggests this topology requires 3 mutations at minimum</h3>
 					<img class="stretch" src="images/parsimony_4.png">
 				</section>
-				
+
 				<section>
 					<h3>Parsimony suggests both topologies equally tenable</h3>
 					<img class="stretch" src="images/parsimony_5.png">
 				</section>
-				
+
 				<section data-transition="none">
 					<h3><i>Exercise: which topology is more likely under parsimony?</i></h3>
 					<img class="stretch" src="images/parsimony_exercise_1.png">
 				</section>
-				
+
 				<section data-transition="none">
 					<h3><i>Exercise: which topology is more likely under parsimony?</i></h3>
 					<img class="stretch" src="images/parsimony_exercise_2.png">
 				</section>
-				
+
 				<section data-transition="none">
 					<h3><i>Exercise: which topology is more likely under parsimony?</i></h3>
 					<img class="stretch" src="images/parsimony_exercise_3.png">
 				</section>
-				
+
 				<section data-transition="none">
 					<h3><i>Exercise: which topology is more likely under parsimony?</i></h3>
 					<img class="stretch" src="images/parsimony_exercise_4.png">
 				</section>
-				
+
 				<section data-transition="none">
 					<h3><i>Exercise: which topology is more likely under parsimony?</i></h3>
 					<img class="stretch" src="images/parsimony_exercise_5.png">
 				</section>
-				
+
 				<section data-transition="none">
 					<h3><i>Exercise: which topology is more likely under parsimony?</i></h3>
 					<img class="stretch" src="images/parsimony_exercise_6.png">
 				</section>
-				
+
 				<section data-transition="none">
 					<h3><i>Exercise: which topology is more likely under parsimony?</i></h3>
 					<img class="stretch" src="images/parsimony_exercise_7.png">
-				</section>					
-				
+				</section>
+
 				<section data-transition="none">
 					<h3><i>Exercise: which topology is more likely under parsimony?</i></h3>
 					<img class="stretch" src="images/parsimony_exercise_8.png">
 				</section>
-				
+
 				<section>
 					<h3><a href="http://vincebuffalo.org/dancinggenealogies2/">Example of how phylogeny structures site patterns</a></h3>
 					<div class="citation">
 						<a href="https://github.com/vsbuffalo/coaljs">
 							Buffalo. 2015
 						</a>
-					</div>	
-				</section>				
-				
+					</div>
+				</section>
+
 				<section data-background="#B9D395">
 					<h2 class="title">Inferring phylogenies with likelihood</h2>
 				</section>
 
 				<section>
-					<h3>Maximum likelihood (ML) inference</h3>
-					<br>
-					<p>
-					In ML, you have some set of data $D$ and a model for generating this data. This model has parameters
-					$\theta$. The probability of observing data is $\mathrm{Pr}(D \, | \, \theta)$. The best parameter 
-					point estimate $\hat{\theta}$ is simply the value that maximizes $\mathrm{Pr}(D \, | \, \theta)$.
-					</p>
-				</section>
-
-
-				<section>
-					<h3>Maximum likelihood (ML) inference</h3>
-					<br>
-					<p>
-					For example, if we have data $D$ from a 
-					<a href="https://en.wikipedia.org/wiki/Bernoulli_distribution">Bernoulli</a> observation model 
-					representing $k$ successes in $n$ trials, then
-					the probability of observing $k$ and $n$ given coin flip probability parameter $p$ is simply
-					$$\mathrm{Pr}(k,n \, | \, p) = p^k \, (1-p)^{n-k}.$$
-				</section>
-				
-				<section>
-					<h3>Maximum likelihood (ML) inference</h3>
-					<br>
-					<p>
-					For the Bernoulli model $\mathrm{Pr}(k,n \, | \, p) = p^k \, (1-p)^{n-k}$,
-					we have $\hat{p} = \cfrac{k}{n}$. For example, with $k=8$ and $n=10$, $\hat{p}=0.8$
-					and the likelihood curve follows
-					</p>
-					<img class="stretch" src="images/bernoulli_ml.png">
-				</section>				
-
-				<section>
 					<h3>Data likelihood</h3>
 					<br>
 					<p>
-					In phylogenetics, $D$ are the observed tip sequences and $\theta$ is the phylogenetic tree 
-					including topology and branch lengths.
+					In phylogenetics, $D$ are the observed tip sequences and $\theta$ is the phylogenetic tree
+					including topology and branch lengths, so that the data likelihood follows $\mathrm{Pr}(D \, | \, \theta)$.
 					</p>
 				</section>
 
@@ -183,17 +150,17 @@
 					<h3>Calculating the likelihood of a single topology</h3>
 					<img class="stretch" src="images/likelihood_tree_1.png">
 				</section>
-				
+
 				<section>
 					<h3>Transition probability for each branch</h3>
 					<img class="stretch" src="images/likelihood_tree_2.png">
 				</section>
-				
+
 				<section>
 					<h3>Rather than enumerating all possible internal states</h3>
 					<img class="stretch" src="images/likelihood_tree_3.png">
 				</section>
-				
+
 				<section>
 					<h3>Can use Felstenstein's pruning algorithm to speed up calculation</h3>
 					<img class="stretch" src="images/likelihood_tree_4.png">
@@ -203,119 +170,31 @@
 						</a>
 					</div>
 				</section>
-				
+
 				<section>
 					<h3>ML inference</h3>
 					<br>
 					<p>
-					Inference becomes a search for the tree that maximizes the likelihood of observing tip sequences. 
+					Inference becomes a search for the tree that maximizes the likelihood of observing tip sequences $\mathrm{Pr}(D \, | \, \theta)$.
 					Lots of computation goes into this.
 					</p>
-				</section>														
+				</section>
 
 				<section data-background="#C6D38C">
 					<h2 class="title">Bayesian phylogenetic inference</h2>
 				</section>
 
 				<section>
-					<h3>Bayesian inference</h3>
-					<br>
-					<p>
-					Generally, it's difficult to make probability statements using frequentist statistics. You cannot 
-					directly say that model 1 is twice as likely as model 2. 
-					<a href="http://bactra.org/weblog/1111.html">People misuse <i>p</i> values in this sort of fashion all 
-					the time.</a>
-					</p>
-				</section>
-
-				<section>
-					<h3>Bayes' rule</h3>
-					<br>
-					<p>
-					Bayes' rule forms the basis of Bayesian inference, it states:
-					$$ \mathrm{Pr}(A \, | \, B) = \cfrac{ \mathrm{Pr}(B \, | \, A) \, \mathrm{Pr}(A) }{ \mathrm{Pr}(B) } $$
-					</p>
-				</section>
-				
-				<section>
-					<h3><i>Bayes' rule exercise</i></h3>
-					<br>
-					<p>
-					For example, let's say we have an Ebola test that is 99% 
-					<a href="https://en.wikipedia.org/wiki/Sensitivity_and_specificity">sensitive</a> and 99% 
-					<a href="https://en.wikipedia.org/wiki/Sensitivity_and_specificity">specific</a> (meaning if 
-					someone has Ebola it 
-					will report true 99% of the time and if someone doesn't have Ebola it will report false 99% of the time).
-					Let's further say that 0.1% of the population has Ebola.
-					If we select a random individual and observe a positive test result, what is the probability that they
-					actually have Ebola?
-					</p>
-				</section>	
-				
-				<section>
-					<h3><i>Bayes' rule exercise</i></h3>
-					<br>
-					<p>
-					If we select a random individual and observe a positive test result, what is the probability that they
-					actually have Ebola? I.e. 
-					$\mathrm{Pr}(\mathrm{P} \, | \, \mathrm{E}) = 0.99$, 
-					$\mathrm{Pr}(\mathrm{N} \, | \, \mathrm{E}) = 0.01$, 
-					<br>
-					$\mathrm{Pr}(\mathrm{P} \, | \, \mathrm{NE}) = 0.01$, 
-					$\mathrm{Pr}(\mathrm{N} \, | \, \mathrm{NE}) = 0.99$
-					<br>
-					and $\mathrm{Pr}(\mathrm{E}) = 0.001$.
-					<br>
-					In this case, what is $\mathrm{Pr}(\mathrm{E} \, | \, \mathrm{P})$?
-					</p>
-				</section>						
-
-				<section>
-					<h3>Bayesian inference</h3>
-					<br>
-					<p>
-					Bayesian inference applies Bayes' rule in a likelihood context, so that
-					$$ \mathrm{Pr}(\theta \, | \, D) = \cfrac{ \mathrm{Pr}(D \, | \, \theta) \, \mathrm{Pr}(\theta) }{ \mathrm{Pr}(D) }, $$
-					where $D$ is data and $\theta$ are parameters. $\mathrm{Pr}(D)$ is constant with respect to $\theta$,
-					so that $ \mathrm{Pr}(\theta \, | \, D) \propto \mathrm{Pr}(D \, | \, \theta) \, \mathrm{Pr}(\theta)$.
-					This relationship is often referred to as
-					$ \mathrm{posterior} \propto \mathrm{likelihood} \times \mathrm{prior}$.
-					</p>
-				</section>
-				
-				<section>
-					<h3>Bayesian inference for Bernoulli model</h3>
-					<br>
-					<p>
-					Following our previous Bernoulli example, we've observed $k$ successes in $n$ trials, and so the 
-					likelihood $\mathrm{Pr}(k,n \, | \, p) = p^k \, (1-p)^{n-k}$. We'll assume a flat prior
-					$\mathrm{Pr}(p) = 1$. In this case, the marginal likelihood follows
-					$$\mathrm{Pr}(k,n) = \int_0^1 \mathrm{Pr}(k,n \, | \, p) \, \mathrm{Pr}(p) \, dp = \cfrac{k! \, (n-k)!}{(n+1)!}.$$
-					And the full posterior follows
-					$$\mathrm{Pr}(p \, | \, k,n) = \cfrac{(n+1)! \, p^k \, (1-p)^{n-k}}{k! \, (n-k)!}.$$
-				</section>
-				
-				<section>
-					<h3>Probability statements</h3>
-					<br>
-					<p>
-					If $k=8$ and $n=10$, the mean posterior $\mathrm{E}[p] = 0.75$, while the 95% credible interval
-					extends from $0.482$ to $0.896$, and the posterior distribution follows 
-					</p>
-					<img class="stretch" src="images/bernoulli_bayesian.png">
-				</section>
-
-				<section>
 					<h3>Bayesian phylogenetic inference</h3>
 					<br>
 					<p>
-					Here, we are interested in the posterior distribution $\mathrm{Pr}(\tau, \mu \, | \, D)$, where $D$ 
+					Here, we are interested in the posterior distribution $\mathrm{Pr}(\tau, \mu \, | \, D)$, where $D$
 					represents sequence data, $\tau$ represents the tree topology and $\mu$ represents mutational parameters
 					(like transition vs tranversion rate). In this case,
 					$$ \mathrm{Pr}(\tau, \mu \, | \, D) \propto \mathrm{Pr}(D \, | \, \tau, \mu) \, \mathrm{Pr}(\tau) \, \mathrm{Pr}(\mu). $$
 					</p>
 				</section>
-				
+
 				<section>
 					<h3>Bayesian coalescent inference</h3>
 					<br>
@@ -324,34 +203,29 @@
 					we use $\lambda$ to give the likelihood of observing a particular tree topology $\mathrm{Pr}(\tau \, | \, \lambda)$.
 					This probability is the likelihood of observing the coalescent intervals seen in the tree.
 					</p>
-				</section>				
+				</section>
 
 				<section>
 					<h3>Bayesian coalescent inference</h3>
 					<br>
 					<p>
 					Thus, the full model becomes
-					$$ \mathrm{Pr}(\tau, \mu, \lambda \, | \, D) \propto 
+					$$ \mathrm{Pr}(\tau, \mu, \lambda \, | \, D) \propto
 						\mathrm{Pr}(D \, | \, \tau, \mu) \, \mathrm{Pr}(\tau \, | \, \lambda) \, \mathrm{Pr}(\lambda) \, \mathrm{Pr}(\mu). $$
 					Bayesian approaches work well to build these sorts of nested models.
 					</p>
-				</section>	
-				
+				</section>
+
+				<section data-transition="none">
+					<h3>Markov chain Monte Carlo (MCMC)</h3>
+					<img class="stretch" src="images/mcmc_2.png">
+				</section>
+
 				<section>
 					<h2><a href="http://beast.bio.ed.ac.uk/">
 						BEAST: Bayesian Evolutionary Analysis by Sampling Trees
 					</a></h2>
 				</section>
-
-				<section data-transition="none">
-					<h3>Markov chain Monte Carlo (MCMC)</h3>
-					<img class="stretch" src="images/mcmc_1.png">
-				</section>
-				
-				<section data-transition="none">
-					<h3>Markov chain Monte Carlo (MCMC)</h3>
-					<img class="stretch" src="images/mcmc_2.png">
-				</section>				
 
 			</div>
 
