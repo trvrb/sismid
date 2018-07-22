@@ -2,7 +2,7 @@
 
 Here, we'll keep *N* and *&mu;* fixed and keep *&theta;* = 2, but vary the fitness effects of mutations.
 
-This exercise can be completed by running the supplied Python script [`mutation-drift-selection.py`](mutation-drift-selection.py). To run the script with default population size of 100, per-site per-gen mutation rate of 0.0001, 100 sites and 500 generations, but with one mutation in every 20 having a fitness effect of 1.1, input:
+This exercise can be completed by running the supplied Python script [`mutation-drift-selection.py`](https://raw.githubusercontent.com/trvrb/sismid/master/selection/mutation-drift-selection.py). To run the script with default population size of 100, per-site per-gen mutation rate of 0.0001, 100 sites and 500 generations, but with one mutation in every 20 having a fitness effect of 1.1, input:
 
 ```
 python mutation-drift-selection.py --fitness_effect 1.1 --fitness_chance 0.1 --generations 500
