@@ -15,7 +15,7 @@
 
 		<link rel="stylesheet" href="../reveal/css/reveal.min.css">
 		<link rel="stylesheet" href="../reveal/css/theme/trvrb.css" id="theme">
-		<link rel="stylesheet" href="../reveal/css/font-awesome/css/font-awesome.min.css">		
+		<link rel="stylesheet" href="../reveal/css/font-awesome/css/font-awesome.min.css">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="../reveal/lib/css/zenburn.css">
@@ -29,7 +29,7 @@
 
 		<div style="position: absolute; top:10px; left:10px; z-index:100;">
 			<a href="http://bedford.io/projects/sismid/sequences/">
-				<i class="fa fa-times-circle" style="color: #bbb;"></i>
+				<i class="fa fa-times-circle" style="color: #bbb; opacity: 0.1;"></i>
 			</a>
 		</div>
 
@@ -37,56 +37,56 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				
+
 				<section data-background="#8474D1">
 					<h2 class="title">The coalescent</h2>
-				</section>	
-				
+				</section>
+
 				<section data-transition="none">
 					<h3>Epidemic process</h3>
 					<img class="stretch" src="images/infection_tree_1.png">
 				</section>
-				
+
 				<section data-transition="none">
 					<h3>Sample some individuals</h3>
 					<img class="stretch" src="images/infection_tree_2.png">
 				</section>
-				
+
 				<section data-transition="none">
 					<h3>Sequence and determine phylogeny</h3>
 					<img class="stretch" src="images/infection_tree_3.png">
 				</section>
-				
+
 				<section data-transition="none">
 					<h3>Sequence and determine phylogeny</h3>
 					<img class="stretch" src="images/infection_tree_4.png">
 				</section>
-				
+
 				<section data-transition="none">
 					<h3>Wright-Fisher process</h3>
 					<img class="stretch" src="images/wright_fisher_1.png">
 				</section>
-				
+
 				<section data-transition="none">
 					<h3>Sample some individuals</h3>
 					<img class="stretch" src="images/wright_fisher_2.png">
 				</section>
-				
+
 				<section data-transition="none">
 					<h3>Each generation coalescence may occur</h3>
 					<img class="stretch" src="images/wright_fisher_3.png">
 				</section>
-				
+
 				<section data-transition="none">
 					<h3>Each generation coalescence may occur</h3>
 					<img class="stretch" src="images/wright_fisher_4.png">
 				</section>
-				
+
 				<section data-transition="none">
 					<h3>Each generation coalescence may occur</h3>
 					<img class="stretch" src="images/wright_fisher_5.png">
 				</section>
-				
+
 				<section data-transition="none">
 					<h3>Each generation coalescence may occur</h3>
 					<img class="stretch" src="images/wright_fisher_6.png">
@@ -100,7 +100,7 @@
 					<h3>Set of coalescent intervals</h3>
 					<img class="stretch" src="images/coalescent_intervals_1.png">
 				</section>
-				
+
 				<section>
 					<h3>Per-generation probability of coalescence</h3>
 					<br>
@@ -110,7 +110,7 @@
 					probability of the 2nd lineage picking the same parent is $\frac{1}{N}$.</p>
 					<p>Probability of coalescence scales inversely with population size.</p>
 				</section>
-				
+
 				<section>
 					<h3>Per-generation probability of coalescence</h3>
 					<br>
@@ -119,7 +119,7 @@
 					<p>There are $\binom{i}{2}$ ways pairs of lineages can pick the same parent.</p>
 					<p>Probability of coalescence scales quadratically with lineage count.</p>
 				</section>
-				
+
 				<section>
 					<h3>Expected waiting time to coalescence</h3>
 					<br>
@@ -131,12 +131,12 @@
 						wait $x$ generations for the event to occur.
 					</p>
 				</section>
-				
+
 				<section>
 					<h3>Continuous time limit</h3>
 					<br>
-					<p>With per-generation probability of an event $\frac{1}{x}$ small, but many generations, then the 
-					discrete time geometric distribution approximates to a continuous time 
+					<p>With per-generation probability of an event $\frac{1}{x}$ small, but many generations, then the
+					discrete time geometric distribution approximates to a continuous time
 					<a href="https://en.wikipedia.org/wiki/Exponential_distribution">exponential distribution</a>.
 					Thus, we assume $T_i$ to be exponentially distributed with mean
 					<br>
@@ -147,12 +147,12 @@
 					<h3>Set of coalescent intervals with waiting times</h3>
 					<img class="stretch" src="images/coalescent_intervals_2.png">
 				</section>
-				
+
 				<section>
 					<h3>Gives coalescent trees their distinctive shape</h3>
 					<img class="stretch" src="images/coalescent_tree_shape.png">
 				</section>
-				
+
 				<section>
 					<h3>Rate of coalescence scales with population size <i>N</i></h3>
 					<img class="stretch" src="images/coalescent_pop_size.png">
@@ -163,7 +163,7 @@
 						Visualization of the coalescent process
 					</a></h2>
 				</section>
-				
+
 				<section>
 					<h3>Pairwise genetic diversity</h3>
 					<img class="stretch" src="images/diversity.png">
@@ -185,9 +185,9 @@
 
 				<section>
 					<h3>Changing population size alters coalescent rate</h3>
-					<img class="stretch" src="images/changing_pop_size_2.png">				
+					<img class="stretch" src="images/changing_pop_size_2.png">
 				</section>
-								
+
 				<section>
 					<h3>'Skyline' is flexible demographic model that estimates windows of coalescent rate</h3>
 					<img class="stretch" src="images/skyline.png">
@@ -195,7 +195,7 @@
 						<a href="http://mbe.oxfordjournals.org/content/22/5/1185.short">
 							Drummond et al. 2005
 						</a>
-					</div>						
+					</div>
 				</section>
 
 				<section>
@@ -215,39 +215,39 @@
 						<a href="http://www.nature.com/nature/journal/v453/n7195/full/nature06945.html">
 							Rambaut et al. 2008
 						</a>
-					</div>					
+					</div>
 				</section>
 
 				<section>
 					<h3>Interpreting rate of coalescence</h3>
 					<br>
-					<p>These approaches directly estimate the pairwise rate of coalescence $\lambda$, which is measured 
-					in terms of events per year. Thus, the timescale of coalescence $\frac{1}{\lambda}$ is measured as 
+					<p>These approaches directly estimate the pairwise rate of coalescence $\lambda$, which is measured
+					in terms of events per year. Thus, the timescale of coalescence $\frac{1}{\lambda}$ is measured as
 					the expected waiting time in years for two lineages to find a common ancestor.</p>
 				</section>
-				
+
 				<section>
 					<h3>Interpreting rate of coalescence</h3>
 					<br>
-					<p>The timescale of coalescence $\frac{1}{\lambda}$ is equal to $N_e\tau$, where $N_e$ is 
+					<p>The timescale of coalescence $\frac{1}{\lambda}$ is equal to $N_e\tau$, where $N_e$ is
 					measured in generations and $\tau$ is measured in years per generation. $\tau$ acts to rescale time
 					from generations to years.
 					</p>
-				</section>				
+				</section>
 
 				<section>
 					<h3>Example tree</h3>
-					<img class="stretch" src="images/skyline_exercise_example_tree.png">				
+					<img class="stretch" src="images/skyline_exercise_example_tree.png">
 				</section>
-				
+
 				<section>
 					<h3>Example skyline plot</h3>
-					<img class="stretch" src="images/skyline_exercise_example_plot.png">				
-				</section>		
-				
+					<img class="stretch" src="images/skyline_exercise_example_plot.png">
+				</section>
+
 				<section>
 					<h3><i>Exercise: plot skyline from tree</i></h3>
-					<img class="stretch" src="images/skyline_exercise_tree.png">				
+					<img class="stretch" src="images/skyline_exercise_tree.png">
 				</section>
 
 				<section data-background="#7F97DF">
@@ -258,7 +258,7 @@
 					<h3>Neutral population dynamics</h3>
 					<img class="stretch" src="images/tree_neutrality.png">
 				</section>
-				
+
 				<section>
 					<h3>Purifying selection reduces genetic diversity and leads to population stasis</h3>
 					<img class="stretch" src="images/tree_negative_selection.png">
@@ -268,11 +268,11 @@
 					<h3>Positive selection reduces genetic diversity leads to population turnover</h3>
 					<img class="stretch" src="images/tree_positive_selection.png">
 				</section>
-				
+
 				<section>
 					<h3>Episodic positive selection shows selective sweeps</h3>
 					<img class="stretch" src="images/tree_episodic_selection.png">
-				</section>				
+				</section>
 
 			</div>
 
