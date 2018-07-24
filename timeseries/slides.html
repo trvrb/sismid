@@ -90,8 +90,17 @@
 					<p>Observed trajectory $D=(t_0,...,t_n)$ depends on unknown parameter $\theta$
 					<p>Probability density function of $D$ is $f_{\theta}$
 					<p>$$L_D(\theta)=f_{\theta}(D)$$
-                    <p>$$L_D(\theta)=\mathrm{Pr}(D \, | \, \theta)=\mathrm{Pr}(t_0 \, | \, \theta) \cdot \mathrm{Pr}(t_1 \, | \,t_0,\theta) \cdot \mathrm{Pr}(t_2 \, | \,t_1,\theta)...$$
+                    <p>Problem: These data aren't independent.
 				</section>
+                
+                <section>
+                    <h3>Likelihood from non-independent data</h3>
+                    <p>Solution: Factor the joint density into conditional and marginal
+                    <p>e.g., $f(y_3,y_2,y_1)=f(y_3 \, | \, y_2,y_1) \cdot f(y_2,y_1)$
+                    <p>$$f(y_3,y_2,y_1)=f(y_3 \, | \, y_2,y_1) \cdot f(y_2 \, | \, y_1) \cdot f(y_1)$$
+                    <p>$$L(\theta)=\prod_{t=2}^{T}f(y_t|l_{t-1})\cdot f(y_1)$$
+                    <p>where $l_{t-1}$ is information through $t-1$ (i.e., $y_{t-1},...,y_1$), and $T$ is the time series length
+                </section>
 
 				<section>
 					<h3>What's $D$?</h3>
