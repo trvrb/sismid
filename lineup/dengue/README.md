@@ -14,6 +14,8 @@
 ### Serology
 
 * Fig 2 in [Katzelnick et al. 2015.](katzelnick-dengue-serology.pdf)
+* Figs. 3 and 4 in [Katzelnick et al. 2017.](katzelnick-dengue-ADE.pdf)
+
 
 ### Timeseries
 
