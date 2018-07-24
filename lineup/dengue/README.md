@@ -24,5 +24,5 @@
 ### Genetics
 
 * Fig 1 in [Adams et al. 2006.](adams-dengue-genetics.pdf)
-* Fig 4 in [Rasmussen et al. 2013](rasmussen-dengue-genetics.pdf)
+* Fig 4 in [Rasmussen et al. 2014](rasmussen-dengue-genetics.pdf)
 * Fig 1 and 2 in [Pyke et al. 2016](pyke-dengue-genetics.pdf)
