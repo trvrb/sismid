@@ -53,7 +53,7 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Introduction to phylogenetic inference
 * *Exercise: Parsimony reconstruction*
 * Maximum likelihood and Bayesian methods
-* *Exercise: Bayes' rule*
+* Phylogeography and recombination
 
 ### [Selection and Wright-Fisher Dynamics](selection/)
 
