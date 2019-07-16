@@ -24,7 +24,7 @@ epsilon = 0.1
 gamma = np.array([1, 1])/7.0
 mu = 1/(10*365.0)
 alpha = np.array([0.5, 1.])
-a = np.array([1., 2.5])
+a = np.array([1., 1.5])
 omega = 2*np.pi/365.
 obs_sd = 0.01
 
