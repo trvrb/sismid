@@ -1,4 +1,4 @@
-# Enterovirus 71
+# Enterovirus
 
 ![](enterovirus.jpg)
 
@@ -6,6 +6,7 @@
 
 * [Wikipedia: Enterovirus 71](https://en.wikipedia.org/wiki/Enterovirus_71)
 * [Viral Zone: Enterovirus](http://viralzone.expasy.org/all_by_species/97.html)
+* [Nextstrain enterovirus D68](https://nextstrain.org/enterovirus/d68)
 
 ### Serology
 
@@ -18,8 +19,7 @@
 * Figs 1 and 21 in [Khetsuriani et al. 2006](https://www.cdc.gov/mmwr/preview/mmwrhtml/ss5508a1.htm)
 
 
-### Genetics 
+### Genetics
 
 * Figs 1, 2, and 4 in [Tee et al. 2010](http://jvi.asm.org/content/84/7/3339.full)
 * Figs 1 and 2 and Table 2 in [Leitch et al. 2011](http://jvi.asm.org/content/86/5/2676.full)
-

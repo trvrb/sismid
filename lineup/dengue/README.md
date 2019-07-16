@@ -6,6 +6,7 @@
 
 * [ViralZone: Flavivirus](http://viralzone.expasy.org/all_by_protein/24.html)
 * [Wikipedia: Dengue virus](https://en.wikipedia.org/wiki/Dengue_virus)
+* [Nextstrain dengue](https://nextstrain.org/dengue)
 
 ### Important features
 
