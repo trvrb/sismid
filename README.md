@@ -90,6 +90,8 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * [PDF slides](https://s3.amazonaws.com/trvrb/sismid-slides.zip)
 * [Python notes](python.md)
 
+Run exercise iPython notebooks online with MyBinder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/trvrb/sismid/HEAD)
+
 -----------------------------------
 
 All contents including slides, course materials and code are copyright 2015-2018 Sarah Cobey and Trevor Bedford. All slides / course materials (files ending in `.html` and `.md`) are licensed under [Creative Commons Attribution 4.0](CC-LICENSE.txt) and all code (files ending in `.py` and `.ipynb`) is licensed under an [MIT License](MIT-LICENSE.txt).

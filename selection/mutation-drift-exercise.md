@@ -21,3 +21,5 @@ You might try increasing `generations` to something greater than 500 to get a be
 ```
 python mutation-drift.py --pop_size 50 --mutation_rate 0.0001 --seq_length 100 --generations 2500 --summary
 ```
+
+Alternatively, run iPython notebook online with MyBinder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/trvrb/sismid/HEAD)
