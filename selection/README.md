@@ -7,12 +7,11 @@
 There are *N* individuals in the population. Every generation, each individual has a Poisson number of offspring (looking forwards in time), or picks one random parent individual (looking backwards time). Generations are discrete and non-overlapping.
 
  * [Visualization of Wright-Fisher ancestry](http://bedford.io/projects/ancestry/)
+ * [Visualization of Wright-Fisher haplotype dynamics](http://bedford.io/projects/haplotypes/)
 
 ### Wright-Fisher model with mutation and genetic drift
 
  * [iPython notebook](mutation-drift.ipynb)
-
- * [Visualization of Wright-Fisher haplotype dynamics](http://bedford.io/projects/haplotypes/)
 
  * [*Exercise on the effects of population size and mutation rate on population dynamics*](mutation-drift-exercise.md)
 

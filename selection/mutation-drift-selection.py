@@ -14,13 +14,13 @@ except ImportError:
     import itertools
 
 # global variables
-pop_size = 50
+pop_size = 200
 seq_length = 100
 alphabet = ['A', 'T', 'G', 'C']
-mutation_rate = 0.0001 # per gen per individual per site
-generations = 500
-fitness_effect = 1.1 # fitness effect if a functional mutation occurs
-fitness_chance = 0.1 # chance that a mutation has a fitness effect
+mutation_rate = 0.000025 # per gen per individual per site
+generations = 1000
+fitness_effect = 1.5 # fitness effect if a functional mutation occurs
+fitness_chance = 0.01 # chance that a mutation has a fitness effect
 
 # population
 base_haplotype = ''.join(["A" for i in range(seq_length)])
@@ -230,12 +230,12 @@ def snp_trajectory_plot(xlabel="generation"):
 
 if __name__=="__main__":
 	parser = argparse.ArgumentParser(description = "run wright-fisher simulation with mutation and genetic drift")
-	parser.add_argument('--pop_size', type = int, default = 100.0, help = "population size")
-	parser.add_argument('--mutation_rate', type = float, default = 0.0001, help = "mutation rate")
+	parser.add_argument('--pop_size', type = int, default = 200.0, help = "population size")
+	parser.add_argument('--mutation_rate', type = float, default = 0.000025, help = "mutation rate")
 	parser.add_argument('--seq_length', type = int, default = 100, help = "sequence length")
-	parser.add_argument('--generations', type = int, default = 500, help = "generations")
-	parser.add_argument('--fitness_effect', type = float, default = 1.1, help = "fitness effect")
-	parser.add_argument('--fitness_chance', type = float, default = 0.1, help = "fitness chance")
+	parser.add_argument('--generations', type = int, default = 1000, help = "generations")
+	parser.add_argument('--fitness_effect', type = float, default = 1.5, help = "fitness effect")
+	parser.add_argument('--fitness_chance', type = float, default = 0.01, help = "fitness chance")
 	parser.add_argument('--summary', action = "store_true", default = False, help = "don't plot trajectories")
 
 	params = parser.parse_args()

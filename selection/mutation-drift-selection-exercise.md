@@ -1,21 +1,23 @@
 # Exercise: effects of positive and negative selection on population dynamics
 
-Here, we'll keep *N* and *&mu;* fixed and keep *&theta;* = 2, but vary the fitness effects of mutations.
+Here, we'll keep *N* and *&mu;* fixed and keep *&theta;* = 1, but include a small fraction of selectively advantageous mutations.
 
-This exercise can be completed by running the supplied Python script [`mutation-drift-selection.py`](mutation-drift-selection.py). To run the script with default population size of 100, per-site per-gen mutation rate of 0.0001, 100 sites and 500 generations, but with one mutation in every 20 having a fitness effect of 1.1, input:
+This exercise can be completed by running the supplied Python script [`mutation-drift-selection.py`](mutation-drift-selection.py). To run the script with default population size of 100, per-site per-gen mutation rate of 0.0001, 100 sites and 500 generations, but with a chance of 0.002 for a mutation to have a fitness effect of 1.1:
 
 ```
-python mutation-drift-selection.py --fitness_effect 1.1 --fitness_chance 0.1 --generations 500
+python mutation-drift-selection.py
 ```
 
 Again, you might try increasing `generations` to something greater than 500 to get a better feel for equilibrium divergence and diversity, say `--generations 2500`. In this case, it may be easier to not plot the haplotype trajectories, using `--summary`, like so:
 
 ```
-python mutation-drift-selection.py --fitness_effect 1.1 --fitness_chance 0.1 --generations 2500 --summary
+python mutation-drift-selection.py --generations 2500 --summary
 ```
 
-> (1) Let's start by examining constant negative selection. Set `--fitness_chance 1.0` and vary `fitness_effect` between 0.8 and 1.0. What happens to diversity, divergence and haplotype dynamics?
+> (1) Can you recognize "selective sweeps" in these dynamics where a new advantage mutation appears and rapidly increases to fixation?
 
-> (2) Let's now examine constant positive selection. Set `--fitness_chance 1.0` and vary `fitness_effect` between 1.0 and 1.2. What happens to diversity, divergence and haplotype dynamics? Do alleles fix faster with positive selection?
+> (2) What do sweeps do to diversity and divergence relative to the neutral scenario?
 
-> (3) What are the effects of occasional mutations of large selective effect? Set parameters `--fitness_chance 0.01` and `--fitness_effect 2.0`. What happens to diversity, divergence and haplotype dynamics? Can you see selective sweeps in action?
+--------------------------------------------
+
+Alternatively, if you don't have a working local Python install, you can run the `mutation-drift-selection.ipynb` notebook online with MyBinder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/trvrb/sismid/HEAD)
