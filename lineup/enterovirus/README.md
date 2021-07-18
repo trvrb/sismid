@@ -17,7 +17,7 @@
 
 * Fig 1 in [Takahashi et al. 2016](http://journals.plos.org/plosmedicine/article?id=10.1371%2Fjournal.pmed.1001958)
 * Figs 1 and 21 in [Khetsuriani et al. 2006](https://www.cdc.gov/mmwr/preview/mmwrhtml/ss5508a1.htm)
-
+* Fig 5 in [Takahashi et al. 2018](https://royalsocietypublishing.org/doi/10.1098/rsif.2018.0507)
 
 ### Genetics
 

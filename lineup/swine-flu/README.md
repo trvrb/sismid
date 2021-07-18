@@ -7,10 +7,6 @@
 * [ViralZone: Influenza A](http://viralzone.expasy.org/all_by_species/6.html)
 * [Wikipedia: Swine Influenza](https://en.wikipedia.org/wiki/Swine_influenza)
 
-### Important features
-
-* Same virus, different hosts. Why does it behave differently?
-
 ### Serology
 
 * Table 1 and Fig 2 and 3 in [de Jong et al. 2007.](dejong-swine-flu-serology.pdf)

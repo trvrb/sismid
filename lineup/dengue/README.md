@@ -8,15 +8,10 @@
 * [Wikipedia: Dengue virus](https://en.wikipedia.org/wiki/Dengue_virus)
 * [Nextstrain dengue](https://nextstrain.org/dengue)
 
-### Important features
-
-* [Antibody dependent enhancement](https://en.wikipedia.org/wiki/Antibody-dependent_enhancement). What's going on here?
-
 ### Serology
 
 * Fig 2 in [Katzelnick et al. 2015.](katzelnick-dengue-serology.pdf)
 * Figs. 3 and 4 in [Katzelnick et al. 2017.](katzelnick-dengue-ADE.pdf)
-
 
 ### Timeseries
 

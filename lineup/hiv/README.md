@@ -5,11 +5,7 @@
 ### Introduction
 
 * [ViralZone: HIV](http://viralzone.expasy.org/all_by_species/7.html)
-* [Wikipedia: Dengue virus](https://en.wikipedia.org/wiki/HIV)
-
-### Important features
-
-* Within-host competition and evolution
+* [Wikipedia: HIV](https://en.wikipedia.org/wiki/HIV)
 
 ### Serology
 
