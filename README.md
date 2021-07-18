@@ -1,8 +1,8 @@
 # Description
 
-**Short course taught by [Sarah Cobey](http://cobeylab.uchicago.edu/) and [Trevor Bedford](http://bedford.io/) for [SISMID 2019](http://www.biostat.washington.edu/suminst/sismid).**
+**Short course taught by [Sarah Cobey](http://cobeylab.uchicago.edu/) and [Trevor Bedford](http://bedford.io/) for [SISMID 2021](https://si.biostat.washington.edu/suminst/sismid).**
 
-This module provides an introduction to modeling antigenically diverse pathogen populations. The first part of the course will introduce multistrain compartmental models and potential mechanisms of competition. These simple models will be contrasted with models with more complex assumptions (e.g., multiple forms of immunity and spatial structure). We will review how to statistically fit multistrain models to longitudinal data from individuals and time series data from populations. The second part of the course will show how, using the coalescent as a neutral expectation, evolutionary pressures can be quantified using sequence data. We will detail bioinformatic methods to build phylogenies, quantify selective pressures and estimate pathogen population structure. Methods to measure pathogen phenotypic similarity and antigenic evolution, such as antigenic cartography, will be introduced. Assumes material from Module 2 (Mathematical Models of Infectious Diseases). Material from Module 14 (Evolutionary Dynamics and Molecular Epidemiology of Viruses) would be helpful, but not required.
+This module provides an introduction to modeling antigenically diverse pathogen populations. The first part of the course will introduce multistrain compartmental models and potential mechanisms of competition. These simple models will be contrasted with models with more complex assumptions (e.g., multiple forms of immunity and spatial structure). We will review how to statistically fit multistrain models to longitudinal data from individuals and time series data from populations. The second part of the course will show how, using the coalescent as a neutral expectation, evolutionary pressures can be quantified using sequence data. We will detail bioinformatic methods to build phylogenies, quantify selective pressures and estimate pathogen population structure. Methods to measure pathogen phenotypic similarity and antigenic evolution, such as antigenic cartography, will be introduced. Assumes material from Module 2 (Mathematical Models of Infectious Diseases). Material from Module 14 (Evolutionary Dynamics and Molecular Epidemiology of Viruses) would complement course material, but is not required.
 
 # Outline
 
@@ -16,7 +16,6 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 ### [Immunity and immune-mediated competition](immunity/)
 
 * The biological basis of antigenic diversity: innate, cellular, and humoral responses
-* *Exercise: Review main immune interactions for chosen pathogens*
 
 ### [Serology](serology/)
 
@@ -24,7 +23,6 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Antigenic cartography
 * *Exercise: Antigenic map*
 * Original antigenic sin
-* *Exercise: Review serological data for chosen pathogens*
 
 ### [Multistrain models](models/)
 
@@ -42,7 +40,6 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * When to trust a model
 * Tips & tricks: insights from natural experiments
 * State-space reconstruction
-* *Exercise: Reviewing timeseries data for chosen pathogens*
 
 ### [The coalescent and phylogenetics](sequences/)
 
@@ -63,7 +60,6 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Wright-Fisher with mutation, genetic drift and selection
 * *Exercise: Effects of positive and negative selection on population dynamics*
 * Tests of selection
-* *Exercise: Reviewing genetic data for chosen pathogens*
 
 ### [Forecasting](forecasting/)
 
