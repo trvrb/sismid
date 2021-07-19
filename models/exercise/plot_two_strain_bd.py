@@ -41,14 +41,14 @@ NSR = 0.02
 NIR = 0.0
 
 # Organize and run simulations
-SI = np.array([NSS, NIS, NRS, NRI, NSI, NSR, NIR])
-ic = np.array([NSS, NIS, NRS, NRI, NSI, NSR, NIR, 1-np.sum(SI)])
+SI = np.array([NSS, NIS, NRS, NRI, NSI, NSR, NIR], dtype="object")
+ic = np.array([NSS, NIS, NRS, NRI, NSI, NSR, NIR, 1-np.sum(SI)], dtype="object")
 par_vals = np.linspace(par_min, par_max, n_points)
 bif_vals = np.zeros((len(par_vals), n_strobes))
 for i in range(len(par_vals)):
     print('Running value %d of %d' % (i+1,len(par_vals)))
     exec(sweep_par + " = par_vals[i]")
-    params = np.array([gamma, mu, alpha, a, omega, beta, epsilon])
+    params = np.array([gamma, mu, alpha, a, omega, beta, epsilon], dtype="object")
     output = run_two_strain(end_time, output_interval, step_size, params, ic)
     I = output[:, 1] + output[:, 6]  # NIS + NIR
     bif_vals[i, :] = I[-n_strobes:len(I)]
