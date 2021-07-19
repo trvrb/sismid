@@ -6,6 +6,7 @@
 
 * [ViralZone: Influenza A](http://viralzone.expasy.org/all_by_species/6.html)
 * [Wikipedia: Seasonal Influenza](https://en.wikipedia.org/wiki/Influenza)
+* [Nextstrain seasonal flu](https://nextstrain.org/flu/seasonal/h3n2/ha/2y)
 
 ### Serology
 
