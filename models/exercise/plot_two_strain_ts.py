@@ -37,9 +37,9 @@ NSR = 0.02
 NIR = 0.0
 
 # Organize and run simulation
-params = np.array([gamma, mu, alpha, a, omega, beta, epsilon])
-SI = np.array([NSS, NIS, NRS, NRI, NSI, NSR, NIR])
-ic = np.array([NSS, NIS, NRS, NRI, NSI, NSR, NIR, 1-np.sum(SI)])
+params = np.array([gamma, mu, alpha, a, omega, beta, epsilon],dtype="object")
+SI = np.array([NSS, NIS, NRS, NRI, NSI, NSR, NIR],dtype="object")
+ic = np.array([NSS, NIS, NRS, NRI, NSI, NSR, NIR, 1-np.sum(SI)],dtype="object")
 output = run_two_strain(end_time, output_interval, step_size, params, ic)
 
 # Save output (NIS+NIR, NSI+NRI) to csv and plot
