@@ -136,7 +136,7 @@
 					<h3>Inference for time series</h3>
 					<p><a href="https://kingaa.github.io/sbied/">POMP</a> (partially observed Markov Process)</p>
 					<p><a href="https://www.sciencedirect.com/science/article/pii/S1755436519300301">pMCMC</a> (particle Markov chain Monte Carlo)</p>
-					<p><a href="https://www.jstor.org/stable/3100023?seq=1#metadata_info_tab_contents">TSIR</a>, if conditions met</p>
+					<p><a href="https://rss.onlinelibrary.wiley.com/doi/10.1111/1467-9876.00187">TSIR</a>, if conditions met</p>
 				</section>
 
 				<section>
@@ -206,6 +206,7 @@
 				</section>
 
 				<section>
+				<section>
 					<h3>Bayesian inference allows for probability statements</h3>
 					<p>
 					If $k=8$ and $n=10$, the mean posterior $\mathrm{E}[p] = 0.75$, while the 95% credible interval
@@ -213,6 +214,17 @@
 					</p>
 					<img class="stretch" src="images/bernoulli_bayesian.png">
 				</section>
+					<section>
+					<h3>Maximum likelihood (ML) inference</h3>
+					<br>
+					<p>
+					For the Bernoulli model $\mathrm{Pr}(k,n \, | \, p) = p^k \, (1-p)^{n-k}$,
+					we have $\hat{p} = k/n$. For example, with $k=8$ and $n=10$, $\hat{p}=0.8$
+					the likelihood curve follows
+					</p>
+					<img class="stretch" src="images/bernoulli_ml.png">
+				</section>
+					</section>
 
 				<section>
 					<h3>Methods for Bayesian integration</h3>
@@ -280,6 +292,42 @@
 					<p>Many parameters
 					<p>Multiple minima
 					<p>Noise, nonstationarity, etc.
+				</section>
+
+				<section data-background="#99CCFF">
+					<h3>How would we estimate how strongly two strains are competing?</h3>
+					<p>Assume we have time series of cases of each.</p>
+				</section>
+
+				<section>
+					<h3>One approach (1/3)</h3>
+					<ul>
+						<li>Assume yesterday's model structure. (Potential modifications: allow coinfections, noise in rates.)
+						<li>Create a mapping from latent states (number infected, $X(t)$) to data (cases, $Y(t)$), e.g.,
+						$$Y(t) \sim \text{nbinom}(\text{mean} = \rho X(t), \text{size} = \psi )$$</li>
+						with $\rho$ representing the reporting rate. (N.B. Potential problems with overcounting here; better to use an accumulator variable.)
+					</ul>
+					<p></p>
+				</section>
+
+				<section>
+					<h3>One approach (2/3)</h3>
+				<img class="stretch" src="images/pomp.png">
+					<div class="citation">
+						<a href="https://kingaa.github.io/sbied/">
+							King and Ionides (SISMID module)
+						</a>
+				</section>
+
+				<section>
+					<h3>One approach (3/3)</h3>
+					<p>Constrain/fix some parameters, fit (vary) $\alpha$, <i>a</i>, maybe $\rho$, etc., to find the parameter combinations that maximize the likelihood of the data, e.g., multiple iterated filtering using a particle filter (sequential Monte Carlo)
+					</p>
+					<img class="stretch" src="images/smc_cartoon.jpeg">
+					<div class="citation">
+						<a href="https://str.llnl.gov/january-2013/williams">
+							LLNL
+						</a>
 				</section>
 
 				<section data-background="#99CCFF">
