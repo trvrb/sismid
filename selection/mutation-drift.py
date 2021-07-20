@@ -215,7 +215,7 @@ def snp_trajectory_plot(xlabel="generation"):
 
 if __name__=="__main__":
 	parser = argparse.ArgumentParser(description = "run wright-fisher simulation with mutation and genetic drift")
-	parser.add_argument('--pop_size', type = int, default = 200.0, help = "population size")
+	parser.add_argument('--pop_size', type = int, default = 200, help = "population size")
 	parser.add_argument('--mutation_rate', type = float, default = 0.000025, help = "mutation rate")
 	parser.add_argument('--seq_length', type = int, default = 100, help = "sequence length")
 	parser.add_argument('--generations', type = int, default = 1000, help = "generations")
