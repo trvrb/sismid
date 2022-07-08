@@ -1,6 +1,6 @@
 # Description
 
-**Short course taught by [Sarah Cobey](http://cobeylab.uchicago.edu/) and [Trevor Bedford](http://bedford.io/) for [SISMID 2021](https://si.biostat.washington.edu/suminst/sismid).**
+**Short course taught by [Sarah Cobey](http://cobeylab.uchicago.edu/) and [Trevor Bedford](http://bedford.io/) for [SISMID 2022](https://si.biostat.washington.edu/suminst/sismid).**
 
 This module provides an introduction to modeling antigenically diverse pathogen populations. The first part of the course will introduce multistrain compartmental models and potential mechanisms of competition. These simple models will be contrasted with models with more complex assumptions (e.g., multiple forms of immunity and spatial structure). We will review how to statistically fit multistrain models to longitudinal data from individuals and time series data from populations. The second part of the course will show how, using the coalescent as a neutral expectation, evolutionary pressures can be quantified using sequence data. We will detail bioinformatic methods to build phylogenies, quantify selective pressures and estimate pathogen population structure. Methods to measure pathogen phenotypic similarity and antigenic evolution, such as antigenic cartography, will be introduced. Assumes material from Module 2 (Mathematical Models of Infectious Diseases). Material from Module 14 (Evolutionary Dynamics and Molecular Epidemiology of Viruses) would complement course material, but is not required.
 
@@ -17,6 +17,9 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 
 * The biological basis of antigenic diversity: innate, cellular, and humoral responses
 
+
+## Day 2
+
 ### [Serology](serology/)
 
 * Serological binding and neutralization data
@@ -31,8 +34,6 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Analytic solutions
 * Numerical integration
 * *Exercise: Dynamics of a multistrain SIR system*
-
-## Day 2
 
 ### [Timeseries analysis](timeseries/)
 
@@ -52,6 +53,9 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Maximum likelihood and Bayesian methods
 * Phylogeography and recombination
 
+
+## Day 3
+
 ### [Selection and Wright-Fisher Dynamics](selection/)
 
 * Introduction to Wright-Fisher model
@@ -66,8 +70,6 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Mechanistic models
 * Nonlinear forecasting
 * Fitness model projections
-
-## Day 3
 
 ### [Synthesis](https://github.com/trvrb/sismid/wiki/)
 
