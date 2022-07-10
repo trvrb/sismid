@@ -180,14 +180,14 @@ def get_all_haplotypes():
     return haplotypes
 
 def stacked_trajectory_plot(xlabel="generation"):
-	colors_lighter = ["#A567AF", "#8F69C1", "#8474D1", "#7F85DB", "#7F97DF", "#82A8DD", "#88B5D5", "#8FC0C9", "#97C8BC", "#A1CDAD", "#ACD1A0", "#B9D395", "#C6D38C", "#D3D285", "#DECE81", "#E8C77D", "#EDBB7A", "#EEAB77", "#ED9773", "#EA816F", "#E76B6B"]
-	mpl.rcParams['font.size']=18
-	haplotypes = get_all_haplotypes()
-	trajectories = [get_trajectory(haplotype) for haplotype in haplotypes]
-	plt.stackplot(range(generations), trajectories, colors=colors_lighter)
-	plt.ylim(0, 1)
-	plt.ylabel("frequency")
-	plt.xlabel(xlabel)
+    colors_lighter = ["#A567AF", "#8F69C1", "#8474D1", "#7F85DB", "#7F97DF", "#82A8DD", "#88B5D5", "#8FC0C9", "#97C8BC", "#A1CDAD", "#ACD1A0", "#B9D395", "#C6D38C", "#D3D285", "#DECE81", "#E8C77D", "#EDBB7A", "#EEAB77", "#ED9773", "#EA816F", "#E76B6B"]
+    mpl.rcParams['font.size']=18
+    haplotypes = get_all_haplotypes()
+    trajectories = [get_trajectory(haplotype) for haplotype in haplotypes]
+    plt.stackplot(range(generations), trajectories, colors=colors_lighter)
+    plt.ylim(0, 1)
+    plt.ylabel("frequency")
+    plt.xlabel(xlabel)
 
 # plot snp trajectories
 def get_snp_frequency(site, generation):
@@ -214,55 +214,55 @@ def get_all_snps():
     return snps
 
 def snp_trajectory_plot(xlabel="generation"):
-	colors = ["#781C86", "#571EA2", "#462EB9", "#3F47C9", "#3F63CF", "#447CCD", "#4C90C0", "#56A0AE", "#63AC9A", "#72B485", "#83BA70", "#96BD60", "#AABD52", "#BDBB48", "#CEB541", "#DCAB3C", "#E49938", "#E68133", "#E4632E", "#DF4327", "#DB2122"]
-	mpl.rcParams['font.size']=18
-	snps = get_all_snps()
-	trajectories = [get_snp_trajectory(snp) for snp in snps]
-	data = []
-	for trajectory, color in zip(trajectories, itertools.cycle(colors)):
-		data.append(range(generations))
-		data.append(trajectory)
-		data.append(color)
-	plt.plot(*data)
-	plt.ylim(0, 1)
-	plt.ylabel("frequency")
-	plt.xlabel(xlabel)
+    colors = ["#781C86", "#571EA2", "#462EB9", "#3F47C9", "#3F63CF", "#447CCD", "#4C90C0", "#56A0AE", "#63AC9A", "#72B485", "#83BA70", "#96BD60", "#AABD52", "#BDBB48", "#CEB541", "#DCAB3C", "#E49938", "#E68133", "#E4632E", "#DF4327", "#DB2122"]
+    mpl.rcParams['font.size']=18
+    snps = get_all_snps()
+    trajectories = [get_snp_trajectory(snp) for snp in snps]
+    data = []
+    for trajectory, color in zip(trajectories, itertools.cycle(colors)):
+        data.append(range(generations))
+        data.append(trajectory)
+        data.append(color)
+    plt.plot(*data)
+    plt.ylim(0, 1)
+    plt.ylabel("frequency")
+    plt.xlabel(xlabel)
 
 if __name__=="__main__":
-	parser = argparse.ArgumentParser(description = "run wright-fisher simulation with mutation and genetic drift")
-	parser.add_argument('--pop_size', type = int, default = 200.0, help = "population size")
-	parser.add_argument('--mutation_rate', type = float, default = 0.000025, help = "mutation rate")
-	parser.add_argument('--seq_length', type = int, default = 100, help = "sequence length")
-	parser.add_argument('--generations', type = int, default = 1000, help = "generations")
-	parser.add_argument('--fitness_effect', type = float, default = 1.5, help = "fitness effect")
-	parser.add_argument('--fitness_chance', type = float, default = 0.01, help = "fitness chance")
-	parser.add_argument('--summary', action = "store_true", default = False, help = "don't plot trajectories")
-	parser.add_argument('--output', type = str, default = "fig_mutation_drift_selection.png", help = "file name for figure output")	
+    parser = argparse.ArgumentParser(description = "run wright-fisher simulation with mutation and genetic drift")
+    parser.add_argument('--pop_size', type = int, default = 200.0, help = "population size")
+    parser.add_argument('--mutation_rate', type = float, default = 0.000025, help = "mutation rate")
+    parser.add_argument('--seq_length', type = int, default = 100, help = "sequence length")
+    parser.add_argument('--generations', type = int, default = 1000, help = "generations")
+    parser.add_argument('--fitness_effect', type = float, default = 1.5, help = "fitness effect")
+    parser.add_argument('--fitness_chance', type = float, default = 0.01, help = "fitness chance")
+    parser.add_argument('--summary', action = "store_true", default = False, help = "don't plot trajectories")
+    parser.add_argument('--output', type = str, default = "fig_mutation_drift_selection.png", help = "file name for figure output")
 
-	params = parser.parse_args()
-	pop_size = params.pop_size
-	mutation_rate = params.mutation_rate
-	seq_length = params.seq_length
-	generations = params.generations
-	fitness_effect = params.fitness_effect
-	fitness_chance = params.fitness_chance
-	output = params.output	
+    params = parser.parse_args()
+    pop_size = params.pop_size
+    mutation_rate = params.mutation_rate
+    seq_length = params.seq_length
+    generations = params.generations
+    fitness_effect = params.fitness_effect
+    fitness_chance = params.fitness_chance
+    output = params.output
 
-	simulate()
+    simulate()
 
-	plt.figure(num=None, figsize=(14, 10), dpi=80, facecolor='w', edgecolor='k')
-	if params.summary:
-		plt.subplot2grid((2,1), (0,0))
-		diversity_plot()
-		plt.subplot2grid((2,1), (1,0))
-		divergence_plot()
-	else:
-		plt.subplot2grid((3,2), (0,0), colspan=2)
-		stacked_trajectory_plot(xlabel="")
-		plt.subplot2grid((3,2), (1,0), colspan=2)
-		snp_trajectory_plot(xlabel="")
-		plt.subplot2grid((3,2), (2,0))
-		diversity_plot()
-		plt.subplot2grid((3,2), (2,1))
-		divergence_plot()
-	plt.savefig(output, dpi=150)
+    plt.figure(num=None, figsize=(14, 10), dpi=80, facecolor='w', edgecolor='k')
+    if params.summary:
+        plt.subplot2grid((2,1), (0,0))
+        diversity_plot()
+        plt.subplot2grid((2,1), (1,0))
+        divergence_plot()
+    else:
+        plt.subplot2grid((3,2), (0,0), colspan=2)
+        stacked_trajectory_plot(xlabel="")
+        plt.subplot2grid((3,2), (1,0), colspan=2)
+        snp_trajectory_plot(xlabel="")
+        plt.subplot2grid((3,2), (2,0))
+        diversity_plot()
+        plt.subplot2grid((3,2), (2,1))
+        divergence_plot()
+    plt.savefig(output, dpi=150)
