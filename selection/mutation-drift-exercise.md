@@ -8,7 +8,7 @@ This exercise can be completed by running the supplied Python script [`mutation-
 python mutation-drift.py --pop_size 200 --mutation_rate 0.000025
 ```
 
-Again, these parameters give *&theta;* = 1.
+This will output the file `fig_mutation_drift.png` that can be examined locally. Again, these parameters give *&theta;* = 1.
 
 > (1) Keeping the above parameters as baseline, adjust population size up and down to vary *&theta;* between ~0.2 and ~5. What happens to diversity, divergence and haplotype dynamics?
 

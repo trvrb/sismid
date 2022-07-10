@@ -8,7 +8,7 @@ This exercise can be completed by running the supplied Python script [`mutation-
 python mutation-drift-selection.py
 ```
 
-Again, you might try increasing `generations` to something greater than 1000 to get a better feel for equilibrium divergence and diversity, say `--generations 2500`. In this case, it may be easier to not plot the haplotype trajectories, using `--summary`, like so:
+This will output the file `fig_mutation_drift_selection.png` that can be examined locally. Again, you might try increasing `generations` to something greater than 1000 to get a better feel for equilibrium divergence and diversity, say `--generations 2500`. In this case, it may be easier to not plot the haplotype trajectories, using `--summary`, like so:
 
 ```
 python mutation-drift-selection.py --generations 2500 --summary
