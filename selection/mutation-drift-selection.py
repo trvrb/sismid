@@ -5,7 +5,7 @@ Simulate Wright-Fisher population dynamics with selection
 import argparse
 import numpy as np
 import matplotlib as mpl
-mpl.use('TkAgg')
+mpl.use('Agg')
 import matplotlib.pyplot as plt
 
 try:
@@ -237,6 +237,7 @@ if __name__=="__main__":
 	parser.add_argument('--fitness_effect', type = float, default = 1.5, help = "fitness effect")
 	parser.add_argument('--fitness_chance', type = float, default = 0.01, help = "fitness chance")
 	parser.add_argument('--summary', action = "store_true", default = False, help = "don't plot trajectories")
+	parser.add_argument('--output', type = str, default = "fig_mutation_drift_selection.png", help = "file name for figure output")	
 
 	params = parser.parse_args()
 	pop_size = params.pop_size
@@ -245,6 +246,7 @@ if __name__=="__main__":
 	generations = params.generations
 	fitness_effect = params.fitness_effect
 	fitness_chance = params.fitness_chance
+	output = params.output	
 
 	simulate()
 
@@ -263,4 +265,4 @@ if __name__=="__main__":
 		diversity_plot()
 		plt.subplot2grid((3,2), (2,1))
 		divergence_plot()
-	plt.show()
+	plt.savefig(output, dpi=150)

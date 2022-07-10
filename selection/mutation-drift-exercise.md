@@ -24,4 +24,4 @@ python mutation-drift.py --pop_size 200 --mutation_rate 0.000025 --generations 2
 
 --------------------------------------------
 
-Alternatively, if you don't have a working local Python install, you can run the `mutation-drift.ipynb` notebook online with MyBinder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/trvrb/sismid/HEAD)
+Alternatively, if you don't have a working local Python install, you can run the `mutation-drift.ipynb` notebook or the `mutation-drift.py` script online with MyBinder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/trvrb/sismid/HEAD)

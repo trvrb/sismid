@@ -20,4 +20,4 @@ python mutation-drift-selection.py --generations 2500 --summary
 
 --------------------------------------------
 
-Alternatively, if you don't have a working local Python install, you can run the `mutation-drift-selection.ipynb` notebook online with MyBinder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/trvrb/sismid/HEAD)
+Alternatively, if you don't have a working local Python install, you can run the `mutation-drift-selection.ipynb` notebook or the `mutation-drift-selection.py` script online with MyBinder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/trvrb/sismid/HEAD)

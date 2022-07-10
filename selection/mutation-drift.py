@@ -5,7 +5,7 @@ Simulate Wright-Fisher population dynamics
 import argparse
 import numpy as np
 import matplotlib as mpl
-mpl.use('TkAgg')
+mpl.use('Agg')
 import matplotlib.pyplot as plt
 
 try:
@@ -220,12 +220,14 @@ if __name__=="__main__":
 	parser.add_argument('--seq_length', type = int, default = 100, help = "sequence length")
 	parser.add_argument('--generations', type = int, default = 1000, help = "generations")
 	parser.add_argument('--summary', action = "store_true", default = False, help = "don't plot trajectories")
+	parser.add_argument('--output', type = str, default = "fig_mutation_drift.png", help = "file name for figure output")
 
 	params = parser.parse_args()
 	pop_size = params.pop_size
 	mutation_rate = params.mutation_rate
 	seq_length = params.seq_length
 	generations = params.generations
+	output = params.output
 
 	simulate()
 
@@ -244,4 +246,4 @@ if __name__=="__main__":
 		diversity_plot()
 		plt.subplot2grid((3,2), (2,1))
 		divergence_plot()
-	plt.show()
+	plt.savefig(output, dpi=150)
