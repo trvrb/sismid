@@ -6,7 +6,9 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 
 # Outline
 
-## Day 1
+## Day 1, Wed July 13
+
+_Block 1, 11:30am to 2:30pm_
 
 ### [Pathogen diversity](pathogens/)
 
@@ -17,8 +19,9 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 
 * The biological basis of antigenic diversity: innate, cellular, and humoral responses
 
+## Day 2, Thur July 14
 
-## Day 2
+_Block 2, 8am to 11am_
 
 ### [Serology](serology/)
 
@@ -34,6 +37,8 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Analytic solutions
 * Numerical integration
 * *Exercise: Dynamics of a multistrain SIR system*
+
+_Block 3, 11:30am to 2:30pm_
 
 ### [Timeseries analysis](timeseries/)
 
@@ -53,8 +58,9 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Maximum likelihood and Bayesian methods
 * Phylogeography and recombination
 
+## Day 3, Fri July 15
 
-## Day 3
+_Block 4, 8am to 11am_
 
 ### [Selection and Wright-Fisher Dynamics](selection/)
 
@@ -70,6 +76,8 @@ This module provides an introduction to modeling antigenically diverse pathogen 
 * Mechanistic models
 * Nonlinear forecasting
 * Fitness model projections
+
+_Block 5, 11:30am to 2:30pm_
 
 ### [Synthesis](https://github.com/trvrb/sismid/wiki/)
 
