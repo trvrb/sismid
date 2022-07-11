@@ -1,3 +1,4 @@
+
 ###################################################################																   #
 # Basic plot for two-strain SIR model:
 # Bifurcation diagram for one parameter
@@ -6,7 +7,7 @@
 import sys
 import numpy as np
 import matplotlib as mpl
-mpl.use('TkAgg')
+mpl.use('Agg')
 from matplotlib.font_manager import FontProperties 
 import matplotlib.pyplot as plt
 from two_strain import *
