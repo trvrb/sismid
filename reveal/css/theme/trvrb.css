@@ -61,6 +61,26 @@ body {
   margin: 20px 0;
   line-height: 1.6em; }
 
+.reveal .smaller {
+	font-size: smaller;
+}
+
+.reveal .larger {
+	font-size: larger;
+}
+
+.reveal .even-smaller {
+	font-size: 75%;
+}
+
+.reveal .tiny {
+	font-size: 60%;
+}
+
+.reveal .even-tinier {
+	font-size: 50%;
+}
+
 .citation {
 	position: absolute;
 	bottom:0px;

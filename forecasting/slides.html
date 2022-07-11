@@ -271,95 +271,163 @@
 						</div>
 				</section>
 
+				<section data-transition="fade" data-background="#000000">
+					<h1 class="title">Evolutionary forecasting</h1>
+				</section>
+
 				<section>
-					<h3>Forecasting flu evolution</h3>
-					<img class="stretch" src="images/flu_h3n2_tree_vaccines.png">
+					<h3>Influenza vaccine strain selection strategy</h3>
+					<p class="smaller">
+						General strategy for antigenically evolving seasonal influenza viruses is attempt to match vaccine strain as close as possible to circulating viruses
+					</p>
+					<img class="stretch" src="images/flu_h3n2_tree_vaccines_2014_2022.png">
+					<div class="citation">
+						<a href="https://nextstrain.org/flu/seasonal/h3n2/ha/6y">nextstrain.org</a>
+					</div>
 				</section>
 
 				<section>
 					<h3>Vaccine strain selection timeline</h3>
+					<p class="smaller">
+						Due to manufacturing and distribution, vaccine strain selection occurs in Feb for an fall vaccination campaign ahead of seasonal influenza epidemic
+					</p>
 					<img class="stretch" src="images/flu_vaccine_schedule.jpg">
 				</section>
 
 				<section>
-					<h3>Seek to explain change in clade frequencies over 1 year</h3>
-					<img class="stretch" src="images/prediction_clade_frequencies.png">
-				</section>
-
-				<section>
-					<h3>Fitness models can project clade frequencies</h3>
-					<br>
-					<p>Clade frequencies $X$ derive from the fitnesses $f$ and frequencies $x$ of constituent viruses, such that</p>
-					<p>$$\hat{X}_v(t+\Delta t) = \sum_{i:v} x_i(t) \, \mathrm{exp}(f_i \, \Delta t)$$</p>
-					<p>This captures clonal interference between competing lineages</p>
+					<h3>Fitness models project strain frequencies</h3>
+					<p class="smaller">Future frequency $x_i(t+\Delta t)$ of strain $i$ derives from strain fitness $f_i$ and present day frequency $x_i(t)$, such that</p>
+					<p class="smaller">$$x_i(t+\Delta t) = \frac{1}{Z(t)} \, x_i(t) \, \mathrm{exp}(f_i \, \Delta t)$$</p>
+					<p class="smaller">
+						Strain frequencies at each timepoint are normalized by total frequency $Z(t)$.
+						This captures clonal interference between competing lineages.
+					</p>
 					<img class="stretch" src="images/clonal_interferance.jpg">
 					<div class="citation">
-						<a href="http://www.nature.com/nature/journal/v507/n7490/full/nature13087.html">&#321;uksza and L&auml;ssig 2014</a>
+						<a href="http://www.nature.com/nature/journal/v507/n7490/full/nature13087.html">&#321;uksza and L&auml;ssig. 2014. Nature.</a>
 					</div>
 				</section>
 
 				<section>
-					<h3>Clonal interference</h3>
-					<img class="stretch" src="images/yeast_muller_plot.png">
+					<h3>Match strain forecast to retrospective circulation</h3>
+					<img class="stretch" src="images/prediction_fitness_model_schematic.png">
+					<div class="citation">
+						<a href="https://bedford.io/papers/huddleston-flu-forecasting/">Huddleston et al. 2020. eLife.</a>
+					</div>
 				</section>
 
 				<section>
-					<h3>Predictive fitness models</h3>
+					<h3>Strain fitness estimated from viral attributes</h3>
+					<p class="smaller">The fitness $f$ of strain $i$ is estimated as</p>
+					<p class="smaller">$$f_i = \beta^\mathrm{A} \, f_i^\mathrm{A} + \beta^\mathrm{B} \, f_i^\mathrm{B} + \ldots$$</p>
+					<p class="smaller">where $f^A$, $f^B$, etc... are different standardized viral attributes and
+						$\beta^A$, $\beta^B$, etc... coefficients are trained based on historical evolution</p>
 					<br>
-					<p>A simple predictive model estimates the fitness $f$ of virus $i$ as</p>
-					<p>$$\hat{f}_i = \beta^\mathrm{ep} \, f_i^\mathrm{ep} + \beta^\mathrm{ne} \, f_i^\mathrm{ne}$$</p>
-					<p>where $f_i^\mathrm{ep}$ measures cross-immunity via substitutions at epitope sites and $f_i^\mathrm{ne}$ measures mutational load via substitutions at non-epitope sites</p>
+					<table class="smaller">
+						<thead>
+							<tr>
+								<th width="28%">Antigenic drift</th>
+								<th width="38%">Intrinsic fitness</th>
+								<th width="33%">Recent growth</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>epitope mutations</td>
+								<td>non-epitope mutations</td>
+								<td>local branching index</td>
+							</tr>
+							<tr>
+								<td>HI titers</td>
+								<td>DMS data (via Bloom lab)</td>
+								<td>delta frequency</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
+					<h3>Model successfully predicts clade growth and best pick from model is generally close to best possible retrospective pick</h3>
+					<img class="stretch" src="images/prediction_validation_clade_growth_ranking.png">
 					<div class="citation">
-						<a href="http://www.nature.com/nature/journal/v507/n7490/full/nature13087.html">&#321;uksza and L&auml;ssig 2014</a>
+						<a href="https://bedford.io/papers/huddleston-flu-forecasting/">Huddleston et al. 2020. eLife.</a>
+					</div>
+				</section>
+
+				<section class="left-align">
+					<h3>Two main issues</h3>
+					<p>
+					<ol class="smaller">
+						<li>
+							We swapped from assessing clade frequencies to earth mover's distance because our clade assignments were not
+							stable across trees built at different timepoints, while clade frequencies are the more natural metric.
+						</li>
+						<li>
+							Strain fitness $f_i$ is largely fixed by the "fundamentals" of the strain rather than being learned from frequency behavior.
+						</li>
+					</ol>
+					</p>
+				</section>
+
+				<section>
+					<h3>Genetic relationships of globally sampled SARS-CoV-2 to present</h3>
+					<img class="stretch" src="images/ncov_variants_tree_unrooted_2022_05_22.png">
+					<div class="citation">
+						<a href="https://nextstrain.org/ncov/gisaid/global?l=unrooted&m=div">nextstrain.org</a>
 					</div>
 				</section>
 
 				<section>
-					<h3>Model selection</h3>
-					<img src="images/luksza_models.png">
-						<div class="citation">
-            	<a href="http://www.nature.com/nature/journal/v507/n7490/full/nature13087.html">&#321;uksza and L&auml;ssig 2014</a>
-						</div>
-				</section>
-
-				<section>
-					<h3>Performance</h3>
-					<img class="stretch" src="images/prediction_ll.jpg">
-					<div class="citation">
-          	<a href="http://www.nature.com/nature/journal/v507/n7490/full/nature13087.html">&#321;uksza and L&auml;ssig 2014</a>
-					</div>
-				</section>
-
-				<section>
-					<h3>Emergence and spread of SARS-CoV-2 variant viruses</h3>
-					<img class="stretch" src="images/ncov_variants_global.png">
+					<h3>Rapid displacement of existing diversity by emerging variants</h3>
+					<img class="stretch" src="images/ncov_tree_freq_2022_06_20.png">
 					<div class="citation">
 						<a href="https://nextstrain.org/ncov/gisaid/global">nextstrain.org</a>
 					</div>
 				</section>
 
 				<section>
-					<h3>Emergence and spread of SARS-CoV-2 variant viruses</h3>
-					<img class="stretch" src="images/ncov_variants_usa.png">
-					<div class="citation">
-						<a href="https://nextstrain.org/ncov/gisaid/north-america?f_country=USA">nextstrain.org</a>
-					</div>
+					<h3>Population genetic expectation of variant frequency under selection</h3>
+					<p class="smaller">$x' = \frac{x \, (1+s)}{x \, (1+s) + (1-x)}$ for frequency $x$ in one generation with selective advantage $s$</p>
+					<p class="smaller">$x(t) = \frac{x_0 \, (1+s)^t}{x_0 \, (1+s)^t + (1-x_0)}$ for initial frequency $x_0$ over $t$ generations</p>
+					<p class="smaller">Trajectories are linear once logit transformed via $\mathrm{log}(\frac{x}{1 - x})$</p>
+					<img class="stretch" src="images/ncov_variants_selection_logit_trajectories.png">
 				</section>
 
 				<section>
-					<h3>Logistic growth</h3>
-					<p>Exponential growth of fitter variant appears as logistic growth in frequency space</p>
-					<div style="float: left; width: 45%">
-						<p>Logistic regression: $$p(x) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x)}}$$</p>
-					</div>
-					<div style="float: right; width: 45%">
-						<img src="images/logistic_regression_example.png">
-					</div>
+					<h3>Variants show consistent frequency dynamics in logit space</h3>
+					<img class="stretch" src="images/ncov_variants_omicron_countries_frequencies_logit_2022_04_08.png">
 				</section>
 
 				<section>
-					<h3>Multinomial logistic regression fit</h3>
-					<img class="stretch" src="images/ncov_variants_usa_multinomial_logistic_regression.png">
+					<h3>Variants show consistent frequency dynamics in logit space</h3>
+					<img class="stretch" src="images/ncov_variants_delta_countries_frequencies_logit_2021_09_07.png">
+				</section>
+
+				<section>
+					<h3>Multinomial logistic regression</h3>
+					<p class="smaller">
+						Multinomial logistic regression models the probability of a virus sampled at time $t$ belonging to variant $i$ as
+					</p>
+					<p class="smaller">
+						$$\mathrm{Pr}(X = i) = x_i(t) = \frac{p_i \, \mathrm{exp}(f_i \, t)}{\sum_{1 \le j \le n} p_j \, \mathrm{exp}(f_j \, t) }$$
+					</p>
+					<p class="smaller">
+						where the model has $2n$ parameters consisting of $p_i$ the frequency of variant $i$ at initial timepoint and $f_i$ the
+						growth rate or fitness of variant $i$ for $n$ variants.
+					</p>
+					<p class="smaller">
+						The model is fit to minimize "log loss" of predicted variant vs observed variant across observations in dataset.
+					</p>
+				</section>
+
+				<section>
+					<h3>Multinomial logistic regression fits variant frequencies well</h3>
+					<img class="stretch" src="images/sarscov2_variant_rt_logistic_regression_2021_09_01.png">
+				</section>
+
+				<section>
+					<p>Multinomial logistic regression should work well for SARS-CoV-2 prediction, except new variants have been emerging
+						fast enough that the prediction horizon is really quite short</p>
 				</section>
 
 				<section data-background="#99CCFF">
