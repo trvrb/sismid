@@ -23,9 +23,8 @@
 7. **Streptococcus pneumoniae**: How has serotype diversity been affected by the introductions of the pneumococcal conjugate vaccines? How has vaccine-associated selection affected the evolution of antibiotic resistance in pneumococcus?
 8. **Neisseria gonorrhoeae**: What drives balancing selection on antibiotic resistance in gonococcus? How does the mode of transmission shape bacterial population structure?
 9. **Swine flu**: Human seasonal influenza viruses are continually introduced into domestic swine populations. However, human-derived swine flu evolves more slowly in pigs. Why is this? Is this an expected outcome from models of antigenic drift?
-10. **Seasonal flu**: Why do we see repeated strain turnover and rapid coalescence in influenza H3N2, while we see increased co-existence of influenza B viruses? Notably, B/Victoria and B/Yamagata successfully “speciated” in the early 1980s, while seasonal influenza A has not shown an analogous speciation event.
-11. **Measles**: Why does measles virus show very little if any antigenic drift despite mutating rapidly at the RNA level?
-12. **SARS-CoV-2**: What is driving the emergence of variant of concern (VOC) and variant of interest (VOI) viruses? Why were these not observed in the initial spring and summer 2020 pandemic waves?
-13. **SARS-CoV-2**: How much of increased fitness as inferred by regional dominance of variant of concern (VOC) and variant of interest (VOI) viruses is due to increased intrinsic transmissibility and how much is due to antigenic drift?
-14. **SARS-CoV-2**: When will modified booster vaccines be necessary to maintain vaccine efficacy? How would we go about choosing which variant to target with an updated vaccine?
-15. **SARS-CoV-2**: Do we expect Original Antigenic Sin (OAS) to become an issue that eventually limits vaccine efficacy to an evolving SARS-CoV-2 virus?
+10. **Measles**: Why does measles virus show very little if any antigenic drift despite mutating rapidly at the RNA level?
+11. **SARS-CoV-2**: What is driving the emergence of variant of concern (VOC) and variant of interest (VOI) viruses? Why were these not observed in the initial spring and summer 2020 pandemic waves?
+12. **SARS-CoV-2**: How much of increased fitness as inferred by regional dominance of variant of concern (VOC) and variant of interest (VOI) viruses is due to increased intrinsic transmissibility and how much is due to antigenic drift?
+13. **SARS-CoV-2**:  What strategies should we pursue in choosing which variant to target with an updated vaccine? Are there other vaccine strategies that may lead to more robustness against continued antigenic evolution?
+14. **SARS-CoV-2**: Do we expect Original Antigenic Sin (OAS) to become an issue that eventually limits vaccine efficacy to an evolving SARS-CoV-2 virus?
