@@ -17,7 +17,9 @@ Subscript indices refer to the status with respect to strains 1 and 2, respectiv
 
 Compare answers with your neighbors, and be sure to raise any interesting points of disagreement (or agreement or confusion) with the class.
 
-For this next section you'll need to download a Python script. You can download it [here](https://github.com/trvrb/sismid/blob/master/models/exercise/exercise.zip?raw=true). Download this and uncompress it.
+For this next section you'll need to run a Python script.
+
+This can either be downloaded [here](https://github.com/trvrb/sismid/blob/master/models/exercise/exercise.zip?raw=true) and run locally or can be run directly from within MyBinder at [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/trvrb/sismid/HEAD). This script outputs the figure `fig_plot_two_strain_ts.png`.
 
 Let's assume we think this model is a pretty good starting point for testing hypotheses.
 We'll numerically integrate these equations to see what they predict.

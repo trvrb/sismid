@@ -7,8 +7,8 @@ import sys
 import csv
 import numpy as np
 import matplotlib as mpl
-mpl.use('TkAgg')
-from matplotlib.font_manager import FontProperties 
+mpl.use('Agg')
+from matplotlib.font_manager import FontProperties
 import matplotlib.pyplot as plt
 from two_strain import *
 
@@ -85,5 +85,5 @@ plt.xlabel('Time')
 plt.ylabel('Infected 2')
 plt.legend(loc=1, prop=FontProperties(size='smaller'))
 plt.savefig("time_series_" + str(run_num) + ".png")
-plt.show()
+plt.savefig("fig_plot_two_strain_ts.png", dpi=200)
 plt.close()
