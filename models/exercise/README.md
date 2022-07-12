@@ -41,7 +41,7 @@ python plot_two_strain_ts.py
 
 > (6) Now change `alpha` and `a` to make the strains interact. How do the dynamics differ? Do you see differences in the dynamics when you change `alpha` v. `a`?
 
-> (7) Let's use the model to consider the conditions under which a new variant can invade---specifically, the invasion of Omicron in late 2021. (We'll pretend there was a single resident strain, Delta, and a single invader, Omicron.) Major uncertainties at the time included the fraction of the population immune to infection with Omicron compared to prior variants such as Delta, the intrinsic reproductive numbers of Omicron and Delta, and the cross-immunity after infection with each to the other. In laboratory experiments, sera from recipients of the mRNA-1273 vaccine (containing the original Wuhan strain) experienced a 30-fold reduction in neutralization against Omicron (the reduction was ~2.5-fold for Delta). Epidemiological studies in England suggested that Omicron was 50\% more transmissible than Delta within households and potentially twice as transmissible outside households. What intrinsic reproductive numbers, differences in immunity to Delta vs. Omicron (i.e., degree of immune escape in Omicron), and values of `a` or `alpha` are consistent with rapid displacement of Delta? Try to identify a few contrasting scenarios.
+> (7) Let's use the model to consider the conditions under which a new variant can invade---specifically, the invasion of Omicron in late 2021. (We'll pretend there was a single resident strain, Delta, and a single invader, Omicron.) Major uncertainties at the time included the fraction of the population immune to infection with Omicron compared to prior variants such as Delta, the intrinsic reproductive numbers of Omicron and Delta, and the cross-immunity after infection with each to the other. In laboratory experiments, sera from recipients of the mRNA-1273 vaccine (containing the original Wuhan strain, estimated to be half as transmissible as Delta) experienced a 30-fold reduction in neutralization against Omicron (the reduction was ~2.5-fold for Delta). Epidemiological studies in England suggested that Omicron was 50\% more transmissible than Delta within households and potentially twice as transmissible outside households. What intrinsic reproductive numbers, differences in immunity to Delta vs. Omicron (i.e., degree of immune escape in Omicron), and values of `a` or `alpha` are consistent with rapid displacement of Delta? Try to identify a few contrasting scenarios.
 
 > (Optional) Consult [the documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html) for SciPy's' ODE solver [`odeint`](http://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html#scipy.integrate.odeint) in [`scipy.integrate`](http://docs.scipy.org/doc/scipy/reference/integrate.html). This solver uses an adaptive step size. See if you can implement the model using the solver--most of the content of [`two_strain.py`](two_strain.py) can be copied and pasted. Investigate the consequences of changing the tolerance limits (`rtol` and `atol`) and acceptable step sizes (`hmin` and `hmax`) of the solver. These equations are said to be [stiff](http://www.mathworks.com/company/newsletters/articles/stiff-differential-equations.html).
 
@@ -57,7 +57,7 @@ This approach can reveal the presence of multiple stable states or attractors, a
 For simplicity, we'll create our bifurcation diagrams using the same initial conditions throughout.
 We won't measure precisely whether we have obtained equilibrium conditions--we'll simply simulate for a long time, and sample the few final time points.
 
-> (7) Carefully choose reasonable default values for all your parameters. Then create bifurcation diagrams with [`plot_two_strain_bd.py`](plot_two_strain_bd.py), independently sweeping over `alpha`, `a`, and `beta` for one strain. Be modest in creating your first diagram, and record how long it takes to run. Check your results by simulating a few time series at different points.
+> (8) Carefully choose reasonable default values for all your parameters. Then create bifurcation diagrams with [`plot_two_strain_bd.py`](plot_two_strain_bd.py), independently sweeping over `alpha`, `a`, and `beta` for one strain. Be modest in creating your first diagram, and record how long it takes to run. Check your results by simulating a few time series at different points.
 
 Run this with:
 
@@ -65,13 +65,13 @@ Run this with:
 python plot_two_strain_bd.py
 ```
 
-> (8) Is reduced transmission following infection with the heterologous strain dynamically equivalent to reduced susceptibility?
+> (9) Is reduced transmission following infection with the heterologous strain dynamically equivalent to reduced susceptibility?
 
-> (9) If you're starting with seasonal forcing, what happens when you remove it? Do the reverse exercise if you start without it.
+> (10) If you're starting with seasonal forcing, what happens when you remove it? Do the reverse exercise if you start without it.
 
 You might be wondering why we should bother with all this exploration.
 (Can't we just fit the darn things already?)
 Fitting fails all the time, and it's important to understand why.
 Simulating and summarizing dynamics are also useful tools to investigate the results from inference.
 
-> (10) Let's say you obtained an estimate of `beta` from fitting the model. You make a bifurcation diagram, and it indicates that a 5% increase in `beta` would shift the system to chaotic dynamics. The time series don't show chaotic dynamics. What do you conclude? What if your estimate of `beta` came from experiment?
+> (11) Let's say you obtained an estimate of `beta` from fitting the model. You make a bifurcation diagram, and it indicates that a 5% increase in `beta` would shift the system to chaotic dynamics. The time series don't show chaotic dynamics. What do you conclude? What if your estimate of `beta` came from experiment?
