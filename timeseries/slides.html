@@ -151,8 +151,8 @@
 
 				<section>
 					<h3>Likelihood profiles</h3>
-					<p>Hold parameter(s) constant, fit the rest
-					<img class="stretch" src="images/profile.png">
+					<p>Hold parameter(s) constant, fit the rest</p>
+					<img src="images/profile.png">
 						<div class="citation">
 							<a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3730691/pdf/rsif20130414.pdf">
 								Reich et al. 2013
@@ -302,7 +302,7 @@
 				<section>
 					<h3>One approach (1/3)</h3>
 					<ul>
-						<li>Assume yesterday's model structure. (Potential modifications: allow coinfections, noise in rates.)
+						<li>Assume this morning's model structure. (Potential modifications: allow coinfections, noise in rates.)
 						<li>Create a mapping from latent states (number infected, $X(t)$) to data (cases, $Y(t)$), e.g.,
 						$$Y(t) \sim \text{nbinom}(\text{mean} = \rho X(t), \text{size} = \psi )$$</li>
 						with $\rho$ representing the reporting rate. (N.B. Potential problems with overcounting here; better to use an accumulator variable.)
