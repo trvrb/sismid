@@ -4,7 +4,7 @@
 
  * [Slides](slides.html)
 
-### Pathogen comparison
+### Pathogen presentations
 
- * *Exercise: investigate pathogen-specific serological data*
- * *Question: how many "strains" exist for your pathogen? Are there canonical serotypes? Or is it fuzzier?*
+ * *Exercise: is serological data relevant to your question?*
+ * *How many "strains" exist for your pathogen? Are there canonical serotypes? Or is it fuzzier?*
