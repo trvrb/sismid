@@ -2,7 +2,7 @@
 
 Here, we'll keep *N* and *&mu;* fixed and keep *&theta;* = 1, but include a small fraction of selectively advantageous mutations.
 
-This exercise can be completed by running the supplied Python script [`mutation-drift-selection.py`](mutation-drift-selection.py). To run the script with default population size of 200, per-site per-gen mutation rate of 0.000025, 100 sites and 1000 generations, but with a chance of 0.01 for a mutation to have a fitness effect of 1.5:
+This exercise can be completed by running the supplied Python script [`mutation-drift-selection.py`](mutation-drift-selection.py). To run the script with default population size of 500, per-site per-gen mutation rate of 0.000025, 100 sites and 1000 generations, but with a chance of 0.005 for a mutation to have a fitness effect of 1.5:
 
 ```
 python mutation-drift-selection.py

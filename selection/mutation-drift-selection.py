@@ -14,13 +14,13 @@ except ImportError:
     import itertools
 
 # global variables
-pop_size = 200
+pop_size = 500
 seq_length = 100
 alphabet = ['A', 'T', 'G', 'C']
 mutation_rate = 0.000025 # per gen per individual per site
 generations = 1000
 fitness_effect = 1.5 # fitness effect if a functional mutation occurs
-fitness_chance = 0.01 # chance that a mutation has a fitness effect
+fitness_chance = 0.005 # chance that a mutation has a fitness effect
 
 # population
 base_haplotype = ''.join(["A" for i in range(seq_length)])
