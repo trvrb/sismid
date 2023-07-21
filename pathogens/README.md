@@ -4,7 +4,7 @@
 
 * [Slides](slides.html)
 
-### Pathogen comparison
+### Pathogen presentations
 
 * *Exercise: Assigning study groups and picking questions to address. Divide into groups of 4-6 people and choose a question from the list below.*
 * [Lineup of pathogens and questions](../lineup/)
