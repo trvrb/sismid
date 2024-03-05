@@ -38,7 +38,7 @@ With *&theta;* = 5.0, there are many segregating haplotypes.
 
 ## Chance of fixation
 
-A new mutant appears in the population at an initial frequency *p* of {% eqinline 1/N %}. It has a {% eqinline 1/N %} of eventually fixing in the population and a {% eqinline (N-1)/N %} chance of being lost from the population.
+A new mutant appears in the population at an initial frequency *p* of $$1/N$$. It has a $$1/N$$ of eventually fixing in the population and a $$(N-1)/N$$ chance of being lost from the population.
 
 Similarly, if a mutant is at population frequency *p*, then it has a *p* chance of fixing. At any point in time, looking forwards, the chance of fixation of a neutral mutation is just its frequency.
 
@@ -60,7 +60,7 @@ With *&theta;* = 1 and *N* = 500, population turnover occurs slowly.
 
 ## Divergence
 
-Each generation we expect *N&mu;* mutations across the entire population. Each mutation has a {% eqinline 1/N %} chance of fixing. Thus the rate of fixed mutations is {% eqinline N \mu \times 1/N = \mu %}.
+Each generation we expect *N&mu;* mutations across the entire population. Each mutation has a $$1/N$$ chance of fixing. Thus the rate of fixed mutations is $$N \mu \times 1/N = \mu$$.
 
 This result, that the rate of neutral divergence across a species is equal to the rate of mutation in a single individual, is a classic finding from [Kimura](http://www.blackwellpublishing.com/ridley/classictexts/kimura.pdf).
 
