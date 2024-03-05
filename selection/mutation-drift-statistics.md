@@ -14,7 +14,7 @@ This is all assuming a Wright-Fisher population of discrete non-overlapping gene
 
 Genetic diversity is most commonly summarized with the statistic *&pi;*, which is equal to the average number of mutations per site between two random individuals in the population. *&pi;* is most commonly measured in terms of substitutions per site. The expectation of *&pi;* follows
 
-{% eq E[\pi] = \theta = 2N\mu %}
+$$E[\pi] = \theta = 2N\mu$$
 
 *&pi;* for *Drosophila* and *&pi;* for flu is approximately 0.01, while *&pi;* for humans is approximately 0.001. This means that for an average length gene of 1000 basepairs, two random fruit flies or two random flues will probably differ at ~10 sites, while two random humans will differ at ~1 site.
 
@@ -22,7 +22,7 @@ Genetic diversity is most commonly summarized with the statistic *&pi;*, which i
 
 The number of unique haplotypes in a sample of *n* sequences can be estimated from [Ewen's sampling formula](https://en.wikipedia.org/wiki/Ewens's_sampling_formula). Ewen's sampling formula gives the probability of observing *a*<sub>1</sub> copies of haplotype 1, *a*<sub>2</sub> copies of haplotype 2, etc... in a sample of *n* sequences. The sole parameter of the sampling formula is *&theta;*. Thus *&theta;* is sufficient to predict the entire distribution of haplotype frequencies. The expectation of *k* unique haplotypes follows:
 
-{% eq E[k] = \sum^{n}_{i=1} \frac{\theta}{\theta + i - 1} %}
+$$E[k] = \sum^{n}_{i=1} \frac{\theta}{\theta + i - 1}$$
 
 With *&theta;* = 0.2, there is usually only a single dominant haplotype in the population.
 

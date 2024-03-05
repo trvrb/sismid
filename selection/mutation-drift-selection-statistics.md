@@ -14,7 +14,7 @@ This is all assuming a Wright-Fisher population of discrete non-overlapping gene
 
 A new mutant appears in the population at an initial frequency *p* of $$1/N$$. It has a chance of fixing of
 
-{% eq \mathrm{Pr}(\mathrm{fix}) = \frac{ 1-e^{-2s} }{ 1-e^{-2Ns} } %}
+$$\mathrm{Pr}(\mathrm{fix}) = \frac{ 1-e^{-2s} }{ 1-e^{-2Ns} }$$
 
 In the limit as $$\lim_{N \to \infty}$$, this becomes $$\mathrm{Pr}(\mathrm{fix}) \approx 2s$$.
 
@@ -30,7 +30,7 @@ It's also clear that larger population sizes are more efficient at purging delet
 
 We also know the general probability of an allele fixing that is at current frequency *p*. This is
 
-{% eq \mathrm{Pr}(\mathrm{fix}) = \frac{ 1-e^{-2Nsp} }{ 1-e^{-2Ns} } %}.
+$$\mathrm{Pr}(\mathrm{fix}) = \frac{ 1-e^{-2Nsp} }{ 1-e^{-2Ns} }$$.
 
 This gives the following relationship between *Ns* and *p* and chance of fixation.
 
